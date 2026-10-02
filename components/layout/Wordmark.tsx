@@ -9,7 +9,7 @@ export function Wordmark({ className, size = "header" }: { className?: string; s
     <span className={cn("inline-flex min-w-0 flex-col", className)}>
       <span
         className={cn(
-          "whitespace-nowrap font-serif tracking-[-.02em]",
+          "whitespace-nowrap font-serif font-light tracking-[-.02em]", // one notch above the 200 used for headings
           size === "header" ? "text-[30px] mp:text-[26px]" : "text-[28px] mp:text-[26px]",
           // after the size: tailwind-merge drops a line-height that comes before a font-size
           "leading-none",
