@@ -25,7 +25,7 @@ export default function ContactPage() {
 
       <section className="wrap py-[clamp(80px,10vw,150px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-start gap-[clamp(56px,8vw,130px)]">
-          <div className="m-center flex flex-col">
+          <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">Get in touch</Eyebrow>
             <h2 className="t-h2">
               Let&apos;s <span className="hl-green">Talk</span>
@@ -59,7 +59,7 @@ export default function ContactPage() {
             ["Hours", site.hours[0], site.hours[1]],
             ["Company", "Home Native Interiors", site.company],
           ].map(([label, a, b]) => (
-            <div key={label} className="m-center">
+            <div key={label} data-m-center className="">
               <div className="label-caps">— {label}</div>
               <div className="text-[19px] leading-[1.6] text-muted-1">
                 {a}

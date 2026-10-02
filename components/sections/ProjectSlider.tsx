@@ -49,9 +49,9 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
 
   return (
     <>
-      <div className="wrap-wide m-center mb-[clamp(48px,6vw,80px)] flex flex-wrap items-end justify-between gap-7">
+      <div data-m-center className="wrap-wide mb-[clamp(48px,6vw,80px)] flex flex-wrap items-end justify-between gap-7">
         {head}
-        <div className="m-row flex items-center gap-3.5">
+        <div data-m-row className="flex items-center gap-3.5">
           <button
             type="button"
             onClick={prev}

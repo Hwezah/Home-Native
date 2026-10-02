@@ -16,7 +16,7 @@ export function SectionHead({
   eyebrowClassName?: string;
 }) {
   return (
-    <div className={cn("m-center flex flex-wrap items-end justify-between gap-7", className)}>
+    <div data-m-center className={cn("flex flex-wrap items-end justify-between gap-7", className)}>
       <div className="max-w-[860px] flex-[1_1_520px]">
         <Eyebrow className={eyebrowClassName}>{eyebrow}</Eyebrow>
         {children}

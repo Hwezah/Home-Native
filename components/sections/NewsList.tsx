@@ -16,9 +16,9 @@ export function NewsList({ posts }: { posts: Post[] }) {
   return (
     <>
       <section className="wrap pb-[clamp(50px,6vw,90px)] pt-[clamp(70px,9vw,140px)]">
-        <div className="m-center flex flex-wrap items-end justify-between gap-8">
+        <div data-m-center className="flex flex-wrap items-end justify-between gap-8">
           <h1 className="m-0 font-serif text-[clamp(72px,9vw,140px)] leading-none tracking-[-.03em]">News</h1>
-          <div className="m-center flex max-w-[520px] flex-col gap-5">
+          <div data-m-center className="flex max-w-[520px] flex-col gap-5">
             <p className="m-0 text-[18px] leading-[1.7] text-muted-1b">Ideas, materials and stories from the studio.</p>
             <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter posts">
               {postCategories.map((c) => (
@@ -34,7 +34,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
       <section aria-label="Posts" className="wrap pb-[clamp(60px,6vw,90px)]">
         {shown.map((p) => (
           <article key={p.slug} className="mb-[clamp(80px,9vw,140px)]">
-            <div className={`m-center mb-8 flex flex-col gap-3.5 ${INDENT}`}>
+            <div data-m-center className={`mb-8 flex flex-col gap-3.5 ${INDENT}`}>
               <Link href={`/news/${p.slug}`} className="block">
                 <h2 className="m-0 max-w-[760px] text-[clamp(36px,4.2vw,66px)] font-extralight leading-[1.08] tracking-[-.01em] text-balance transition-colors duration-300">
                   {p.title}
@@ -50,7 +50,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
                 <Img src={p.image} alt="" sizes="(max-width: 1160px) 100vw, 1080px" />
               </div>
             </Link>
-            <div className={`m-center mt-8 flex flex-col items-start gap-[22px] ${INDENT}`}>
+            <div data-m-center className={`mt-8 flex flex-col items-start gap-[22px] ${INDENT}`}>
               <p className="m-0 max-w-[620px] text-[19px] leading-[1.7] text-muted-1b">{p.excerpt}</p>
               <Link
                 href={`/news/${p.slug}`}
@@ -64,7 +64,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
         ))}
         {shown.length === 0 && <p className="text-[19px] text-muted-1b">No posts in this category yet.</p>}
 
-        <nav aria-label="Pagination" className="m-row flex items-center justify-between gap-5 border-t border-line pt-9 text-[15px] uppercase tracking-[.12em]">
+        <nav aria-label="Pagination" data-m-row className="flex items-center justify-between gap-5 border-t border-line pt-9 text-[15px] uppercase tracking-[.12em]">
           <div className="flex gap-[26px]">
             <span aria-current="page" className="border-b border-ink pb-1">01</span>
             <span className="text-muted-2" aria-disabled="true">02</span>

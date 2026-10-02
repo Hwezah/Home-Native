@@ -62,10 +62,10 @@ export function TestimonialCentered({ items }: { items: Testimonial[] }) {
   const n = items.length;
   const q = items[t];
   const arrow =
-    "cursor-pointer border-0 bg-transparent p-3 text-ink transition-[color,transform] duration-300 hover:text-green m-hide";
+    "cursor-pointer border-0 bg-transparent p-3 text-ink transition-[color,transform] duration-300 hover:text-green";
   return (
     <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-[clamp(12px,4vw,60px)]">
-      <button type="button" aria-label="Previous testimonial" onClick={() => setT((t + n - 1) % n)} className={cn(arrow, "hover:-translate-x-1.5")}>
+      <button type="button" data-m-hide aria-label="Previous testimonial" onClick={() => setT((t + n - 1) % n)} className={cn(arrow, "hover:-translate-x-1.5")}>
         <ArrowLeft size={36} strokeWidth={1.25} />
       </button>
       <div className="flex flex-col items-center text-center">
@@ -91,7 +91,7 @@ export function TestimonialCentered({ items }: { items: Testimonial[] }) {
           <Dots count={n} active={t} onPick={setT} />
         </div>
       </div>
-      <button type="button" aria-label="Next testimonial" onClick={() => setT((t + 1) % n)} className={cn(arrow, "hover:translate-x-1.5")}>
+      <button type="button" data-m-hide aria-label="Next testimonial" onClick={() => setT((t + 1) % n)} className={cn(arrow, "hover:translate-x-1.5")}>
         <ArrowRight size={36} strokeWidth={1.25} />
       </button>
     </div>

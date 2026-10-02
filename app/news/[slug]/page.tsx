@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
 function BlockView({ b }: { b: Block }) {
   switch (b.type) {
     case "lead":
-      return <p className="m-center m-0 font-serif text-[clamp(26px,2.4vw,36px)] leading-[1.4] text-ink">{b.text}</p>;
+      return <p data-m-center className="m-0 font-serif text-[clamp(26px,2.4vw,36px)] leading-[1.4] text-ink">{b.text}</p>;
     case "p":
-      return <p className="m-center m-0 text-[19px] leading-[1.8] text-muted-1">{b.text}</p>;
+      return <p data-m-center className="m-0 text-[19px] leading-[1.8] text-muted-1">{b.text}</p>;
     case "h3":
-      return <h3 className="m-center mb-0 mt-6 text-[clamp(24px,2vw,30px)] font-normal leading-[1.3]">{b.text}</h3>;
+      return <h3 data-m-center className="mb-0 mt-6 text-[clamp(24px,2vw,30px)] font-normal leading-[1.3]">{b.text}</h3>;
     case "image":
       return <ZoomImg src={b.src} alt={b.alt} frameClassName="my-[22px] aspect-[16/10] bg-[#D8CFBF]" sizes="(max-width: 860px) 100vw, 780px" />;
     case "list":
@@ -67,7 +67,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
     <>
       <article>
         <header className="wrap pb-[clamp(40px,4vw,60px)] pt-[clamp(70px,9vw,140px)]">
-          <div className="m-center flex flex-col gap-6">
+          <div data-m-center className="flex flex-col gap-6">
             <Link href="/news" className="flex items-center gap-2.5 text-[14px] uppercase tracking-[.1em] text-muted-2">
               <ArrowLeft size={16} strokeWidth={1.25} />
               All news
@@ -92,7 +92,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
             {post.body.map((b, i) => (
               <BlockView key={i} b={b} />
             ))}
-            <div className="m-row mt-9 flex flex-wrap items-center justify-between gap-5 border-t border-line pt-[30px]">
+            <div data-m-row className="mt-9 flex flex-wrap items-center justify-between gap-5 border-t border-line pt-[30px]">
               <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0">
                 {post.tags.map((t) => (
                   <li key={t} className="whitespace-nowrap rounded-full border border-line-strong px-4 py-2 text-[13px] uppercase tracking-[.1em]">
@@ -107,7 +107,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
       </article>
 
       <nav aria-label="More posts" className="wrap pt-[clamp(70px,8vw,120px)]">
-        <div className="m-row flex items-center justify-between gap-6 border-y border-line py-9">
+        <div data-m-row className="flex items-center justify-between gap-6 border-y border-line py-9">
           <Link href={`/news/${prev.slug}`} className="flex max-w-[46%] items-center gap-[18px]">
             <ArrowLeft size={26} strokeWidth={1.25} />
             <span className="flex flex-col gap-1">
@@ -126,7 +126,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
       </nav>
 
       <section className="wrap pt-[clamp(80px,9vw,130px)]">
-        <div className="m-center flex flex-col">
+        <div data-m-center className="flex flex-col">
           <Eyebrow className="w-full">Keep reading</Eyebrow>
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-[clamp(24px,3vw,48px)]">

@@ -32,7 +32,7 @@ export default function HomePage() {
         <ParallaxImg src={pexels(1571460)} alt="Bright open-plan living room with a floating oak staircase" speed={0.35} priority className="hero-zoom" />
         <div className="pointer-events-none absolute inset-0 bg-[rgba(40,36,30,.35)]" />
         <div className="hero-line pointer-events-none absolute inset-x-0 top-1/2 h-px bg-white/30" />
-        <div className="wrap-wide m-center pointer-events-none relative flex h-full flex-col justify-center">
+        <div data-m-center className="wrap-wide pointer-events-none relative flex h-full flex-col justify-center">
           <div className="hero-fade mb-3.5 text-[13px] uppercase tracking-[.16em]" style={{ animationDelay: "300ms" }}>
             Home Native&apos;s Best
           </div>
@@ -40,7 +40,7 @@ export default function HomePage() {
           <p className="hero-fade m-0 mb-9 max-w-[620px] text-[18px] font-light" style={{ animationDelay: "1000ms" }}>
             Rooms shaped around how you live. Calm, considered interiors made to last.
           </p>
-          <div className="hero-fade m-row pointer-events-auto flex flex-wrap items-center gap-7" style={{ animationDelay: "1150ms" }}>
+          <div data-m-row className="hero-fade pointer-events-auto flex flex-wrap items-center gap-7" style={{ animationDelay: "1150ms" }}>
             <PillButton href="/contact" variant="light" size="hero" icon="before" block={false}>
               Get Started Now
             </PillButton>
@@ -50,7 +50,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div aria-hidden="true" className="m-hide pointer-events-none absolute bottom-[clamp(32px,6vh,64px)] right-[clamp(20px,5vw,80px)] h-[140px] w-[140px]">
+        <div aria-hidden="true" data-m-hide className="pointer-events-none absolute bottom-[clamp(32px,6vh,64px)] right-[clamp(20px,5vw,80px)] h-[140px] w-[140px]">
           <svg viewBox="0 0 140 140" width="140" height="140" className="spin absolute inset-0">
             <defs>
               <path id="hnCircle" d="M70,70 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0" />
@@ -84,7 +84,7 @@ export default function HomePage() {
         <div aria-hidden="true" className="outline-word absolute -right-[1vw] top-5 text-[clamp(160px,26vw,420px)] font-light [-webkit-text-stroke:1px_rgba(0,0,0,.08)]">
           Native
         </div>
-        <div className="m-center relative flex flex-col gap-7">
+        <div data-m-center className="relative flex flex-col gap-7">
           <div className="text-[14px] uppercase">— About Us</div>
           <p className="relative m-0 max-w-[1320px] font-serif text-[clamp(32px,4.4vw,66px)] leading-[1.18] tracking-[-.02em] text-pretty">
             We are an interior design studio creating calm, functional and lasting spaces. Experienced in{" "}
@@ -161,7 +161,7 @@ export default function HomePage() {
             {reasons.map((r) => {
               const Icon = reasonIcons[r.icon];
               return (
-                <div key={r.title} className="m-center flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7">
+                <div key={r.title} data-m-center className="flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7">
                   <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#6D7569] text-paper transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
                     <Icon size={52} strokeWidth={1} />
                   </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
           <div data-reveal className="relative h-[clamp(420px,46vw,680px)] overflow-hidden rounded-3xl bg-[#cfc6b8]">
             <ParallaxImg src={pexels(1571467)} alt="Calm living room with a grey sofa and patterned rug" speed={0.15} extra={12} sizes="(max-width: 960px) 100vw, 50vw" />
           </div>
-          <div className="m-center">
+          <div data-m-center className="">
             <Eyebrow>FAQ</Eyebrow>
             <h2 className="t-h2 mb-12">
               Common <span className="hl-green">Questions</span>
@@ -227,7 +227,7 @@ export default function HomePage() {
         </SectionHead>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-[clamp(24px,2.6vw,40px)]">
           {posts.slice(0, 3).map((n) => (
-            <Link key={n.slug} href={`/news/${n.slug}`} className="zoom-host m-center group flex flex-col gap-[22px] hover:text-ink">
+            <Link key={n.slug} href={`/news/${n.slug}`} data-m-center className="zoom-host group flex flex-col gap-[22px] hover:text-ink">
               <div data-reveal className="relative h-[340px] overflow-hidden rounded-[14px] bg-[#ddd]">
                 <div className="zoom group-hover:scale-[1.07]">
                   <Img src={n.image} alt="" sizes="(max-width: 1000px) 100vw, 33vw" />

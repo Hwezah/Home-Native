@@ -30,7 +30,7 @@ export default function ServicesPage() {
 
       {/* ── Intro ── */}
       <section className="wrap pb-[clamp(60px,7vw,100px)] pt-[clamp(80px,10vw,150px)]">
-        <div className="m-center flex flex-col">
+        <div data-m-center className="flex flex-col">
           <Eyebrow>Services</Eyebrow>
           <h2 className="t-h2 max-w-[900px]">
             Transforming <span className="hl-green">Spaces</span> Into Homes That Fit
@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-[clamp(48px,5vw,80px)]">
           {serviceColumns.map((c) => (
             <div key={c.tag} className="flex flex-col">
-              <div className="m-center flex flex-col items-start">
+              <div data-m-center className="flex flex-col items-start">
                 <span className="inline-block px-5 py-2.5 text-[14px] uppercase tracking-[.14em]" style={{ background: c.tint }}>
                   {c.tag}
                 </span>
@@ -108,13 +108,13 @@ export default function ServicesPage() {
             {site.phone}
           </a>
           <div className="mt-14 grid w-full max-w-[860px] grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-8">
-            <div className="m-center text-left">
+            <div data-m-center className="text-left">
               <div className="label-caps mb-2.5">— Email</div>
               <a href={`mailto:${site.email}`} className="pointer-events-auto text-[19px] text-paper hover:text-yellow">
                 {site.email}
               </a>
             </div>
-            <div className="m-center text-right">
+            <div data-m-center className="text-right">
               <div className="label-caps mb-2.5">— Hours</div>
               <div className="text-[19px] leading-[1.6]">
                 {site.hours[0]}

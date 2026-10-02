@@ -12,7 +12,7 @@ export function GetStarted() {
         Get Started On <span className="hl-sand">Inspiring</span> Interiors — Contact Today
       </h2>
       <div className="mx-auto mt-14 grid max-w-[1060px] grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-9 border-t border-line pt-14">
-        <div className="m-center text-left">
+        <div data-m-center className="text-left">
           <div className="label-caps">— Email</div>
           <a href={`mailto:${site.email}`} className="text-[19px] font-light text-muted-1">{site.email}</a>
         </div>
@@ -24,7 +24,7 @@ export function GetStarted() {
             {site.hours[1]}
           </div>
         </div>
-        <div className="m-center text-right">
+        <div data-m-center className="text-right">
           <div className="label-caps">— Phone</div>
           <a href={site.phoneHref} className="text-[24px] font-light">{site.phone}</a>
         </div>

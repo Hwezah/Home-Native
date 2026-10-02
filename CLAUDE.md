@@ -11,10 +11,10 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
 
 - Tokens are CSS variables in `app/globals.css`, mirrored into Tailwind via `@theme inline`.
 - Custom classes live in `@layer base` / `@layer components` so Tailwind utilities always win.
-- Mobile portrait: follow `.claude/skills/mobile-portrait/SKILL.md` (helpers `.m-center`, `.m-btn`, `.m-row`,
-  `.m-stack`, `.m-span`, `.m-hide`) and audit every page at 390×844 before pushing.
+- Mobile portrait: follow `.claude/skills/mobile-portrait/SKILL.md` (attributes `data-m-center`, `data-m-btn`,
+  `data-m-row`, `data-m-stack`, `data-m-span`, `data-m-hide`) and audit every page at 390×844 before pushing.
 - Scroll reveal and parallax are global (`components/effects/ScrollEffects.tsx`): headings, paragraphs,
-  `a.m-btn` and `[data-reveal]` inside `main` reveal; `[data-parallax]` layers move. Opt out with
+  `a[data-m-btn]` and `[data-reveal]` inside `main` reveal; `[data-parallax]` layers move. Opt out with
   `data-no-reveal`; heroes are excluded via `data-hero`.
 - Content is typed data in `content/*.ts`; detail pages use `generateStaticParams`.
 - Run `npm run lint` and `npm run build` before pushing.

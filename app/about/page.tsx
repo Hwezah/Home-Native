@@ -37,7 +37,7 @@ export default function AboutPage() {
         >
           Native
         </div>
-        <div className="wrap m-center relative flex flex-col gap-8">
+        <div data-m-center className="wrap relative flex flex-col gap-8">
           <div className="text-[14px] uppercase">— About Us</div>
           <p className="t-lead">
             We are an interior design studio dedicated to creating calm, functional and lasting spaces. Experienced in{" "}
@@ -48,7 +48,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="wrap relative mt-[clamp(80px,10vw,150px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] gap-[clamp(40px,6vw,90px)]">
-          <div className="m-center flex flex-col gap-[26px]">
+          <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Mission</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
               At <strong className="font-medium text-ink">Home Native</strong>, our mission is to design spaces that blend beauty, comfort and function. We
@@ -56,7 +56,7 @@ export default function AboutPage() {
               sustainable choices and close attention to detail.
             </p>
           </div>
-          <div className="m-center flex flex-col gap-[26px]">
+          <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Vision</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
               At <strong className="font-medium text-ink">Home Native</strong>, our vision is to be a trusted name in inspiring, livable spaces. We aim to raise
@@ -75,11 +75,11 @@ export default function AboutPage() {
 
       {/* ── Numbers ── */}
       <section className="wrap py-[clamp(80px,9vw,140px)]">
-        <div className="m-center border-b border-line pb-7 text-[15px] uppercase">/ Numbers of Success</div>
+        <div data-m-center className="border-b border-line pb-7 text-[15px] uppercase">/ Numbers of Success</div>
         {stats.map((st) => (
           <div
             key={st.title}
-            className="m-stack m-center group grid grid-cols-[auto_minmax(0,1.2fr)_minmax(0,1.6fr)_auto] items-center gap-[clamp(16px,3vw,48px)] border-b border-line py-8 transition-colors hover:bg-surface-warm"
+            data-m-stack data-m-center className="group grid grid-cols-[auto_minmax(0,1.2fr)_minmax(0,1.6fr)_auto] items-center gap-[clamp(16px,3vw,48px)] border-b border-line py-8 transition-colors hover:bg-surface-warm"
           >
             <div
               className="flex h-[clamp(84px,9vw,124px)] w-[clamp(84px,9vw,124px)] items-center justify-center rounded-full text-ink transition-transform duration-500 group-hover:rotate-45"
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       {/* ── Team ── */}
       <section className="wrap pb-[clamp(80px,9vw,140px)]">
-        <div className="m-center mb-[clamp(56px,7vw,110px)] flex flex-wrap items-end justify-between gap-7">
+        <div data-m-center className="mb-[clamp(56px,7vw,110px)] flex flex-wrap items-end justify-between gap-7">
           <div className="max-w-[640px] flex-[1_1_420px]">
             <Eyebrow>Our Team</Eyebrow>
             <h2 className="m-0 font-serif text-[clamp(56px,7vw,110px)] leading-none tracking-[-.02em]">
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] items-start gap-[clamp(24px,5vw,90px)]">
           {team.map((m) => (
-            <div key={m.name} className={`m-center flex flex-col gap-[18px] ${m.offset ? "min-[880px]:mt-[120px]" : ""}`}>
+            <div key={m.name} data-m-center className={`flex flex-col gap-[18px] ${m.offset ? "min-[880px]:mt-[120px]" : ""}`}>
               <div data-reveal className="group relative aspect-square overflow-hidden bg-[#ddd]">
                 <div className="zoom grayscale-[.35] transition-[transform,filter] duration-[1200ms] group-hover:scale-[1.06] group-hover:grayscale-0">
                   <Img src={m.src} alt={`${m.name}, ${m.role}`} sizes="(max-width: 880px) 100vw, 33vw" />

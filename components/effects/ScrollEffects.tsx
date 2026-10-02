@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const REVEAL =
-  "main section h1, main section h2, main section h3, main section p, main section a.m-btn, main [data-reveal], footer [data-reveal]";
+  "main section h1, main section h2, main section h3, main section p, main section a[data-m-btn], main [data-reveal], footer [data-reveal]";
 
 /**
  * Page-wide scroll reveals + parallax, re-scanned on every route change.

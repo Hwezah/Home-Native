@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
       {/* ── Intro ── */}
       <section className="wrap pb-[clamp(70px,8vw,120px)] pt-[clamp(70px,9vw,140px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-end gap-[clamp(48px,7vw,110px)]">
-          <div className="m-center flex flex-col gap-[30px]">
+          <div data-m-center className="flex flex-col gap-[30px]">
             <Link href="/portfolio" className="flex items-center gap-2.5 text-[14px] uppercase tracking-[.1em] text-muted-2">
               <ArrowLeft size={16} strokeWidth={1.25} />
               {project.category} — Interior Design
@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
           </div>
           <dl className="m-0 grid grid-cols-2 gap-x-7 gap-y-9">
             {meta.map(([label, value]) => (
-              <div key={label} className="m-center flex flex-col gap-2.5 border-t border-line pt-[18px]">
+              <div key={label} data-m-center className="flex flex-col gap-2.5 border-t border-line pt-[18px]">
                 <dt className="text-[13px] uppercase tracking-[.18em] text-muted-2">{label}</dt>
                 <dd className="m-0 text-[19px] uppercase tracking-[.04em]">{value}</dd>
               </div>
@@ -66,7 +66,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
       {/* ── Colour palette ── */}
       <section className="wrap py-[clamp(90px,10vw,160px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(48px,6vw,96px)]">
-          <div className="m-center flex flex-col">
+          <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">{palette.eyebrow}</Eyebrow>
             <h2 className="t-h2">
               {palette.title} <span className="hl-green">{palette.highlight}</span>
@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
       <section className="wrap pb-[clamp(90px,10vw,160px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(48px,6vw,96px)]">
           <ZoomImg src={materials.image} alt={`${project.title} — materials detail`} frameClassName="aspect-[16/11] bg-[#D8CFBF]" sizes="(max-width: 960px) 100vw, 50vw" />
-          <div className="m-center flex flex-col">
+          <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">{materials.eyebrow}</Eyebrow>
             <h2 className="t-h2">
               {materials.title} <span className="hl-green">{materials.highlight}</span>
@@ -112,7 +112,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
 
       {/* ── Prev / next ── */}
       <nav aria-label="More projects" className="wrap pt-[clamp(70px,8vw,120px)]">
-        <div className="m-row flex items-center justify-between gap-6 border-y border-line py-9">
+        <div data-m-row className="flex items-center justify-between gap-6 border-y border-line py-9">
           <Link href={`/portfolio/${prev.slug}`} className="flex items-center gap-[18px]">
             <ArrowLeft size={28} strokeWidth={1.25} />
             <span className="flex flex-col gap-1">

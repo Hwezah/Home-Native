@@ -74,9 +74,9 @@ export function ContactForm() {
       <Input name="phone" type="tel" placeholder="Phone (optional)" aria-label="Phone (optional)" autoComplete="tel" />
       {/* Honeypot */}
       <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-      <div className="m-center mb-2.5 mt-[22px] flex flex-col gap-3.5">
+      <div data-m-center className="mb-2.5 mt-[22px] flex flex-col gap-3.5">
         <Label id="project-type-label">Project type</Label>
-        <div className="m-center flex flex-wrap gap-2.5" role="radiogroup" aria-labelledby="project-type-label">
+        <div data-m-center className="flex flex-wrap gap-2.5" role="radiogroup" aria-labelledby="project-type-label">
           {projectTypes.map((t) => (
             <Chip key={t} active={t === projectType} role="radio" aria-checked={t === projectType} onClick={() => setProjectType(t)}>
               {t}
@@ -91,7 +91,7 @@ export function ContactForm() {
           {error}
         </span>
       )}
-      <Button type="submit" variant="solid" size="block" disabled={pending} className="m-btn mt-4 cursor-pointer">
+      <Button type="submit" variant="solid" size="block" disabled={pending} data-m-btn className="mt-4 cursor-pointer">
         {pending ? "Sending…" : "Send message"}
       </Button>
     </form>

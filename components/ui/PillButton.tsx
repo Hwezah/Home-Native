@@ -17,7 +17,7 @@ type Props = {
 
 export function PillButton({ href, children, className, icon = "after", block = true, variant, size }: Props) {
   return (
-    <Link href={href} className={cn(buttonVariants({ variant, size }), block && "m-btn", className)}>
+    <Link href={href} data-m-btn={block ? "" : undefined} className={cn(buttonVariants({ variant, size }), className)}>
       {icon === "before" && <ArrowUpRight size={18} strokeWidth={1.25} />}
       {children}
       {icon === "after" && <ArrowRight size={18} strokeWidth={1.25} />}

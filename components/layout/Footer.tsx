@@ -14,7 +14,7 @@ export function Footer() {
 function LightFooter() {
   return (
     <footer className="px-[clamp(20px,5vw,80px)] pb-12 pt-10">
-      <div className="m-center flex flex-wrap items-center justify-between gap-5 text-[15px] uppercase tracking-[.06em] text-[#666]">
+      <div data-m-center className="flex flex-wrap items-center justify-between gap-5 text-[15px] uppercase tracking-[.06em] text-[#666]">
         <div data-reveal className="flex items-center gap-7 text-ink">
           <a href={site.socials.instagram} aria-label="Instagram"><Instagram /></a>
           <a href={site.socials.facebook} aria-label="Facebook"><Facebook /></a>
@@ -27,33 +27,33 @@ function LightFooter() {
 }
 
 function DarkFooter() {
-  const col = "m-center flex flex-col gap-3.5 text-[16px]";
+  const col = "flex flex-col gap-3.5 text-[16px]";
   const head = "mb-1.5 text-[13px] uppercase tracking-[.16em] text-paper";
   return (
     <footer className="bg-ink text-[#bbb]">
       <div className="wrap-wide pb-10 pt-[clamp(64px,7vw,100px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-12 border-b border-[#2a2a2a] pb-16">
-          <div className="m-span m-center col-span-2 min-w-0">
+          <div data-m-span data-m-center className="col-span-2 min-w-0">
             <div className="mb-5 font-serif text-[34px] text-paper">Home Native</div>
             <p className="m-0 max-w-[380px] text-[17px] font-light leading-[1.6]">
               Interior design studio creating calm, functional and lasting spaces. A MachineNative company.
             </p>
           </div>
-          <div className={col}>
+          <div data-m-center className={col}>
             <div className={head}>Studio</div>
             <Link href="/about">About</Link>
             <Link href="/services">Services</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/news">News</Link>
           </div>
-          <div className={col}>
+          <div data-m-center className={col}>
             <div className={head}>Contact</div>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={site.phoneHref}>{site.phone}</a>
             <span>Mon–Fri, 9am–5pm</span>
           </div>
         </div>
-        <div className="m-center flex flex-wrap justify-between gap-5 pt-8 text-[14px]">
+        <div data-m-center className="flex flex-wrap justify-between gap-5 pt-8 text-[14px]">
           <span>© 2026 Home Native Interiors — a MachineNative company</span>
           <div className="flex gap-6">
             <a href={site.socials.instagram}>Instagram</a>
