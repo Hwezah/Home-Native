@@ -40,12 +40,19 @@ export default function HomePage() {
           <p className="hero-fade m-0 mb-9 max-w-[620px] text-[18px] font-light" style={{ animationDelay: "1000ms" }}>
             Rooms shaped around how you live. Calm, considered interiors made to last.
           </p>
-          <div data-m-row className="hero-fade pointer-events-auto flex flex-wrap items-center gap-7" style={{ animationDelay: "1150ms" }}>
-            <PillButton href="/contact" variant="light" size="hero" icon="before" block={false}>
+          {/* Mobile portrait: both CTAs stack, centred, 80vw; "or" is dropped. */}
+          <div data-m-stack data-m-center className="hero-fade pointer-events-auto flex flex-wrap items-center gap-7" style={{ animationDelay: "1150ms" }}>
+            <PillButton href="/contact" variant="light" size="hero" icon="before">
               Get Started Now
             </PillButton>
-            <span className="italic opacity-60">or</span>
-            <Link href="/services" className="border-b border-white/60 pb-1.5 text-[14px] uppercase tracking-[.16em] text-paper hover:text-paper">
+            <span data-m-hide className="italic opacity-60">
+              or
+            </span>
+            <Link
+              href="/services"
+              data-m-btn
+              className="inline-flex items-center justify-center border-b border-white/60 pb-1.5 text-[14px] uppercase tracking-[.16em] text-paper transition-colors duration-[350ms] hover:text-paper mp:rounded-full mp:border mp:px-10 mp:py-[22px] mp:hover:bg-paper mp:hover:text-ink"
+            >
               Explore Services
             </Link>
           </div>

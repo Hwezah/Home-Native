@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* `mp:` = phones held upright — matches the mobile portrait rules. */
+@custom-variant mp (@media (max-width: 600px) and (orientation: portrait));
+
 /* ───────────── Design tokens (see design_handoff_home_native/README.md) ───────────── */
 :root {
   --ink: #111111;
