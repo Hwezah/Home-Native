@@ -10,6 +10,8 @@ import { Accordion } from "@/components/ui/Accordion";
 import { ParallaxImg, ZoomImg } from "@/components/ui/Img";
 import { PillButton } from "@/components/ui/PillButton";
 import { TestimonialCentered } from "@/components/ui/TestimonialSlider";
+import { ProjectStrip } from "@/components/sections/ProjectStrip";
+import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -84,8 +86,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── Latest projects strip (Velin-style) ── */}
+      <ProjectStrip projects={projects} />
+
       {/* ── Testimonial ── */}
-      <section aria-label="Testimonials" className="wrap pb-[clamp(90px,10vw,160px)]">
+      <section aria-label="Testimonials" className="wrap py-[clamp(90px,10vw,160px)]">
         <TestimonialCentered items={testimonials} />
       </section>
 
