@@ -9,60 +9,76 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/utils";
 
 const CLONES = 3; // max cards in view; cloned onto the end for a seamless loop
-const EASE = "transform .9s cubic-bezier(.2,.7,.2,1)";
+const SLIDE_MS = 1000; // glide time, as in the Velin reference
+const HOLD_MS = 3500; // pause between glides
+const EASE = `transform ${SLIDE_MS}ms cubic-bezier(.22,.61,.36,1)`; // ease-out: quick start, soft landing
 
 /**
- * Velin-style "Latest Projects" band: dark intro panel + auto-advancing strip of
- * tall project columns. The first visible column is lit, the rest tinted brown.
- * 3 columns on desktop, 2 on tablet, 1 on mobile portrait. Swipe > 50px moves.
+ * Velin-style "Latest Projects" carousel: dark intro panel + a looping row of tall project
+ * columns that glides one column left every few seconds. The outgoing column slides under the
+ * intro panel; the new first column brightens as it settles, the rest stay tinted brown.
+ * 3 columns on desktop, 2 on tablet, 1 on mobile portrait. Horizontal swipes / Prev / Next move it.
+ * Auto-play pauses only while a mouse hovers it (never stuck by touch scrolls) or the tab is hidden.
  */
 export function ProjectStrip({ projects }: { projects: Project[] }) {
   const n = projects.length;
   const items = [...projects, ...projects.slice(0, CLONES)];
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
+  const indexRef = useRef(0);
   const hover = useRef(false);
-  const dragX = useRef<number | null>(null);
-  const dragY = useRef(0);
+  const busy = useRef(false);
+  const drag = useRef<{ x: number; y: number } | null>(null);
+  const swiped = useRef(false);
+
+  const go = (i: number, withAnim = true) => {
+    indexRef.current = i;
+    setAnimate(withAnim);
+    setIndex(i);
+  };
+  // Run after the browser has painted a no-animation jump, so the next move animates.
+  const afterPaint = (fn: () => void) => requestAnimationFrame(() => requestAnimationFrame(fn));
 
   const next = () => {
-    setAnimate(true);
-    setIndex((i) => Math.min(i + 1, n));
+    if (busy.current) return;
+    busy.current = true;
+    if (indexRef.current >= n) {
+      // Sitting on the clone of item 0: jump to the real item 0, then glide on.
+      go(0, false);
+      afterPaint(() => go(1));
+    } else go(indexRef.current + 1);
   };
   const prev = () => {
-    if (index === 0) {
-      // Jump to the cloned copy of item 0 without animating, then step back.
-      setAnimate(false);
-      setIndex(n);
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => {
-          setAnimate(true);
-          setIndex(n - 1);
-        }),
-      );
-    } else {
-      setAnimate(true);
-      setIndex((i) => i - 1);
-    }
+    if (busy.current) return;
+    busy.current = true;
+    if (indexRef.current <= 0) {
+      go(n, false);
+      afterPaint(() => go(n - 1));
+    } else go(indexRef.current - 1);
   };
 
-  // After sliding onto the clone of item 0, snap back to the real one.
-  const onTransitionEnd = () => {
-    if (index === n) {
-      setAnimate(false);
-      setIndex(0);
-    }
+  // Only the track's own transform transition counts (child tint/zoom transitions bubble up too).
+  const onTransitionEnd = (e: React.TransitionEvent) => {
+    if (e.target !== e.currentTarget || e.propertyName !== "transform") return;
+    busy.current = false;
+    if (indexRef.current === n) go(0, false); // landed on the clone → swap to the real one invisibly
   };
+
+  // Safety net: never stay "busy" if a transitionend is missed (e.g. tab hidden mid-glide).
+  useEffect(() => {
+    if (!busy.current) return;
+    const t = setTimeout(() => (busy.current = false), SLIDE_MS + 200);
+    return () => clearTimeout(t);
+  }, [index]);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => {
-      if (!hover.current) {
-        setAnimate(true);
-        setIndex((i) => Math.min(i + 1, n));
-      }
-    }, 4500);
+      if (!hover.current && !document.hidden) next();
+    }, HOLD_MS + SLIDE_MS);
     return () => clearInterval(id);
+    // next() reads refs only, so a single interval is enough
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [n]);
 
   const active = index % n;
@@ -86,20 +102,30 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
       <div
         data-hn-drag
         className="relative h-[clamp(520px,48vw,690px)] cursor-grab touch-pan-y select-none overflow-hidden [--per:3] max-[1200px]:[--per:2] mp:h-[480px] mp:[--per:1]"
-        onMouseEnter={() => (hover.current = true)}
-        onMouseLeave={() => (hover.current = false)}
+        onPointerEnter={(e) => e.pointerType === "mouse" && (hover.current = true)}
+        onPointerLeave={(e) => e.pointerType === "mouse" && (hover.current = false)}
         onPointerDown={(e) => {
-          dragX.current = e.clientX;
-          dragY.current = e.clientY;
-          hover.current = true;
+          drag.current = { x: e.clientX, y: e.clientY };
+          swiped.current = false;
         }}
+        onPointerCancel={() => (drag.current = null)}
         onPointerUp={(e) => {
-          hover.current = false;
-          if (dragX.current == null) return;
-          const dx = e.clientX - dragX.current;
-          dragX.current = null;
+          const d = drag.current;
+          drag.current = null;
+          if (!d) return;
+          const dx = e.clientX - d.x;
           // Horizontal swipes only — a mostly-vertical drag is a scroll.
-          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - dragY.current)) (dx < 0 ? next : prev)();
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - d.y)) {
+            swiped.current = true;
+            (dx < 0 ? next : prev)();
+          }
+        }}
+        // A swipe must not also open the project it ended on.
+        onClickCapture={(e) => {
+          if (swiped.current) {
+            e.preventDefault();
+            swiped.current = false;
+          }
         }}
       >
         <div
@@ -125,7 +151,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
                 {/* Brown tint on the columns that are not lit */}
                 <div
                   className={cn(
-                    "pointer-events-none absolute inset-0 transition-[background-color] duration-700",
+                    "pointer-events-none absolute inset-0 transition-[background-color] duration-1000",
                     lit ? "bg-[rgba(46,31,18,.12)] group-hover:bg-[rgba(46,31,18,.05)]" : "bg-[rgba(46,31,18,.72)] group-hover:bg-[rgba(46,31,18,.45)]",
                   )}
                 />

@@ -33,7 +33,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
     dragX.current = e.clientX;
     dragY.current = e.clientY;
     dragged.current = false;
-    hover.current = true;
+    if (e.pointerType === "mouse") hover.current = true;
   };
   const onUp = (e: React.PointerEvent) => {
     hover.current = false;
@@ -81,8 +81,12 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
         onPointerDown={onDown}
         onPointerUp={onUp}
         onPointerLeave={onUp}
-        onMouseEnter={() => (hover.current = true)}
-        onMouseLeave={() => (hover.current = false)}
+        onPointerCancel={() => {
+          // Touch scroll started here: forget the drag and resume auto-play.
+          hover.current = false;
+          dragX.current = null;
+        }}
+        onPointerEnter={(e) => e.pointerType === "mouse" && (hover.current = true)}
         className="relative h-[640px] cursor-grab touch-pan-y select-none [--card:524px] max-[600px]:h-[520px] max-[600px]:[--card:80vw]"
       >
         <div
