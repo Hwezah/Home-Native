@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav } from "@/content/site";
 import { useMenu } from "@/context/MenuContext";
-import { useHideOnScroll } from "@/lib/useHideOnScroll";
 import { useScrolled } from "@/lib/useScrolled";
 import { cn } from "@/lib/utils";
 import { Wordmark } from "./Wordmark";
@@ -18,12 +17,11 @@ export function isActive(pathname: string, href: string) {
 
 /**
  * Fixed header. Transparent at the top of the page (white text over image heroes); once the page
- * scrolls it turns into frosted glass. Hides on scroll down, shows on scroll up.
+ * scrolls it turns into frosted glass. Always stays pinned to the top (client decision).
  */
 export function Header() {
   const pathname = usePathname();
   const { menuOpen, openMenu } = useMenu();
-  const hidden = useHideOnScroll(160, menuOpen);
   const scrolled = useScrolled();
   const overHero = !scrolled && HERO_PAGES.includes(pathname);
 
@@ -31,13 +29,12 @@ export function Header() {
     <header
       data-glass={scrolled || undefined}
       className={cn(
-        "fixed inset-x-0 top-0 z-30 border-b transition-[transform,background-color,box-shadow,border-color,color,backdrop-filter] duration-500 ease-hn",
+        "fixed inset-x-0 top-0 z-30 border-b transition-[background-color,box-shadow,border-color,color,backdrop-filter] duration-500 ease-hn",
         scrolled
           ? "border-line/60 bg-paper/65 shadow-[0_8px_30px_rgba(0,0,0,.06)] backdrop-blur-xl backdrop-saturate-150"
           : "border-transparent bg-transparent",
         overHero ? "text-white" : "text-ink",
       )}
-      style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
     >
       <div className="mx-auto flex h-[var(--header-h)] w-[90vw] mp:w-[calc(100vw-2*var(--gutter-m))] flex-nowrap items-center justify-between gap-6 mp:gap-4">
         <Link href="/" className="min-w-0 hover:text-current" aria-label="HomeNative interiors — home">

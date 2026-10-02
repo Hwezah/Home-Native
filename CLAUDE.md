@@ -18,7 +18,7 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   `line`, `muted-*`, `surface-*`, `fill`, `img-bg`) for page surfaces/text; use fixed `white` / `#111` only for
   text and buttons sitting on photos or the deep-brown sections.
 - Header is fixed and transparent at the top (white text over image heroes listed in `HERO_PAGES`), frosted
-  glass once scrolled. `#main` is padded by `--header-h`; a first-child `[data-hero]` slides up under it.
+  glass once scrolled. It always stays pinned (client decision — no hide-on-scroll, overrides the handoff). `#main` is padded by `--header-h`; a first-child `[data-hero]` slides up under it.
 - Cursor and click sound react to mouse presses and real taps only — never to touch-down, so scrolls
   are not treated as clicks.
 - Custom classes live in `@layer base` / `@layer components` so Tailwind utilities always win.
