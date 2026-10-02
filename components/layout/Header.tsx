@@ -7,6 +7,7 @@ import { useMenu } from "@/context/MenuContext";
 import { useHideOnScroll } from "@/lib/useHideOnScroll";
 import { useScrolled } from "@/lib/useScrolled";
 import { cn } from "@/lib/utils";
+import { Wordmark } from "./Wordmark";
 
 /** Pages whose first section is a full-bleed image hero that sits under the header. */
 const HERO_PAGES = ["/", "/about", "/services", "/contact"];
@@ -39,14 +40,8 @@ export function Header() {
       style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
     >
       <div className="mx-auto flex h-[var(--header-h)] w-[90vw] flex-nowrap items-center justify-between gap-6 mp:gap-4">
-        {/* Wordmark: "Home Native" with INTERIORS spread underneath to exactly the same width. */}
-        <Link href="/" className="inline-flex min-w-0 flex-col hover:text-current" aria-label="Home Native interiors — home">
-          <span className="whitespace-nowrap font-serif text-[30px] leading-none tracking-[-.02em] mp:text-[26px]">Home Native</span>
-          <span aria-hidden="true" className="-mt-0.5 flex justify-between text-[11px] font-light leading-none mp:-mt-px mp:text-[10px]">
-            {"INTERIORS".split("").map((ch, i) => (
-              <span key={i}>{ch}</span>
-            ))}
-          </span>
+        <Link href="/" className="min-w-0 hover:text-current" aria-label="Home Native interiors — home">
+          <Wordmark />
         </Link>
         <nav aria-label="Main" className="flex items-center gap-[clamp(16px,2.4vw,34px)] text-[13px] uppercase tracking-[.08em]">
           {nav.map((item) => {

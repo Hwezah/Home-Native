@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { nav, site } from "@/content/site";
 import { useMenu } from "@/context/MenuContext";
+import { Wordmark } from "./Wordmark";
 
 /** Right-hand 35% panel. Text is never centred, mobile included. */
 export function SidePanel() {
@@ -31,16 +32,18 @@ export function SidePanel() {
         style={{ transform: menuOpen ? "translateX(0)" : "translateX(105%)" }}
       >
         <div className="mb-[clamp(48px,7vh,90px)] flex items-center justify-between">
-          <span className="font-serif text-[28px]">Home Native</span>
+          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label="Home Native interiors — home">
+            <Wordmark size="panel" />
+          </Link>
           <button
             ref={closeRef}
             type="button"
             onClick={closeMenu}
             aria-label="Close menu"
-            className="relative h-16 w-16 cursor-pointer border-0 bg-transparent p-0"
+            className="relative h-12 w-12 cursor-pointer border-0 bg-transparent p-0"
           >
-            <span className="absolute left-0 top-1/2 h-px w-16 rotate-45 bg-ink" />
-            <span className="absolute left-0 top-1/2 h-px w-16 -rotate-45 bg-ink" />
+            <span className="absolute left-0 top-1/2 h-px w-12 rotate-45 bg-ink" />
+            <span className="absolute left-0 top-1/2 h-px w-12 -rotate-45 bg-ink" />
           </button>
         </div>
         <nav aria-label="Menu" className="flex flex-col gap-1.5 text-[clamp(32px,2.6vw,44px)] font-light leading-[1.3]">
