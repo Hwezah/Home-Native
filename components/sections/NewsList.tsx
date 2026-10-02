@@ -20,7 +20,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
           <h1 className="m-0 font-serif text-[clamp(72px,9vw,140px)] leading-none tracking-[-.03em]">News</h1>
           <div data-m-center className="flex max-w-[520px] flex-col gap-5">
             <p className="m-0 text-[18px] leading-[1.7] text-muted-1b">Ideas, materials and stories from the studio.</p>
-            <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter posts">
+            <div className="flex flex-wrap gap-2.5 mp:justify-center" role="group" aria-label="Filter posts">
               {postCategories.map((c) => (
                 <Chip key={c} active={c === category} onClick={() => setCategory(c)}>
                   {c}

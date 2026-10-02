@@ -17,7 +17,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
         <p className="m-0 max-w-[420px] text-[19px] leading-[1.7] text-muted-1b">
           A selection of recent homes and workplaces — each one shaped around the people who use it.
         </p>
-        <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter projects">
+        <div className="flex flex-wrap gap-2.5 mp:justify-center" role="group" aria-label="Filter projects">
           {projectCategories.map((c) => (
             <Chip key={c} active={c === category} onClick={() => setCategory(c)}>
               {c}

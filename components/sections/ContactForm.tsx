@@ -76,7 +76,7 @@ export function ContactForm() {
       <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div data-m-center className="mb-2.5 mt-[22px] flex flex-col gap-3.5">
         <Label id="project-type-label">Project type</Label>
-        <div data-m-center className="flex flex-wrap gap-2.5" role="radiogroup" aria-labelledby="project-type-label">
+        <div className="flex flex-wrap gap-2.5 mp:justify-center" role="radiogroup" aria-labelledby="project-type-label">
           {projectTypes.map((t) => (
             <Chip key={t} active={t === projectType} role="radio" aria-checked={t === projectType} onClick={() => setProjectType(t)}>
               {t}

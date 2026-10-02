@@ -32,6 +32,9 @@ Put this in the global stylesheet once, then opt elements in with data attribute
 - `data-m-center` on wrappers whose text and children should center (never inside the exceptions).
 - `data-m-btn` on standalone buttons (they need display flex/inline-flex to center their content).
 - `data-m-row` on rows of side-by-side buttons.
+- Small pill buttons (filter chips, tags, option chips) are buttons too: centre every wrapped line of them.
+  Use `justify-content: center` on the wrapping row (Tailwind `mp:justify-center`), not `data-m-center`,
+  whose auto margins push the pills apart unevenly.
 
 Project extras (this repo): `data-m-stack` stacks a multi-column row vertically (pair with `data-m-center`),
 `data-m-span` resets a grid span, `data-m-hide` hides an element on mobile portrait.
@@ -40,4 +43,5 @@ Project extras (this repo): `data-m-stack` stacks a multi-column row vertically 
 Render every page at **390×844** (portrait, touch) and check:
 - every visible text element is centred unless it falls under an exception above;
 - standalone buttons are 80vw and centred; button rows are spread with space-between;
+- every button of any size (pills, chips, tags, icon and text buttons) is horizontally centred, line by line;
 - no horizontal scroll (`document.documentElement.scrollWidth <= innerWidth`).

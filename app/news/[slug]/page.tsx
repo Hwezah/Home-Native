@@ -88,12 +88,12 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
         </div>
 
         <section aria-label="Article" className="wrap pt-[clamp(70px,8vw,120px)]">
-          <div className="ml-auto mr-[clamp(0px,6vw,80px)] flex max-w-[780px] flex-col gap-[26px]">
+          <div className="ml-auto mr-[clamp(0px,6vw,80px)] flex max-w-[780px] flex-col gap-[26px] mp:mx-auto">
             {post.body.map((b, i) => (
               <BlockView key={i} b={b} />
             ))}
-            <div data-m-row className="mt-9 flex flex-wrap items-center justify-between gap-5 border-t border-line pt-[30px]">
-              <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0">
+            <div data-m-stack data-m-center className="mt-9 flex flex-wrap items-center justify-between gap-5 border-t border-line pt-[30px]">
+              <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0 mp:justify-center">
                 {post.tags.map((t) => (
                   <li key={t} className="whitespace-nowrap rounded-full border border-line-strong px-4 py-2 text-[13px] uppercase tracking-[.1em]">
                     {t}
