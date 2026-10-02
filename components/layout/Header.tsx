@@ -21,7 +21,7 @@ export function Header() {
       className="sticky top-0 z-30 bg-paper shadow-[0_2px_18px_rgba(0,0,0,.05)] transition-transform duration-500 ease-hn"
       style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
     >
-      <div className="wrap-wide flex flex-wrap items-center justify-between gap-6 py-[22px]">
+      <div className="mx-auto flex w-[90vw] flex-wrap items-center justify-between gap-6 py-[22px]">
         <Link href="/" className="flex items-center gap-3.5 hover:text-ink" aria-label="Home Native interiors — home">
           <span className="font-serif text-[30px] tracking-[-.02em]">Home Native</span>
           <span className="h-px w-[60px] bg-ink" aria-hidden="true" />
