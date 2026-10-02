@@ -39,7 +39,7 @@ export function TestimonialColumn({ items }: { items: Testimonial[] }) {
   const [t, setT] = useAutoIndex(items.length);
   const q = items[t];
   return (
-    <div className="flex flex-col items-center px-[clamp(24px,5vw,80px)] py-[clamp(64px,8vw,110px)] text-center">
+    <div className="flex flex-col items-center px-[clamp(24px,5vw,80px)] mp:px-[var(--gutter-m)] py-[clamp(64px,8vw,110px)] text-center">
       <div className="mb-14 w-full max-w-[440px] border-b border-line pb-[18px] text-[15px] uppercase">Testimonials</div>
       <div className="mb-7 text-brand-mid">
         <Quote size={48} strokeWidth={1} />

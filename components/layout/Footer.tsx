@@ -13,7 +13,7 @@ export function Footer() {
 
 function LightFooter() {
   return (
-    <footer className="px-[clamp(20px,5vw,80px)] pb-12 pt-10">
+    <footer className="px-[clamp(20px,5vw,80px)] mp:px-[var(--gutter-m)] pb-12 pt-10">
       <div data-m-center className="flex flex-wrap items-center justify-between gap-5 text-[15px] uppercase tracking-[.06em] text-muted-1b">
         <div data-reveal className="flex items-center gap-7 text-ink">
           <a href={site.socials.instagram} aria-label="Instagram"><Instagram /></a>

@@ -39,7 +39,7 @@ export function Header() {
       )}
       style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
     >
-      <div className="mx-auto flex h-[var(--header-h)] w-[90vw] flex-nowrap items-center justify-between gap-6 mp:gap-4">
+      <div className="mx-auto flex h-[var(--header-h)] w-[90vw] mp:w-[calc(100vw-2*var(--gutter-m))] flex-nowrap items-center justify-between gap-6 mp:gap-4">
         <Link href="/" className="min-w-0 hover:text-current" aria-label="Home Native interiors — home">
           <Wordmark />
         </Link>

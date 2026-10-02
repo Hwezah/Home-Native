@@ -86,7 +86,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
   return (
     <section aria-label="Latest projects" className="grid bg-brand text-white min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
       {/* Intro panel */}
-      <div data-m-center className="flex flex-col justify-center px-[clamp(20px,4vw,72px)] py-[clamp(64px,8vw,110px)]">
+      <div data-m-center className="flex flex-col justify-center px-[clamp(20px,4vw,72px)] mp:px-[var(--gutter-m)] py-[clamp(64px,8vw,110px)]">
         <Eyebrow dash={false} className="max-w-[440px] border-white/[.14] text-white/70">
           Latest Projects
         </Eyebrow>

@@ -3,7 +3,7 @@ import { PillButton } from "@/components/ui/PillButton";
 
 export function GetStarted() {
   return (
-    <section aria-labelledby="get-started" className="px-[clamp(20px,5vw,40px)] pb-[clamp(60px,6vw,90px)] pt-[clamp(90px,10vw,150px)] text-center">
+    <section aria-labelledby="get-started" className="px-[clamp(20px,5vw,40px)] mp:px-[var(--gutter-m)] pb-[clamp(60px,6vw,90px)] pt-[clamp(90px,10vw,150px)] text-center">
       <div className="mb-9 inline-block border-b border-line pb-3.5 text-[14px] uppercase">— Get Started</div>
       <h2
         id="get-started"
