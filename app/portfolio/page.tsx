@@ -5,7 +5,7 @@ import { GetStarted } from "@/components/layout/GetStarted";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "A selection of recent homes and workplaces by Home Native — each one shaped around the people who use it.",
+  description: "A selection of recent homes and workplaces by HomeNative — each one shaped around the people who use it.",
 };
 
 export default function PortfolioPage() {

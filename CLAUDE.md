@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Home Native — project rules
+# HomeNative — project rules
 
 The design rules, tokens and page specs live in `design_handoff_home_native/CLAUDE.md` and
 `design_handoff_home_native/README.md`. Read both before changing UI. When the README and the HTML

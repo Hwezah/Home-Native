@@ -32,7 +32,7 @@ export function SidePanel() {
         style={{ transform: menuOpen ? "translateX(0)" : "translateX(105%)" }}
       >
         <div className="mb-[clamp(48px,7vh,90px)] flex items-center justify-between">
-          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label="Home Native interiors — home">
+          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label="HomeNative interiors — home">
             <Wordmark size="panel" />
           </Link>
           <button

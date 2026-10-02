@@ -1,7 +1,7 @@
 export const siteUrl = "https://homenative.co";
 
 export const site = {
-  name: "Home Native",
+  name: "HomeNative",
   tagline: "interiors",
   company: "A MachineNative company",
   email: "info@homenative.co",

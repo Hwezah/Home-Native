@@ -14,7 +14,7 @@ import { Counter } from "@/components/effects/Counter";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Meet Home Native — an interior design studio in Kampala creating calm, functional and lasting spaces.",
+  description: "Meet HomeNative — an interior design studio in Kampala creating calm, functional and lasting spaces.",
 };
 
 export default function AboutPage() {
@@ -51,7 +51,7 @@ export default function AboutPage() {
           <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Mission</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
-              At <strong className="font-medium text-ink">Home Native</strong>, our mission is to design spaces that blend beauty, comfort and function. We
+              At <strong className="font-medium text-ink">HomeNative</strong>, our mission is to design spaces that blend beauty, comfort and function. We
               create interiors that reflect the people in them, make everyday living easier and leave a lasting impression — through thoughtful design,
               sustainable choices and close attention to detail.
             </p>
@@ -59,11 +59,11 @@ export default function AboutPage() {
           <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Vision</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
-              At <strong className="font-medium text-ink">Home Native</strong>, our vision is to be a trusted name in inspiring, livable spaces. We aim to raise
+              At <strong className="font-medium text-ink">HomeNative</strong>, our vision is to be a trusted name in inspiring, livable spaces. We aim to raise
               the standard of interior design by embracing innovation, sustainability and craftsmanship — turning every project into a timeless place that
               fits its owner&apos;s life.
             </p>
-            <div className="mt-[18px] self-end border-b border-ink pb-1 font-serif text-[34px] italic">Home Native</div>
+            <div className="mt-[18px] self-end border-b border-ink pb-1 font-serif text-[34px] italic">HomeNative</div>
           </div>
         </div>
       </section>

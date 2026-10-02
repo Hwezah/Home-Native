@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-/** shadcn/ui Input — Home Native style: underline only, brown on focus. */
+/** shadcn/ui Input — HomeNative style: underline only, brown on focus. */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input

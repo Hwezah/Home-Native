@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
 /**
- * "Home Native" with INTERIORS in capitals underneath, spread to exactly the same width.
- * `size` sets the "Home Native" font size; INTERIORS scales with it.
+ * "HomeNative" with INTERIORS in capitals underneath, spread to exactly the same width.
+ * `size` sets the "HomeNative" font size; INTERIORS scales with it.
  */
 export function Wordmark({ className, size = "header" }: { className?: string; size?: "header" | "panel" }) {
   return (
@@ -15,7 +15,7 @@ export function Wordmark({ className, size = "header" }: { className?: string; s
           "leading-none",
         )}
       >
-        Home Native
+        HomeNative
       </span>
       <span aria-hidden="true" className="-mt-0.5 flex justify-between text-[11px] font-light leading-none mp:-mt-px mp:text-[10px]">
         {"INTERIORS".split("").map((ch, i) => (

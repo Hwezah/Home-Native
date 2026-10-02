@@ -5,7 +5,7 @@ import { GetStarted } from "@/components/layout/GetStarted";
 
 export const metadata: Metadata = {
   title: "News",
-  description: "Ideas, materials and stories from the Home Native studio.",
+  description: "Ideas, materials and stories from the HomeNative studio.",
 };
 
 export default function NewsPage() {

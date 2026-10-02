@@ -18,7 +18,7 @@ import { ProjectSlider } from "@/components/sections/ProjectSlider";
 import { TestimonialSplit } from "@/components/sections/TestimonialSplit";
 
 export const metadata: Metadata = {
-  title: { absolute: "Home Native Interiors — Interior Solutions" },
+  title: { absolute: "HomeNative Interiors — Interior Solutions" },
   description: "Rooms shaped around how you live. Calm, considered interiors made to last — an interior design studio in Kampala, Uganda.",
 };
 
@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="hero-line pointer-events-none absolute inset-x-0 top-1/2 h-px bg-white/30" />
         <div data-m-center className="wrap-wide pointer-events-none relative flex h-full flex-col justify-center">
           <div className="hero-fade mb-3.5 text-[13px] uppercase tracking-[.16em]" style={{ animationDelay: "300ms" }}>
-            Home Native&apos;s Best
+            HomeNative&apos;s Best
           </div>
           <HeroTitle className="m-0 mb-7 font-serif text-[clamp(52px,8.4vw,128px)] leading-none tracking-[-.02em]" parts={["Interior Solutions"]} />
           <p className="hero-fade m-0 mb-9 max-w-[620px] text-[18px] font-light" style={{ animationDelay: "1000ms" }}>
@@ -63,7 +63,7 @@ export default function HomePage() {
               <path id="hnCircle" d="M70,70 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0" />
             </defs>
             <text fill="#fff" className="font-sans" style={{ fontWeight: 300, fontSize: 12.5, letterSpacing: 4.2, textTransform: "uppercase" }}>
-              <textPath href="#hnCircle">Scroll to explore • Home Native • </textPath>
+              <textPath href="#hnCircle">Scroll to explore • HomeNative • </textPath>
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center text-white">

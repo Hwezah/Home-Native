@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 /**
- * shadcn/ui Button, re-skinned with the Home Native button system:
+ * shadcn/ui Button, re-skinned with the HomeNative button system:
  * pill (secondary), primary (CTA), light (on dark images), outline-light, solid (form submit).
  */
 const buttonVariants = cva(

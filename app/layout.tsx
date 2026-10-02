@@ -27,12 +27,12 @@ const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", display: 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Home Native Interiors — Interior design studio in Kampala",
-    template: "%s — Home Native Interiors",
+    default: "HomeNative Interiors — Interior design studio in Kampala",
+    template: "%s — HomeNative Interiors",
   },
   description:
-    "Home Native is an interior design studio in Kampala, Uganda creating calm, functional and lasting spaces. A MachineNative company.",
-  openGraph: { siteName: "Home Native Interiors", type: "website", locale: "en_UG" },
+    "HomeNative is an interior design studio in Kampala, Uganda creating calm, functional and lasting spaces. A MachineNative company.",
+  openGraph: { siteName: "HomeNative Interiors", type: "website", locale: "en_UG" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

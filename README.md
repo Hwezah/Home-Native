@@ -1,6 +1,6 @@
-# Home Native Interiors
+# HomeNative Interiors
 
-Marketing site for **Home Native**, an interior design studio in Kampala, Uganda — *a MachineNative company*.
+Marketing site for **HomeNative**, an interior design studio in Kampala, Uganda — *a MachineNative company*.
 
 Built with **Next.js 16 (App Router, TypeScript)**, **Tailwind CSS v4**, **shadcn/ui**, **React Context** and a
 **Supabase** placeholder.

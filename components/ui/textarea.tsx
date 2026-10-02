@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-/** shadcn/ui Textarea — Home Native style: boxed, 1px border, brown on focus. */
+/** shadcn/ui Textarea — HomeNative style: boxed, 1px border, brown on focus. */
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea

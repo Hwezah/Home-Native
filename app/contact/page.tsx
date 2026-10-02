@@ -8,7 +8,7 @@ import { Facebook, Instagram, Linkedin } from "@/components/ui/social-icons";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Tell us about your space — a single room or a whole home. Home Native, Kampala, Uganda. info@homenative.co · 0742 696 353.",
+  description: "Tell us about your space — a single room or a whole home. HomeNative, Kampala, Uganda. info@homenative.co · 0742 696 353.",
 };
 
 export default function ContactPage() {
@@ -57,7 +57,7 @@ export default function ContactPage() {
           {[
             ["Studio", site.location, "Visits by appointment"],
             ["Hours", site.hours[0], site.hours[1]],
-            ["Company", "Home Native Interiors", site.company],
+            ["Company", "HomeNative Interiors", site.company],
           ].map(([label, a, b]) => (
             <div key={label} data-m-center className="">
               <div className="label-caps">— {label}</div>

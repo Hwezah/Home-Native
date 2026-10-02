@@ -9,7 +9,7 @@ export function TestimonialSplit() {
     <section aria-label="Testimonials" className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] border-b border-ink">
       <TestimonialColumn items={testimonials} />
       <div className="relative min-h-[560px] overflow-hidden bg-[#1A1714]">
-        <ParallaxImg src={pexels(3768911)} alt="Home Native client portrait" speed={0.2} extra={12} sizes="(max-width: 920px) 100vw, 50vw" />
+        <ParallaxImg src={pexels(3768911)} alt="HomeNative client portrait" speed={0.2} extra={12} sizes="(max-width: 920px) 100vw, 50vw" />
         <div className="pointer-events-none absolute inset-0 grid grid-cols-2 content-center gap-x-5 gap-y-10 p-[clamp(40px,7vw,120px)] font-num text-[clamp(24px,2.4vw,38px)] font-light tracking-[.02em] text-white">
           {clients.map((c, i) => (
             <div key={c} style={{ justifySelf: i % 2 ? "end" : "start" }}>
