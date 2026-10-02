@@ -132,7 +132,7 @@ export default function HomePage() {
                   <h3 className="m-0 mb-[26px] text-[clamp(30px,2.8vw,44px)] font-light leading-[1.15]">{s.title}</h3>
                   <p data-no-reveal className="m-0 text-[18px] font-light leading-[1.45]">{s.body}</p>
                 </div>
-                <div className="flex items-center gap-5 pb-[60px] text-[13px] uppercase tracking-[.2em]">
+                <div className="flex items-center gap-5 pb-[60px] text-[13px] uppercase tracking-[.2em] mp:justify-center">
                   See Details
                   <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-white/60">
                     <ArrowRight size={18} strokeWidth={1.25} />
