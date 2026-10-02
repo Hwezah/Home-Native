@@ -16,11 +16,11 @@ export function ReelCard({ image }: { image: string }) {
           onClick={() => setPlaying((p) => !p)}
           aria-label={playing ? "Pause show reel" : "Play show reel"}
           aria-pressed={playing}
-          className="pointer-events-auto flex h-32 w-32 cursor-pointer items-center justify-center rounded-full border-0 bg-paper p-0 text-ink shadow-[0_0_0_22px_rgba(255,255,255,.18)] transition-[transform,box-shadow] duration-[400ms] hover:scale-[1.08] hover:shadow-[0_0_0_34px_rgba(255,255,255,.22)]"
+          className="pointer-events-auto flex h-32 w-32 cursor-pointer items-center justify-center rounded-full border-0 bg-paper p-0 text-ink shadow-[0_0_0_22px_rgba(255,255,255,.18)] transition-[transform,box-shadow] duration-[400ms] hover:scale-[1.08] hover:shadow-[0_0_0_34px_rgba(255,255,255,.22)] mp:h-[72px] mp:w-[72px] mp:shadow-[0_0_0_12px_rgba(255,255,255,.18)] [&_svg]:mp:size-[22px]"
         >
           {playing ? <Pause size={30} strokeWidth={1.1} /> : <Play size={30} strokeWidth={1.1} />}
         </button>
-        <div className="text-[20px] text-paper [text-shadow:0_1px_10px_rgba(0,0,0,.35)]">Watch our Show Reel 2026</div>
+        <div className="text-[20px] text-paper [text-shadow:0_1px_10px_rgba(0,0,0,.35)] mp:text-[16px]">Watch our Show Reel 2026</div>
       </div>
     </div>
   );
