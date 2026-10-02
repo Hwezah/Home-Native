@@ -39,10 +39,14 @@ export function Header() {
       style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
     >
       <div className="mx-auto flex h-[var(--header-h)] w-[90vw] flex-nowrap items-center justify-between gap-6 mp:gap-4">
-        <Link href="/" className="flex min-w-0 items-center gap-3.5 hover:text-current mp:gap-2.5" aria-label="Home Native interiors — home">
-          <span className="whitespace-nowrap font-serif text-[30px] tracking-[-.02em] mp:text-[26px]">Home Native</span>
-          <span className="h-px w-[60px] shrink-0 bg-current mp:w-7" aria-hidden="true" />
-          <span className="whitespace-nowrap text-[17px] font-light mp:text-[15px]">interiors</span>
+        {/* Wordmark: "Home Native" with INTERIORS spread underneath to exactly the same width. */}
+        <Link href="/" className="inline-flex min-w-0 flex-col hover:text-current" aria-label="Home Native interiors — home">
+          <span className="whitespace-nowrap font-serif text-[30px] leading-none tracking-[-.02em] mp:text-[26px]">Home Native</span>
+          <span aria-hidden="true" className="mt-1.5 flex justify-between text-[11px] font-light leading-none mp:mt-1 mp:text-[10px]">
+            {"INTERIORS".split("").map((ch, i) => (
+              <span key={i}>{ch}</span>
+            ))}
+          </span>
         </Link>
         <nav aria-label="Main" className="flex items-center gap-[clamp(16px,2.4vw,34px)] text-[13px] uppercase tracking-[.08em]">
           {nav.map((item) => {
