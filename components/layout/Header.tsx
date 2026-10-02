@@ -42,7 +42,7 @@ export function Header() {
         {/* Wordmark: "Home Native" with INTERIORS spread underneath to exactly the same width. */}
         <Link href="/" className="inline-flex min-w-0 flex-col hover:text-current" aria-label="Home Native interiors — home">
           <span className="whitespace-nowrap font-serif text-[30px] leading-none tracking-[-.02em] mp:text-[26px]">Home Native</span>
-          <span aria-hidden="true" className="mt-1.5 flex justify-between text-[11px] font-light leading-none mp:mt-1 mp:text-[10px]">
+          <span aria-hidden="true" className="-mt-0.5 flex justify-between text-[11px] font-light leading-none mp:-mt-px mp:text-[10px]">
             {"INTERIORS".split("").map((ch, i) => (
               <span key={i}>{ch}</span>
             ))}
