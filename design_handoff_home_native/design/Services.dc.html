@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200;6..72,300&family=Jost:wght@200;300;400&family=Oswald:wght@200;300&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;background:#fff;color:#111;font-family:'Jost',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#111;text-decoration:none}
+a:hover{color:#4C7A43}
+@media (pointer:fine){*{cursor:none!important}}
+@media (max-width:600px) and (orientation:portrait){
+[data-m-center]{text-align:center!important;align-items:center!important;justify-content:center!important}
+[data-m-center]>*{margin-left:auto!important;margin-right:auto!important;align-self:center!important}
+[data-m-btn]{width:80vw!important;justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
+[data-m-row]{justify-content:space-between!important;width:100%!important}
+[data-m-span]{grid-column:auto!important}
+[data-m-hide]{display:none!important}
+}
+</style>
+</helmet>
+<div style="background:#fff">
+<header data-screen-label="Header" data-hn-header="" style="position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 2px 18px rgba(0,0,0,.05);transition:transform .5s cubic-bezier(.2,.7,.2,1)">
+  <div style="max-width:1460px;margin:0 auto;padding:22px clamp(20px,5vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="Home%20Native%20Homepage.dc.html" style="display:flex;align-items:center;gap:14px">
+      <span style="font-family:'Newsreader',serif;font-weight:200;font-size:30px;letter-spacing:-.02em">Home Native</span>
+      <span style="width:60px;height:1px;background:#111"></span>
+      <span style="font-size:17px;font-weight:300">interiors</span>
+    </a>
+    <nav style="display:flex;gap:clamp(16px,2.4vw,34px);flex-wrap:wrap;font-size:13px;letter-spacing:.08em;text-transform:uppercase">
+      <a href="Home%20Native%20Homepage.dc.html" style="transition:color .3s" style-hover="color:#4C7A43">Home</a>
+      <a href="About.dc.html" style="transition:color .3s" style-hover="color:#4C7A43">About</a>
+      <a href="Services.dc.html" style="border-bottom:1px solid #111;padding-bottom:4px">Services</a>
+      <a href="Portfolio.dc.html" style="transition:color .3s" style-hover="color:#4C7A43">Portfolio</a>
+      <a href="News.dc.html" style="transition:color .3s" style-hover="color:#4C7A43">News</a>
+      <a href="Contact.dc.html" style="transition:color .3s" style-hover="color:#4C7A43">Contact</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="width:52px;height:30px;background:none;border:none;padding:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:9px">
+        <span style="display:block;width:52px;height:1px;background:#111"></span>
+        <span style="display:block;width:52px;height:1px;background:#111"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+<div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:40;background:rgba(17,17,17,.4);opacity:{{ menuOverlayOp }};pointer-events:{{ menuPE }};transition:opacity .5s"></div>
+<aside data-screen-label="Side panel" style="position:fixed;top:0;right:0;bottom:0;z-index:50;width:35%;min-width:min(100%,360px);background:#fff;transform:{{ menuX }};transition:transform .6s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;padding:clamp(32px,3.6vw,56px);overflow-y:auto">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(48px,7vh,90px)">
+    <span style="font-family:'Newsreader',serif;font-weight:200;font-size:28px">Home Native</span>
+    <button onClick="{{ closeMenu }}" aria-label="Close menu" style="position:relative;width:64px;height:64px;background:none;border:none;cursor:pointer;padding:0">
+      <span style="position:absolute;left:0;top:50%;width:64px;height:1px;background:#111;transform:rotate(45deg)"></span>
+      <span style="position:absolute;left:0;top:50%;width:64px;height:1px;background:#111;transform:rotate(-45deg)"></span>
+    </button>
+  </div>
+  <nav style="display:flex;flex-direction:column;gap:6px;font-size:clamp(32px,2.6vw,44px);font-weight:300;line-height:1.3">
+    <a href="Home%20Native%20Homepage.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">Home</a>
+    <a href="About.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">About</a>
+    <a href="Services.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">Services</a>
+    <a href="Portfolio.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">Portfolio</a>
+    <a href="News.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">News</a>
+    <a href="Contact.dc.html" style="transition:padding .4s,color .3s" style-hover="padding-left:18px;color:#4C7A43">Contact</a>
+  </nav>
+  <div style="margin-top:auto;padding-top:48px;border-top:1px solid #eee;display:flex;flex-direction:column;gap:10px;font-size:17px;font-weight:300;color:#555">
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#111;margin-bottom:6px">Get in touch</div>
+    <a href="mailto:info@homenative.co" style="color:#555">info@homenative.co</a>
+    <span>0742 696 353</span>
+    <div style="display:flex;gap:22px;margin-top:14px;font-size:14px;letter-spacing:.1em;text-transform:uppercase"><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">LinkedIn</a></div>
+  </div>
+</aside>
+
+<section data-screen-label="Hero" style="position:relative;height:min(78vh,760px);min-height:520px;color:#fff;overflow:hidden;background:#7A5E45">
+  <div data-parallax="0.35" style="position:absolute;left:0;right:0;top:-15%;height:130%;will-change:transform"><image-slot id="sv-hero" shape="rect" src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" placeholder="Hero interior"></image-slot></div>
+  <div style="position:absolute;inset:0;background:rgba(40,30,20,.32);pointer-events:none"></div>
+  <div style="position:absolute;left:0;right:0;top:62%;height:1px;background:rgba(255,255,255,.22);pointer-events:none;transform-origin:left"></div>
+  <div data-m-center="" style="position:relative;height:100%;max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(60px,12vh,130px);pointer-events:none">
+    <div style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:clamp(28px,5vh,56px)">— What We Do</div>
+    <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:200;font-size:clamp(64px,9vw,136px);line-height:1;letter-spacing:-.03em">Our <span style="color:#F3EFA6;background:linear-gradient(transparent 90%,#F3EFA6 90%)">Services.</span></h1>
+    <div style="align-self:flex-end;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-top:-28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.25);min-width:min(100%,360px);text-align:right" data-m-hide="">Spaces shaped around how you live.</div>
+  </div>
+</section>
+
+<section data-screen-label="Intro" style="max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-top:clamp(80px,10vw,150px);padding-bottom:clamp(60px,7vw,100px)">
+  <div data-m-center="" style="display:flex;flex-direction:column">
+    <div style="font-size:14px;text-transform:uppercase;padding-bottom:18px;border-bottom:1px solid #eee;margin-bottom:28px">— Services</div>
+    <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:200;font-size:clamp(48px,6vw,90px);line-height:1;letter-spacing:-.02em;max-width:900px">Transforming <span style="color:#4C7A43;background:linear-gradient(transparent 88%,#DCEBD6 88%)">Spaces</span> Into Homes That Fit</h2>
+    <p style="margin:36px 0 0;max-width:620px;font-size:19px;line-height:1.7;color:#555">From a single room to a full renovation, we handle every step — planning, sourcing, building and styling — so the result feels calm, considered and entirely yours.</p>
+  </div>
+</section>
+<section data-screen-label="Service columns" style="max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-bottom:clamp(90px,10vw,160px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(48px,5vw,80px)">
+    <div style="display:flex;flex-direction:column">
+      <div data-m-center="" style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="display:inline-block;padding:10px 20px;background:#E3E6DC;font-size:14px;letter-spacing:.14em;text-transform:uppercase">Concept & Planning</span>
+        <h3 style="margin:32px 0 0;font-weight:300;font-size:clamp(26px,2.2vw,34px);line-height:1.25;padding-bottom:28px;border-bottom:1px solid #eee;width:100%">Space planning for the way you actually live</h3>
+        <p style="margin:28px 0 0;font-size:18px;line-height:1.7;color:#666;max-width:340px">Layouts that make room for comfort, flow and everyday routines.</p>
+      </div>
+      <ul style="list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:19px;font-weight:400">
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Space Planning</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Colour Consultation</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Furniture Selection</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>3D Visualisation</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div data-m-center="" style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="display:inline-block;padding:10px 20px;background:#DCE4E8;font-size:14px;letter-spacing:.14em;text-transform:uppercase">Light & Detail</span>
+        <h3 style="margin:32px 0 0;font-weight:300;font-size:clamp(26px,2.2vw,34px);line-height:1.25;padding-bottom:28px;border-bottom:1px solid #eee;width:100%">Lighting and detail that set the mood</h3>
+        <p style="margin:28px 0 0;font-size:18px;line-height:1.7;color:#666;max-width:340px">Layered light and finishing touches that change how a room feels.</p>
+      </div>
+      <ul style="list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:19px;font-weight:400">
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Lighting Design</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Décor & Accessories</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Art Placement</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Custom Joinery</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div data-m-center="" style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="display:inline-block;padding:10px 20px;background:#EBDDE0;font-size:14px;letter-spacing:.14em;text-transform:uppercase">Materials</span>
+        <h3 style="margin:32px 0 0;font-weight:300;font-size:clamp(26px,2.2vw,34px);line-height:1.25;padding-bottom:28px;border-bottom:1px solid #eee;width:100%">Natural materials for healthier interiors</h3>
+        <p style="margin:28px 0 0;font-size:18px;line-height:1.7;color:#666;max-width:340px">Honest, durable finishes chosen to age well and feel good to live with.</p>
+      </div>
+      <ul style="list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:19px;font-weight:400">
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Material Sourcing</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Wall Treatments</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Flooring</li>
+        <li style="display:flex;align-items:center;gap:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Window Styling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Accordion A" style="max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-bottom:clamp(90px,10vw,160px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,90px);align-items:center">
+    <div>
+    <sc-for list="{{ accA }}" as="f" hint-placeholder-count="4">
+      <div style="border-bottom:1px solid #eee">
+        <button type="button" onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px 0;background:none;border:none;text-align:left;font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(24px,2.2vw,34px);color:#111;cursor:pointer;transition:color .3s" style-hover="color:#4C7A43">{{ f.q }}<span style="position:relative;width:26px;height:26px;flex-shrink:0"><span style="position:absolute;left:0;top:50%;width:26px;height:1px;background:currentColor"></span><span style="position:absolute;left:0;top:50%;width:26px;height:1px;background:currentColor;transform:{{ f.rot }};transition:transform .45s cubic-bezier(.2,.7,.2,1)"></span></span></button>
+        <div style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .55s cubic-bezier(.2,.7,.2,1)"><div style="overflow:hidden"><p style="margin:0;padding:0 clamp(0px,3vw,48px) 36px;font-size:18px;line-height:1.75;color:#555">{{ f.a }}</p></div></div>
+      </div>
+    </sc-for>
+    </div>
+    <div style="aspect-ratio:1/1;overflow:hidden;background:#D8CFBF"><div style="width:100%;height:100%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.06)"><image-slot id="sv-acc-a" shape="rect" src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" placeholder="Space planning photo"></image-slot></div></div>
+  </div>
+</section>
+<section data-screen-label="Accordion B" style="max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-bottom:clamp(90px,10vw,160px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,90px);align-items:center">
+    <div style="aspect-ratio:1/1;overflow:hidden;background:#D8CFBF"><div style="width:100%;height:100%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.06)"><image-slot id="sv-acc-b" shape="rect" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" placeholder="Project photo"></image-slot></div></div>
+    <div>
+    <sc-for list="{{ accB }}" as="f" hint-placeholder-count="4">
+      <div style="border-bottom:1px solid #eee">
+        <button type="button" onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px 0;background:none;border:none;text-align:left;font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(24px,2.2vw,34px);color:#111;cursor:pointer;transition:color .3s" style-hover="color:#4C7A43">{{ f.q }}<span style="position:relative;width:26px;height:26px;flex-shrink:0"><span style="position:absolute;left:0;top:50%;width:26px;height:1px;background:currentColor"></span><span style="position:absolute;left:0;top:50%;width:26px;height:1px;background:currentColor;transform:{{ f.rot }};transition:transform .45s cubic-bezier(.2,.7,.2,1)"></span></span></button>
+        <div style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .55s cubic-bezier(.2,.7,.2,1)"><div style="overflow:hidden"><p style="margin:0;padding:0 clamp(0px,3vw,48px) 36px;font-size:18px;line-height:1.75;color:#555">{{ f.a }}</p></div></div>
+      </div>
+    </sc-for>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Testimonial" style="max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-bottom:clamp(90px,10vw,160px)">
+  <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(12px,4vw,60px)">
+    <button type="button" data-m-hide="" onClick="{{ qPrev }}" aria-label="Previous" style="background:none;border:none;padding:12px;cursor:pointer;color:#111;transition:color .3s,transform .3s" style-hover="color:#4C7A43;transform:translateX(-6px)"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="color:#4C7A43;margin-bottom:36px"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div>
+      <div style="font-family:'Newsreader',serif;font-weight:200;font-size:clamp(28px,3.6vw,56px);line-height:1.25;letter-spacing:-.015em;text-wrap:balance;max-width:1000px;min-height:3.75em;display:flex;align-items:center">{{ quote.text }}</div>
+      <div style="position:relative;width:84px;height:84px;border-radius:50%;overflow:hidden;margin-top:44px;background:#ddd;filter:grayscale(1)">
+        <sc-for list="{{ avatars }}" as="av" hint-placeholder-count="1"><div style="position:absolute;inset:0;opacity:{{ av.op }};transition:opacity .6s"><img src="{{ av.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div></sc-for>
+      </div>
+      <div style="font-size:18px;font-weight:400;text-transform:uppercase;margin-top:22px">{{ quote.name }}</div>
+      <div style="font-size:17px;color:#999;margin-top:4px">{{ quote.role }}</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:48px">
+        <sc-for list="{{ dots }}" as="d" hint-placeholder-count="5"><button type="button" onClick="{{ d.go }}" style="height:5px;width:{{ d.w }};border:none;border-radius:4px;background:{{ d.bg }};cursor:pointer;padding:0;transition:width .3s"></button></sc-for>
+      </div>
+    </div>
+    <button type="button" data-m-hide="" onClick="{{ qNext }}" aria-label="Next" style="background:none;border:none;padding:12px;cursor:pointer;color:#111;transition:color .3s,transform .3s" style-hover="color:#4C7A43;transform:translateX(6px)"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+  </div>
+</section>
+<section data-screen-label="Contact band" style="position:relative;overflow:hidden;color:#fff;background:#5A4433">
+  <div data-parallax="0.25" style="position:absolute;left:0;right:0;top:-15%;height:130%"><image-slot id="sv-band" shape="rect" src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" placeholder="Warm interior"></image-slot></div>
+  <div style="position:absolute;inset:0;background:rgba(30,22,15,.45);pointer-events:none"></div>
+  <div style="position:relative;max-width:1160px;margin:0 auto;padding-left:clamp(20px,5vw,40px);padding-right:clamp(20px,5vw,40px);padding-top:clamp(90px,11vw,170px);padding-bottom:clamp(90px,11vw,170px);text-align:center;display:flex;flex-direction:column;align-items:center;pointer-events:none">
+    <div style="font-size:14px;text-transform:uppercase;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.25);margin-bottom:36px">— Collaboration</div>
+    <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:200;font-size:clamp(56px,8vw,130px);line-height:1.02;letter-spacing:-.03em;color:#fff">Get in <span style="color:#F3EFA6;background:linear-gradient(transparent 90%,#F3EFA6 90%)">touch</span><br>with us.</h2>
+    <p style="margin:32px 0 0;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:#fff">Ask us anything — we reply within one working day.</p>
+    <a href="tel:0742696353" style="pointer-events:auto;margin-top:44px;font-family:'Oswald',sans-serif;font-weight:200;font-size:clamp(64px,10vw,160px);line-height:1;color:#fff;letter-spacing:.01em" style-hover="color:#F3EFA6">0742 696 353</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px;width:100%;max-width:860px;margin-top:56px">
+      <div data-m-center="" style="text-align:left"><div style="font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin-bottom:10px">— Email</div><a href="mailto:info@homenative.co" style="pointer-events:auto;color:#fff;font-size:19px">info@homenative.co</a></div>
+      <div data-m-center="" style="text-align:right"><div style="font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin-bottom:10px">— Hours</div><div style="font-size:19px;line-height:1.6">Mon–Fri: 9 AM to 5 PM<br>Sun: Closed</div></div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:56px;pointer-events:auto;width:100%"><a data-m-btn="" href="Contact.dc.html" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:28px 72px;background:#fff;color:#111;border-radius:999px;font-size:19px;white-space:nowrap;transition:background .35s,color .35s" style-hover="background:#111;color:#fff">Request a Quote<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+  </div>
+</section>
+<footer data-screen-label="Footer" style="padding:40px clamp(20px,5vw,80px) 48px">
+  <div data-m-center="" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#666">
+    <div style="display:flex;gap:28px;align-items:center;color:#111">
+      <a href="#" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+      <a href="#" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+    </div>
+    <span>© 2026 — Home Native Interiors · a MachineNative company</span>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { faq: -1, slide: 2, t: 0 };
+  componentDidMount() {
+    this.onScroll = () => {
+      const vh = window.innerHeight;
+      document.querySelectorAll('[data-parallax]').forEach(el => {
+        const r = el.parentElement.getBoundingClientRect();
+        const speed = parseFloat(el.dataset.parallax) || 0.3;
+        const off = (r.top + r.height / 2 - vh / 2) * -speed;
+        el.style.transform = `translate3d(0,${off.toFixed(1)}px,0)`;
+      });
+    };
+    const header = document.querySelector('[data-hn-header]');
+    let lastY = window.scrollY;
+    this.onHeader = () => {
+      const y = window.scrollY;
+      if (header && !this.state.menu) header.style.transform = (y > lastY && y > 160) ? 'translateY(-100%)' : 'translateY(0)';
+      lastY = y;
+    };
+    window.addEventListener('scroll', this.onHeader, { passive: true });
+    const targets = [...document.querySelectorAll('section h1, section h2, section h3, section p, section a[data-m-btn], section image-slot, footer > div > div')]
+      .filter(el => !el.closest('aside') && !el.closest('header') && !el.closest('[data-screen-label="Hero"]'));
+    targets.forEach(el => {
+      const tgt = el.tagName === 'IMAGE-SLOT' ? el.parentElement : el;
+      tgt.dataset.hnRev = '1';
+      tgt.style.opacity = '0';
+      tgt.style.translate = '0 40px';
+      tgt.style.transition = (tgt.style.transition ? tgt.style.transition + ',' : '') + 'opacity 1s cubic-bezier(.2,.7,.2,1), translate 1s cubic-bezier(.2,.7,.2,1)';
+    });
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        const sibs = [...el.parentElement.children].filter(c => c.dataset.hnRev);
+        el.style.transitionDelay = Math.min(sibs.indexOf(el), 4) * 0.09 + 's';
+        el.style.opacity = '1';
+        el.style.translate = '0 0';
+        this.io.unobserve(el);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-hn-rev]').forEach(el => this.io.observe(el));
+    this.setupCursor();
+    this.cio = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, n = parseFloat(el.dataset.hnCount), suf = el.dataset.suffix || '', t0 = performance.now();
+      const tick = now => { const p = Math.min(1, (now - t0) / 1800), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(n * e) + suf; if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick); this.cio.unobserve(el);
+    }), { threshold: 0.5 });
+    setTimeout(() => document.querySelectorAll('[data-hn-count]').forEach(el => this.cio.observe(el)), 300);
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    const hero = document.querySelector('[data-screen-label="Hero"]');
+    if (hero) {
+      const img = hero.querySelector('image-slot');
+      img && img.animate([{ transform: 'scale(1.18)', filter: 'brightness(.6)' }, { transform: 'scale(1)', filter: 'brightness(1)' }], { duration: 2600, easing: ease, fill: 'both' });
+      const line = hero.children[2];
+      line && line.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 1800, delay: 300, easing: ease, fill: 'both' });
+      const h1 = hero.querySelector('h1');
+      if (h1 && !h1.dataset.split) {
+        h1.dataset.split = '1';
+        const wrap = inner => '<span style="display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em"><span style="display:inline-block">' + inner + '</span></span>';
+        h1.innerHTML = [...h1.childNodes].map(n => n.nodeType === 3
+          ? n.textContent.split(/(\s+)/).map(w => /^\s*$/.test(w) ? w : wrap(w)).join('')
+          : wrap(n.outerHTML)).join('');
+        h1.querySelectorAll('span > span').forEach((s, i) => s.animate([{ transform: 'translateY(110%) rotate(4deg)' }, { transform: 'translateY(0) rotate(0)' }], { duration: 1300, delay: 450 + i * 140, easing: ease, fill: 'both' }));
+      }
+      [...hero.querySelectorAll('h1 ~ *'), hero.querySelector('h1').previousElementSibling].filter(Boolean).forEach((el, i) =>
+        el.animate([{ opacity: 0, transform: 'translateY(30px)' }, { opacity: 1, transform: 'none' }], { duration: 1100, delay: 300 + (el.previousElementSibling ? 700 + i * 150 : 0), easing: ease, fill: 'both' }));
+    }
+    const mq = document.querySelector('[data-hn-marquee]');
+    if (mq) this.mqAnim = mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 38000, iterations: Infinity });
+    if (mq) { mq.parentElement.onmouseenter = () => this.mqAnim.updatePlaybackRate(0.25); mq.parentElement.onmouseleave = () => this.mqAnim.updatePlaybackRate(1); }
+    const spin = document.querySelector('[data-hn-spin]');
+    spin && spin.animate([{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], { duration: 16000, iterations: Infinity });
+    document.querySelectorAll('[data-screen-label="Why us"] sc-for > div > div:first-child, [data-screen-label="Why us"] h3').length;
+    this.auto = setInterval(() => { if (!this.hover) this.setState(st => ({ slide: (st.slide + 1) % 5 })); }, 5000);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+    this.timer = setInterval(() => this.setState(st => ({ t: st.t + 1 })), 6000);
+  }
+  setupCursor() {
+    if (this.cur) return;
+    const mk = css => { const d = document.createElement('div'); d.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:9999;border-radius:50%;' + css; document.body.appendChild(d); return d; };
+    const fine = matchMedia('(pointer:fine)').matches;
+    const ring = mk('width:64px;height:64px;margin:-32px 0 0 -32px;border:1.25px solid #4C7A43;will-change:transform;transition:width .35s cubic-bezier(.2,.7,.2,1),height .35s cubic-bezier(.2,.7,.2,1),margin .35s cubic-bezier(.2,.7,.2,1),opacity .3s,background .35s;opacity:0');
+    const dot = mk('width:6px;height:6px;margin:-3px 0 0 -3px;background:#4C7A43;opacity:0;will-change:transform;transition:opacity .3s');
+    this.cur = { ring, dot };
+    let mx = -100, my = -100, rx = -100, ry = -100, dx = -100, dy = -100, last = performance.now();
+    const loop = now => {
+      const dt = Math.min(64, (now || performance.now()) - last); last = now || performance.now();
+      const k = 1 - Math.pow(0.0018, dt / 1000), kd = 1 - Math.pow(0.000001, dt / 1000);
+      rx += (mx - rx) * k; ry += (my - ry) * k; dx += (mx - dx) * kd; dy += (my - dy) * kd;
+      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
+      dot.style.transform = 'translate3d(' + dx + 'px,' + dy + 'px,0)';
+      this.raf = requestAnimationFrame(loop);
+    };
+    loop();
+    const size = s => { ring.style.width = ring.style.height = s + 'px'; ring.style.margin = (-s / 2) + 'px 0 0 ' + (-s / 2) + 'px'; };
+    const pulse = (x, y) => {
+      const p = mk('width:64px;height:64px;margin:-32px 0 0 -32px;border:1px solid #4C7A43');
+      p.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+      p.animate([{ transform: p.style.transform + ' scale(.4)', opacity: 1 }, { transform: p.style.transform + ' scale(2.6)', opacity: 0 }], { duration: 750, easing: 'cubic-bezier(.2,.7,.2,1)' }).onfinish = () => p.remove();
+    };
+    this.curMove = e => {
+      mx = e.clientX; my = e.clientY;
+      if (e.pointerType === 'mouse') { ring.style.opacity = 1; dot.style.opacity = 1; }
+      const hot = e.target.closest && e.target.closest('a,button,[onclick],[data-hn-drag]');
+      size(hot ? 104 : 64);
+      ring.style.background = hot ? 'rgba(76,122,67,.12)' : 'transparent';
+    };
+    this.curDown = e => {
+      if (e.pointerType !== 'mouse') {
+        mx = rx = dx = e.clientX; my = ry = dy = e.clientY;
+        ring.style.opacity = 1; dot.style.opacity = 1;
+        clearTimeout(this.curHide); this.curHide = setTimeout(() => { ring.style.opacity = 0; dot.style.opacity = 0; }, 700);
+      }
+      size(40); pulse(e.clientX, e.clientY); this.blip();
+    };
+    this.curUp = e => { const hot = e.target.closest && e.target.closest('a,button'); size(hot ? 104 : 64); };
+    this.curLeave = () => { ring.style.opacity = 0; dot.style.opacity = 0; };
+    window.addEventListener('pointermove', this.curMove, { passive: true });
+    window.addEventListener('pointerdown', this.curDown, { passive: true });
+    window.addEventListener('pointerup', this.curUp, { passive: true });
+    document.addEventListener('mouseleave', this.curLeave);
+  }
+  blip() {
+    try {
+      const ac = this.ac || (this.ac = new (window.AudioContext || window.webkitAudioContext)());
+      if (ac.state === 'suspended') ac.resume();
+      const t = ac.currentTime, sr = ac.sampleRate;
+      const tick = (at, dur, freq, q, vol) => {
+        const n = Math.floor(sr * dur), buf = ac.createBuffer(1, n, sr), d = buf.getChannelData(0);
+        for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 6);
+        const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), g = ac.createGain();
+        src.buffer = buf; bp.type = 'bandpass'; bp.frequency.value = freq; bp.Q.value = q; g.gain.value = vol;
+        src.connect(bp).connect(g).connect(ac.destination); src.start(t + at);
+      };
+      tick(0, 0.012, 3200, 4, 0.12);
+      tick(0.004, 0.018, 900, 6, 0.06);
+    } catch (e) {}
+  }
+  componentWillUnmount() {
+    this.ac && this.ac.close();
+    cancelAnimationFrame(this.raf);
+    if (this.cur) { this.cur.ring.remove(); this.cur.dot.remove(); this.cur = null; }
+    window.removeEventListener('pointermove', this.curMove);
+    window.removeEventListener('pointerdown', this.curDown);
+    window.removeEventListener('pointerup', this.curUp);
+    document.removeEventListener('mouseleave', this.curLeave);
+    clearInterval(this.timer);
+    clearInterval(this.auto);
+    this.cio && this.cio.disconnect();
+    this.io && this.io.disconnect();
+    window.removeEventListener('scroll', this.onHeader);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  componentDidUpdate() { this.onScroll && this.onScroll(); }
+  renderVals() {
+    const s = this.state;
+    const quotes = [
+      { text: 'They understood how we live before we did. The house finally feels like ours — calm, warm and easy to be in.', name: 'Amara Osei', role: 'Homeowner · Lagos' },
+      { text: 'Our studio went from cramped to generous without losing a square metre. Clients notice it the moment they walk in.', name: 'Daniel Reyes', role: 'Founder · Atelier Reyes' },
+      { text: 'Clear process, honest budgets and a finish that exceeded the renders. We would hire them again tomorrow.', name: 'Lena Fischer', role: 'Director · Fischer & Co' },
+      { text: 'Every piece has a reason to be there. Nothing feels staged, everything feels considered.', name: 'Kofi Mensah', role: 'Homeowner · Accra' },
+      { text: 'From the first sketch to the last cushion, they handled it all. Stress-free in the best way.', name: 'Sofia Marin', role: 'Restaurateur · Casa Marin' }
+    ];
+    const qi = s.t % quotes.length;
+    const projects = [
+      { id: 'hn-p1', src: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1600', title: 'Linen House', cat: 'Residential' },
+      { id: 'hn-p2', src: 'https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1600', title: 'Oak & Clay Loft', cat: 'Renovation' },
+      { id: 'hn-p3', src: 'https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1600', title: 'Harbour Apartment', cat: 'Residential' },
+      { id: 'hn-p4', src: 'https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=1600', title: 'Kiln Café', cat: 'Commercial' },
+      { id: 'hn-p5', src: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1600', title: 'Stone Cottage', cat: 'Styling' }
+    ];
+    const faqs = [
+      { q: 'How does a project with Home Native start?', a: 'With a free consultation. We visit the space, talk through how you use it, your budget and timing, then send a clear proposal.' },
+      { q: 'Do you take on single rooms?', a: 'Yes. Many projects start with one room — a living space, kitchen or bedroom — and grow from there.' },
+      { q: 'How are your fees structured?', a: 'Fixed design fees per phase, agreed up front. Furniture and contractor costs are quoted transparently with no hidden mark-ups.' },
+      { q: 'Can you work with furniture I already own?', a: 'Absolutely. We love building around pieces with meaning and will suggest where to keep, refresh or replace.' },
+      { q: 'How long does a typical project take?', a: 'Styling projects take 4–8 weeks. Full renovations usually run 3–6 months depending on scope.' }
+    ];
+    return {
+      dragStart: e => { this.dragX = e.clientX; this.hover = true; },
+      dragEnd: e => {
+        this.hover = false;
+        if (this.dragX == null) return;
+        const dx = e.clientX - this.dragX; this.dragX = null;
+        if (Math.abs(dx) > 50) this.setState(st => ({ slide: (st.slide + (dx < 0 ? 1 : 4)) % 5 }));
+      },
+      stats: [
+        { title: 'Design Awards', body: 'Recognised with 10+ national design excellence awards.', n: 10, suf: '+', bg: '#C3D0DA' },
+        { title: 'Project Efficiency', body: 'Completed 90% of projects ahead of schedule.', n: 90, suf: '%', bg: '#D8CFBF' },
+        { title: 'Space Optimization', body: '85% improvement in functional room usage.', n: 85, suf: '%', bg: '#B7CDBB' }
+      ],
+      team: [
+        { id: 'ab-t1', src: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=900', name: 'Brian Otieno', role: 'Founder & Lead Designer', offset: '120px' },
+        { id: 'ab-t2', src: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=900', name: 'Grace Wanjiru', role: 'Interior Architect', offset: '0px' },
+        { id: 'ab-t3', src: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=900', name: 'Daniel Mwangi', role: 'Project Manager', offset: '120px' }
+      ],
+      accA: [["Space Planning","We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks."],["Colour Consultation","A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface."],["Furniture Selection","We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own."],["Lighting Design","Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark."]].map(([q, a], i) => { const on = (s.sa ?? 0) === i; return { q, a, rows: on ? '1fr' : '0fr', rot: on ? 'rotate(0deg)' : 'rotate(90deg)', toggle: () => this.setState({ sa: on ? -1 : i }) }; }),
+      accB: [["Project Management","One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to."],["Custom Joinery","Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers."],["Styling & Art","The final layer — textiles, objects and art curated to make the space feel lived-in from day one."],["Aftercare","We check in after you move in and help with tweaks, additions and seasonal refreshes."]].map(([q, a], i) => { const on = (s.sb ?? 0) === i; return { q, a, rows: on ? '1fr' : '0fr', rot: on ? 'rotate(0deg)' : 'rotate(90deg)', toggle: () => this.setState({ sb: on ? -1 : i }) }; }),
+      qPrev: () => this.setState({ t: (qi + quotes.length - 1) % quotes.length }),
+      qNext: () => this.setState({ t: (qi + 1) % quotes.length }),
+      avatars: ['https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300','https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300','https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300','https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=300','https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=300'].map((src, i) => ({ id: 'sv-av' + i, src, op: i === qi ? 1 : 0 })),
+      openMenu: () => this.setState({ menu: true }),
+      closeMenu: () => this.setState({ menu: false }),
+      menuX: s.menu ? 'translateX(0)' : 'translateX(105%)',
+      menuOverlayOp: s.menu ? 1 : 0,
+      menuPE: s.menu ? 'auto' : 'none',
+      wordmark: this.props.wordmark ?? true,
+      quote: quotes[qi],
+      dots: quotes.map((_, i) => ({ w: i === qi ? '44px' : '6px', bg: i === qi ? '#111' : '#ccc', go: () => this.setState({ t: i }) })),
+      clients: ['Aurel', 'Theo', 'Hudson', 'Loom', 'Kesh', 'Oslo.'].map((n, i) => ({ name: n, align: i % 2 ? 'end' : 'start' })),
+      projects: projects.map((p, i) => ({ ...p, num: String(i + 1).padStart(2, '0'), h: i === s.slide ? '560px' : '440px', op: i === s.slide ? 1 : 0.55, go: () => this.setState({ slide: i }) })),
+      trackX: (-(s.slide * 554) - 262) + 'px',
+      projCount: String(s.slide + 1).padStart(2, '0') + ' / ' + String(projects.length).padStart(2, '0'),
+      prev: () => this.setState({ slide: (s.slide + projects.length - 1) % projects.length }),
+      next: () => this.setState({ slide: (s.slide + 1) % projects.length }),
+      faqs: faqs.map((f, i) => ({ ...f, open: i === s.faq, closed: i !== s.faq, toggle: () => this.setState({ faq: i === s.faq ? -1 : i }) })),
+      news: [
+        { id: 'hn-n1', src: 'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1600', date: 'Sep 18, 2026', cat: 'Ideas', title: 'Five ways to make a small living room feel generous' },
+        { id: 'hn-n2', src: 'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=1600', date: 'Aug 30, 2026', cat: 'Materials', title: 'Why natural oak never goes out of style' },
+        { id: 'hn-n3', src: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1600', date: 'Aug 12, 2026', cat: 'Studio', title: 'Inside our renovation of a 1960s family home' }
+      ],
+      reelPlaying: !!s.reel, reelPaused: !s.reel,
+      toggleReel: () => this.setState({ reel: !s.reel }),
+      services: [
+        { id: 'hn-svc-1', src: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1600', ph: 'Styling photo', title: 'Interior Styling & Customization', body: 'Layered textures, curated pieces and a finish that feels personal.' },
+        { id: 'hn-svc-2', src: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1600', ph: 'Renovation photo', title: 'Renovation & Remodeling', body: 'Reworking layouts and surfaces so the space fits the way you live.' },
+        { id: 'hn-svc-3', src: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1600', ph: 'Furniture photo', title: 'Furniture & Custom Pieces', body: 'Made-to-measure furniture designed for the room it lives in.' }
+      ],
+      reasons: [
+        { gem: true, title: 'Lasting Quality', body: 'Timeless spaces built to inspire and stand the test of time.' },
+        { eye: true, title: 'Attention to Detail', body: 'From concept to finish, precision and care in every element.' },
+        { pen: true, title: 'Tailored Design', body: 'Every project reflects your lifestyle, taste and needs.' },
+        { layers: true, title: 'End-to-End Service', body: 'With you through the whole process — planning to execution.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

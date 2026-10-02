@@ -1,0 +1,10 @@
+"use client";
+
+import { createBrowserClient } from "@supabase/ssr";
+import { isSupabaseConfigured, supabaseAnonKey, supabaseUrl } from "./config";
+
+/** Browser client. Returns null until NEXT_PUBLIC_SUPABASE_* env vars are set. */
+export function createClient() {
+  if (!isSupabaseConfigured) return null;
+  return createBrowserClient(supabaseUrl, supabaseAnonKey);
+}
