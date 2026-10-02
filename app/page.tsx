@@ -168,7 +168,7 @@ export default function HomePage() {
             {reasons.map((r) => {
               const Icon = reasonIcons[r.icon];
               return (
-                <div key={r.title} data-m-center className="flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7">
+                <div key={r.title} data-m-center className="flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7 mp:border-r-0 mp:px-0 mp:pb-14">
                   <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#4A3526] text-paper transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
                     <Icon size={52} strokeWidth={1} />
                   </div>
