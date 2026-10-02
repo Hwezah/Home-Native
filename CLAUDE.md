@@ -10,6 +10,11 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
 (`context/`) · Supabase placeholder (`lib/supabase`, inactive until env vars are set).
 
 - Tokens are CSS variables in `app/globals.css`, mirrored into Tailwind via `@theme inline`.
+- Brand colour (client decision, overrides the handoff's green): `--brand` #2E1F12 is the main colour (dark
+  sections, filled buttons, active chips, footer); `--brand-mid` #8B5E3C is the accent on light backgrounds
+  (highlighted words, link hover, cursor, focus); `--brand-tint` #EADBC8 is the highlight underline.
+- Cursor and click sound react to mouse presses and real taps only — never to touch-down, so scrolls
+  are not treated as clicks.
 - Custom classes live in `@layer base` / `@layer components` so Tailwind utilities always win.
 - Mobile portrait: follow `.claude/skills/mobile-portrait/SKILL.md` (attributes `data-m-center`, `data-m-btn`,
   `data-m-row`, `data-m-stack`, `data-m-span`, `data-m-hide`) and audit every page at 390×844 before pushing.

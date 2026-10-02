@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
           <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">{palette.eyebrow}</Eyebrow>
             <h2 className="t-h2">
-              {palette.title} <span className="hl-green">{palette.highlight}</span>
+              {palette.title} <span className="hl-brand">{palette.highlight}</span>
             </h2>
             <p className="mt-8 text-[18px] leading-[1.8] text-muted-1b">{palette.body}</p>
             <div className="mt-10 grid w-full grid-cols-4 gap-3.5">
@@ -96,7 +96,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
           <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">{materials.eyebrow}</Eyebrow>
             <h2 className="t-h2">
-              {materials.title} <span className="hl-green">{materials.highlight}</span>
+              {materials.title} <span className="hl-brand">{materials.highlight}</span>
             </h2>
             <p className="mt-8 text-[18px] leading-[1.8] text-muted-1b">{materials.body}</p>
           </div>

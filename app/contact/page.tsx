@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">Get in touch</Eyebrow>
             <h2 className="t-h2">
-              Let&apos;s <span className="hl-green">Talk</span>
+              Let&apos;s <span className="hl-brand">Talk</span>
             </h2>
             <p className="mt-8 max-w-[460px] text-[19px] leading-[1.7] text-muted-1b">
               Tell us about your space — a single room or a whole home. We will come back with ideas, a rough timeline and next steps.

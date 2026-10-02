@@ -44,7 +44,7 @@ function BlockView({ b }: { b: Block }) {
     case "quote":
       return (
         <figure className="my-[22px] flex flex-col items-center gap-[22px] border-y border-line py-12 text-center">
-          <span className="text-green">
+          <span className="text-brand-mid">
             <Quote size={40} strokeWidth={1.25} />
           </span>
           <blockquote className="m-0">
@@ -141,7 +141,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
                 <span className="text-muted-2">{n.date}</span>
                 <span className="font-normal">{n.category}</span>
               </div>
-              <span className="text-[clamp(22px,1.8vw,26px)] leading-[1.3] transition-colors duration-300 group-hover:text-green">{n.title}</span>
+              <span className="text-[clamp(22px,1.8vw,26px)] leading-[1.3] transition-colors duration-300 group-hover:text-brand-mid">{n.title}</span>
             </Link>
           ))}
         </div>

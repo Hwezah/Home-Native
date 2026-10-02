@@ -54,7 +54,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
               <p className="m-0 max-w-[620px] text-[19px] leading-[1.7] text-muted-1b">{p.excerpt}</p>
               <Link
                 href={`/news/${p.slug}`}
-                className="flex items-center gap-3 border-b border-ink pb-1.5 text-[14px] uppercase tracking-[.14em] transition-[gap,color,border-color] duration-[350ms] hover:gap-5 hover:border-green"
+                className="flex items-center gap-3 border-b border-ink pb-1.5 text-[14px] uppercase tracking-[.14em] transition-[gap,color,border-color] duration-[350ms] hover:gap-5 hover:border-brand-mid"
               >
                 Read more
                 <ArrowRight size={16} strokeWidth={1.25} />

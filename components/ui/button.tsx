@@ -13,13 +13,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        pill: "rounded-full border border-line-strong bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-paper",
-        primary: "rounded-full border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper",
-        light: "rounded-full bg-paper text-ink hover:bg-green hover:text-paper hover:-translate-y-[3px]",
-        "light-solid": "rounded-full bg-paper text-ink hover:bg-ink hover:text-paper",
+        pill: "rounded-full border border-line-strong bg-transparent text-ink hover:border-brand hover:bg-brand hover:text-paper",
+        primary: "rounded-full border border-brand bg-transparent text-ink hover:bg-brand hover:text-paper",
+        light: "rounded-full bg-paper text-ink hover:bg-brand-mid hover:text-paper hover:-translate-y-[3px]",
+        "light-solid": "rounded-full bg-paper text-ink hover:bg-brand hover:text-paper",
         "outline-light": "rounded-full border border-white/25 text-paper hover:bg-paper hover:text-ink",
         solid:
-          "w-full border border-ink bg-ink text-paper text-[15px] font-normal uppercase tracking-[.3em] hover:bg-paper hover:text-ink",
+          "w-full border border-brand bg-brand text-paper text-[15px] font-normal uppercase tracking-[.3em] hover:bg-paper hover:text-ink",
         link: "text-ink underline-offset-4 hover:underline",
       },
       size: {

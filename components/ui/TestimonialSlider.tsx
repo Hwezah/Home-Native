@@ -41,7 +41,7 @@ export function TestimonialColumn({ items }: { items: Testimonial[] }) {
   return (
     <div className="flex flex-col items-center px-[clamp(24px,5vw,80px)] py-[clamp(64px,8vw,110px)] text-center">
       <div className="mb-14 w-full max-w-[440px] border-b border-line pb-[18px] text-[15px] uppercase">Testimonials</div>
-      <div className="mb-7 text-green">
+      <div className="mb-7 text-brand-mid">
         <Quote size={48} strokeWidth={1} />
       </div>
       <div aria-live="polite" className="flex flex-col items-center">
@@ -62,14 +62,14 @@ export function TestimonialCentered({ items }: { items: Testimonial[] }) {
   const n = items.length;
   const q = items[t];
   const arrow =
-    "cursor-pointer border-0 bg-transparent p-3 text-ink transition-[color,transform] duration-300 hover:text-green";
+    "cursor-pointer border-0 bg-transparent p-3 text-ink transition-[color,transform] duration-300 hover:text-brand-mid";
   return (
     <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-[clamp(12px,4vw,60px)]">
       <button type="button" data-m-hide aria-label="Previous testimonial" onClick={() => setT((t + n - 1) % n)} className={cn(arrow, "hover:-translate-x-1.5")}>
         <ArrowLeft size={36} strokeWidth={1.25} />
       </button>
       <div className="flex flex-col items-center text-center">
-        <div className="mb-9 text-green">
+        <div className="mb-9 text-brand-mid">
           <Quote size={44} strokeWidth={1.25} />
         </div>
         <div

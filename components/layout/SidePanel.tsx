@@ -49,7 +49,7 @@ export function SidePanel() {
               key={item.href}
               href={item.href}
               onClick={closeMenu}
-              className="transition-[padding,color] duration-[400ms] hover:pl-[18px] hover:text-green"
+              className="transition-[padding,color] duration-[400ms] hover:pl-[18px] hover:text-brand-mid"
             >
               {item.label}
             </Link>

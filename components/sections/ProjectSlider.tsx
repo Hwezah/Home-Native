@@ -15,6 +15,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
   const [slide, setSlide] = useState(Math.min(2, n - 1));
   const hover = useRef(false);
   const dragX = useRef<number | null>(null);
+  const dragY = useRef(0);
   const dragged = useRef(false);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
 
   const onDown = (e: React.PointerEvent) => {
     dragX.current = e.clientX;
+    dragY.current = e.clientY;
     dragged.current = false;
     hover.current = true;
   };
@@ -38,7 +40,8 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
     if (dragX.current == null) return;
     const dx = e.clientX - dragX.current;
     dragX.current = null;
-    if (Math.abs(dx) > 50) {
+    // Horizontal swipes only — a mostly-vertical drag is a scroll.
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - dragY.current)) {
       dragged.current = true;
       if (dx < 0) next();
       else prev();
@@ -56,7 +59,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
             type="button"
             onClick={prev}
             aria-label="Previous project"
-            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border border-line-strong bg-paper p-0 text-ink transition-colors duration-300 hover:bg-ink hover:text-paper"
+            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border border-line-strong bg-paper p-0 text-ink transition-colors duration-300 hover:bg-brand hover:text-paper"
           >
             <ArrowLeft size={22} strokeWidth={1.25} />
           </button>
@@ -67,7 +70,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
             type="button"
             onClick={next}
             aria-label="Next project"
-            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-0 bg-ink p-0 text-paper transition-colors duration-300 hover:bg-green"
+            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-0 bg-brand p-0 text-paper transition-colors duration-300 hover:bg-brand-mid"
           >
             <ArrowRight size={22} strokeWidth={1.25} />
           </button>

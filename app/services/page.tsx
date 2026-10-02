@@ -35,7 +35,7 @@ export default function ServicesPage() {
         <div data-m-center className="flex flex-col">
           <Eyebrow>Services</Eyebrow>
           <h2 className="t-h2 max-w-[900px]">
-            Transforming <span className="hl-green">Spaces</span> Into Homes That Fit
+            Transforming <span className="hl-brand">Spaces</span> Into Homes That Fit
           </h2>
           <p className="mt-9 max-w-[620px] text-[19px] leading-[1.7] text-muted-1b">
             From a single room to a full renovation, we handle every step — planning, sourcing, building and styling — so the result feels calm,

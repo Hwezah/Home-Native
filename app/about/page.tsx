@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="text-[14px] uppercase">— About Us</div>
           <p className="t-lead">
             We are an interior design studio dedicated to creating calm, functional and lasting spaces. Experienced in{" "}
-            <Link href="/portfolio" className="hl-green">
+            <Link href="/portfolio" className="hl-brand">
               residential and commercial projects
             </Link>
             , blending modern lines with comfort and purpose. Currently shaping homes that feel native to the people who live in them.
@@ -104,7 +104,7 @@ export default function AboutPage() {
           <div className="max-w-[640px] flex-[1_1_420px]">
             <Eyebrow>Our Team</Eyebrow>
             <h2 className="m-0 font-serif text-[clamp(56px,7vw,110px)] leading-none tracking-[-.02em]">
-              Meet The <span className="hl-green">Team</span>
+              Meet The <span className="hl-brand">Team</span>
             </h2>
           </div>
           <PillButton href="/contact">Learn More</PillButton>

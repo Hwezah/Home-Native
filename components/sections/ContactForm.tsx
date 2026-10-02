@@ -28,7 +28,7 @@ export function ContactForm() {
   if (sent) {
     return (
       <div role="status" className="flex flex-col items-start gap-[22px] bg-surface-warm-3 p-12">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-green-tint text-green">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-tint text-brand-mid">
           <Check size={28} strokeWidth={1.25} />
         </span>
         <span className="font-serif text-[clamp(36px,3.4vw,52px)] leading-[1.1]">Thank you — message received.</span>

@@ -23,6 +23,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
   const [animate, setAnimate] = useState(true);
   const hover = useRef(false);
   const dragX = useRef<number | null>(null);
+  const dragY = useRef(0);
 
   const next = () => {
     setAnimate(true);
@@ -67,7 +68,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
   const active = index % n;
 
   return (
-    <section aria-label="Latest projects" className="grid bg-[#2E1F12] text-paper min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+    <section aria-label="Latest projects" className="grid bg-brand text-paper min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
       {/* Intro panel */}
       <div data-m-center className="flex flex-col justify-center px-[clamp(20px,4vw,72px)] py-[clamp(64px,8vw,110px)]">
         <Eyebrow dash={false} className="max-w-[440px] border-white/[.14] text-white/70">
@@ -89,6 +90,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
         onMouseLeave={() => (hover.current = false)}
         onPointerDown={(e) => {
           dragX.current = e.clientX;
+          dragY.current = e.clientY;
           hover.current = true;
         }}
         onPointerUp={(e) => {
@@ -96,7 +98,8 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
           if (dragX.current == null) return;
           const dx = e.clientX - dragX.current;
           dragX.current = null;
-          if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+          // Horizontal swipes only — a mostly-vertical drag is a scroll.
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - dragY.current)) (dx < 0 ? next : prev)();
         }}
       >
         <div

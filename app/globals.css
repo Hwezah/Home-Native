@@ -13,9 +13,11 @@
   --muted-2b: #999999;
   --line: #eeeeee;
   --line-strong: #e3e3e3;
-  --green: #4c7a43;
-  --green-tint: #dcebd6;
-  --green-soft: #a8c49c;
+  /* Brand: deep brown is the main colour; mid brown is the accent on light backgrounds. */
+  --brand: #2e1f12;
+  --brand-mid: #8b5e3c;
+  --brand-tint: #eadbc8;
+  --brand-soft: #c9a98a;
   --yellow: #f3efa6;
   --sand: #8a7a52;
   --sand-tint: #eae3d3;
@@ -36,12 +38,12 @@
   --secondary-foreground: var(--ink);
   --muted: var(--surface-warm);
   --muted-foreground: var(--muted-2);
-  --accent: var(--green-tint);
+  --accent: var(--brand-tint);
   --accent-foreground: var(--ink);
   --destructive: var(--error);
   --border: var(--line);
   --input: var(--line-strong);
-  --ring: var(--green);
+  --ring: var(--brand-mid);
   --radius: 0px;
 }
 
@@ -54,9 +56,10 @@
   --color-muted-2b: var(--muted-2b);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
-  --color-green: var(--green);
-  --color-green-tint: var(--green-tint);
-  --color-green-soft: var(--green-soft);
+  --color-brand: var(--brand);
+  --color-brand-mid: var(--brand-mid);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-soft: var(--brand-soft);
   --color-yellow: var(--yellow);
   --color-sand: var(--sand);
   --color-sand-tint: var(--sand-tint);
@@ -108,7 +111,7 @@
     text-decoration: none;
   }
   a:hover {
-    color: var(--green);
+    color: var(--brand-mid);
   }
   button {
     font: inherit;
@@ -184,9 +187,9 @@
   }
 
   /* Highlighted words: accent text with a thick tint underline at the baseline */
-  .hl-green {
-    color: var(--green);
-    background: linear-gradient(transparent 88%, var(--green-tint) 88%);
+  .hl-brand {
+    color: var(--brand-mid);
+    background: linear-gradient(transparent 88%, var(--brand-tint) 88%);
   }
   .hl-yellow {
     color: var(--yellow);
@@ -196,8 +199,8 @@
     color: var(--sand);
     background: linear-gradient(transparent 88%, var(--sand-tint) 88%);
   }
-  a.hl-green:hover {
-    color: var(--green);
+  a.hl-brand:hover {
+    color: var(--brand);
   }
 
   /* Outline wordmark ("Native") */

@@ -39,7 +39,7 @@ export function Accordion({
               aria-controls={panelId}
               onClick={() => setOpen(on ? -1 : i)}
               className={cn(
-                "flex w-full cursor-pointer items-center justify-between gap-5 bg-transparent text-left font-light text-ink transition-colors duration-300 hover:text-green",
+                "flex w-full cursor-pointer items-center justify-between gap-5 bg-transparent text-left font-light text-ink transition-colors duration-300 hover:text-brand-mid",
                 variant === "line" ? "py-[30px] text-[clamp(24px,2.2vw,34px)]" : "py-7 text-[22px]",
               )}
             >

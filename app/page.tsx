@@ -78,7 +78,7 @@ export default function HomePage() {
           {[...marquee, ...marquee].map((m, i) => (
             <span key={i} className="flex items-center gap-[clamp(28px,4vw,64px)]">
               {m}
-              <span className="flex text-green">
+              <span className="flex text-brand-mid">
                 <Sparkle size={30} strokeWidth={1} />
               </span>
             </span>
@@ -95,7 +95,7 @@ export default function HomePage() {
           <div className="text-[14px] uppercase">— About Us</div>
           <p className="relative m-0 max-w-[1320px] font-serif text-[clamp(32px,4.4vw,66px)] leading-[1.18] tracking-[-.02em] text-pretty">
             We are an interior design studio creating calm, functional and lasting spaces. Experienced in{" "}
-            <Link href="/portfolio" className="hl-green">
+            <Link href="/portfolio" className="hl-brand">
               residential and commercial projects
             </Link>
             , pairing natural materials with comfort and purpose. Currently shaping homes that feel native to the people who live in them.
@@ -112,7 +112,7 @@ export default function HomePage() {
           action={<PillButton href="/services">All Services</PillButton>}
         >
           <h2 className="t-h2">
-            Design <span className="hl-green">Solutions</span>
+            Design <span className="hl-brand">Solutions</span>
           </h2>
         </SectionHead>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[clamp(20px,2.6vw,40px)]">
@@ -145,11 +145,11 @@ export default function HomePage() {
       </section>
 
       {/* ── Why us ── */}
-      <section className="bg-[#565F52] text-paper">
+      <section className="bg-brand text-paper">
         <div className="wrap-wide py-[clamp(80px,9vw,130px)]">
           <SectionHead
             eyebrow="Why Choose Us?"
-            eyebrowClassName="text-[#C9CFC4] border-white/[.12]"
+            eyebrowClassName="text-[#D9C7B4] border-white/[.12]"
             className="mb-[clamp(56px,7vw,100px)]"
             action={
               <PillButton href="/about" variant="outline-light">
@@ -160,7 +160,7 @@ export default function HomePage() {
             <h2 className="t-h2 mb-[30px]">
               Tailored <span className="hl-yellow">for You</span>
             </h2>
-            <p className="m-0 text-[19px] font-light leading-[1.55] text-[#E4E7E1]">
+            <p className="m-0 text-[19px] font-light leading-[1.55] text-[#EFE5DA]">
               Concept design builds the framework that guides every decision that follows.
             </p>
           </SectionHead>
@@ -169,11 +169,11 @@ export default function HomePage() {
               const Icon = reasonIcons[r.icon];
               return (
                 <div key={r.title} data-m-center className="flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7">
-                  <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#6D7569] text-paper transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
+                  <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#4A3526] text-paper transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
                     <Icon size={52} strokeWidth={1} />
                   </div>
                   <h3 className="m-0 mb-[18px] text-[30px] font-normal leading-[1.1]">{r.title}</h3>
-                  <p className="m-0 mb-[22px] text-[19px] font-light leading-[1.45] text-[#D9DDD6]">{r.body}</p>
+                  <p className="m-0 mb-[22px] text-[19px] font-light leading-[1.45] text-[#E3D5C6]">{r.body}</p>
                   <Link
                     href="/services"
                     className="inline-flex items-center gap-2.5 border-b border-paper pb-1 text-[15px] uppercase tracking-[.16em] text-paper hover:text-yellow"
@@ -199,7 +199,7 @@ export default function HomePage() {
             <div className="max-w-[860px] flex-[1_1_520px]">
               <Eyebrow>Recent Projects</Eyebrow>
               <h2 className="t-h2">
-                Featured <span className="hl-green">Work</span>
+                Featured <span className="hl-brand">Work</span>
               </h2>
             </div>
           }
@@ -218,7 +218,7 @@ export default function HomePage() {
           <div data-m-center className="">
             <Eyebrow>FAQ</Eyebrow>
             <h2 className="t-h2 mb-12">
-              Common <span className="hl-green">Questions</span>
+              Common <span className="hl-brand">Questions</span>
             </h2>
             <Accordion items={faqs} variant="circle" defaultOpen={-1} className="text-left" />
           </div>
@@ -229,7 +229,7 @@ export default function HomePage() {
       <section className="wrap-wide py-[clamp(80px,9vw,130px)]">
         <SectionHead eyebrow="Latest News" className="mb-[clamp(48px,6vw,80px)]" action={<PillButton href="/news">All News</PillButton>}>
           <h2 className="t-h2">
-            From the <span className="hl-green">Journal</span>
+            From the <span className="hl-brand">Journal</span>
           </h2>
         </SectionHead>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-[clamp(24px,2.6vw,40px)]">
@@ -243,9 +243,9 @@ export default function HomePage() {
               <div className="flex gap-3.5 text-[13px] uppercase tracking-[.14em] text-[#777]">
                 <span>{n.date}</span>
                 <span>·</span>
-                <span className="text-green">{n.category}</span>
+                <span className="text-brand-mid">{n.category}</span>
               </div>
-              <h3 className="m-0 font-serif text-[30px] leading-[1.15] transition-colors group-hover:text-green">{n.title}</h3>
+              <h3 className="m-0 font-serif text-[30px] leading-[1.15] transition-colors group-hover:text-brand-mid">{n.title}</h3>
               <span className="inline-flex items-center gap-2 self-start border-b border-ink pb-1 text-[13px] uppercase tracking-[.2em]">
                 Read More <ArrowRight size={14} strokeWidth={1.25} />
               </span>

@@ -42,7 +42,7 @@ export function ShareBar({ path, title }: { path: string; title: string }) {
         onClick={copy}
         aria-label="Copy link"
         className="flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-[13px] font-light uppercase tracking-[.1em] transition-colors"
-        style={{ color: copied ? "var(--green)" : "var(--ink)" }}
+        style={{ color: copied ? "var(--brand-mid)" : "var(--ink)" }}
       >
         <LinkIcon size={20} strokeWidth={1.25} />
         <span aria-live="polite">{copied ? "Copied" : "Copy link"}</span>
