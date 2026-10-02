@@ -74,9 +74,9 @@ export function ContactForm() {
       <Input name="phone" type="tel" placeholder="Phone (optional)" aria-label="Phone (optional)" autoComplete="tel" />
       {/* Honeypot */}
       <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-      <div className="mb-2.5 mt-[22px] flex flex-col gap-3.5">
+      <div className="m-center mb-2.5 mt-[22px] flex flex-col gap-3.5">
         <Label id="project-type-label">Project type</Label>
-        <div className="flex flex-wrap gap-2.5" role="radiogroup" aria-labelledby="project-type-label">
+        <div className="m-center flex flex-wrap gap-2.5" role="radiogroup" aria-labelledby="project-type-label">
           {projectTypes.map((t) => (
             <Chip key={t} active={t === projectType} role="radio" aria-checked={t === projectType} onClick={() => setProjectType(t)}>
               {t}

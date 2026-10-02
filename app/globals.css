@@ -387,6 +387,12 @@
   .m-span {
     grid-column: auto !important;
   }
+  /* Stack a multi-column row vertically (pair with .m-center). */
+  .m-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
   .m-hide {
     display: none !important;
   }

@@ -79,7 +79,7 @@ export default function AboutPage() {
         {stats.map((st) => (
           <div
             key={st.title}
-            className="group grid grid-cols-[auto_minmax(0,1.2fr)_minmax(0,1.6fr)_auto] items-center gap-[clamp(16px,3vw,48px)] border-b border-line py-8 transition-colors hover:bg-surface-warm max-[600px]:grid-cols-[auto_1fr] max-[600px]:gap-y-3"
+            className="m-stack m-center group grid grid-cols-[auto_minmax(0,1.2fr)_minmax(0,1.6fr)_auto] items-center gap-[clamp(16px,3vw,48px)] border-b border-line py-8 transition-colors hover:bg-surface-warm"
           >
             <div
               className="flex h-[clamp(84px,9vw,124px)] w-[clamp(84px,9vw,124px)] items-center justify-center rounded-full text-ink transition-transform duration-500 group-hover:rotate-45"
@@ -88,11 +88,11 @@ export default function AboutPage() {
               <ArrowUpRight size={40} strokeWidth={1} />
             </div>
             <h3 className="m-0 text-[clamp(24px,2.6vw,40px)] font-light leading-[1.1]">{st.title}</h3>
-            <p className="m-0 text-[18px] font-light text-muted-1b max-[600px]:col-span-2">{st.body}</p>
+            <p className="m-0 text-[18px] font-light text-muted-1b">{st.body}</p>
             <Counter
               to={st.n}
               suffix={st.suffix}
-              className="min-w-[2.4em] text-right font-num text-[clamp(56px,6.4vw,96px)] font-extralight leading-none max-[600px]:col-span-2"
+              className="min-w-[2.4em] text-right font-num text-[clamp(56px,6.4vw,96px)] font-extralight leading-none"
             />
           </div>
         ))}
