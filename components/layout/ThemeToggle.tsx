@@ -12,12 +12,12 @@ import { cn } from "@/lib/utils";
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const base =
-    "flex h-11 w-11 cursor-pointer items-center justify-center border-2 border-transparent p-0 transition-[border-color,transform] duration-300 hover:scale-105";
+    "flex h-11 w-11 cursor-pointer items-center justify-center border-2 border-transparent p-0 transition-[border-color,transform] duration-300 hover:scale-105 mp:h-8 mp:w-8 mp:border-[1.5px] [&_svg]:mp:size-4";
   return (
     <div
       role="group"
       aria-label="Colour theme"
-      className="fixed bottom-5 right-5 z-[35] flex shadow-[0_6px_24px_rgba(0,0,0,.18)] mp:bottom-4 mp:right-4"
+      className="fixed bottom-5 right-5 z-[35] flex shadow-[0_6px_24px_rgba(0,0,0,.18)] mp:bottom-3 mp:right-3"
     >
       <button
         type="button"
