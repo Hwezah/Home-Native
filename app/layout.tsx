@@ -4,6 +4,8 @@ import "./globals.css";
 
 import { siteUrl } from "@/content/site";
 import { MenuProvider } from "@/context/MenuContext";
+import { ThemeProvider, themeInitScript } from "@/context/ThemeContext";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Header } from "@/components/layout/Header";
 import { SidePanel } from "@/components/layout/SidePanel";
 import { Footer } from "@/components/layout/Footer";
@@ -35,20 +37,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${jost.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${jost.variable} ${oswald.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Apply the saved / system theme before first paint (no flash). */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
-        <MenuProvider>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-paper focus:px-4 focus:py-2"
-          >
-            Skip to content
-          </a>
-          <Header />
-          <SidePanel />
-          <main id="main">{children}</main>
-          <Footer />
-        </MenuProvider>
+        <ThemeProvider>
+          <MenuProvider>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-paper focus:px-4 focus:py-2"
+            >
+              Skip to content
+            </a>
+            <Header />
+            <SidePanel />
+            <main id="main">{children}</main>
+            <Footer />
+            <ThemeToggle />
+          </MenuProvider>
+        </ThemeProvider>
         <Cursor />
         <ClickSound />
         <ScrollEffects />

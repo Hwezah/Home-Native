@@ -69,7 +69,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Banner ── */}
-      <section aria-label="Studio detail" className="relative h-[clamp(320px,40vw,620px)] overflow-hidden bg-[#E9D9C4]">
+      <section aria-label="Studio detail" className="relative h-[clamp(320px,40vw,620px)] overflow-hidden bg-img-bg">
         <ParallaxImg src={pexels(1350789)} alt="Two armchairs upholstered in bold African wax-print fabric" speed={0.3} extra={20} />
       </section>
 
@@ -112,7 +112,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] items-start gap-[clamp(24px,5vw,90px)]">
           {team.map((m) => (
             <div key={m.name} data-m-center className={`flex flex-col gap-[18px] ${m.offset ? "min-[880px]:mt-[120px]" : ""}`}>
-              <div data-reveal className="group relative aspect-square overflow-hidden bg-[#ddd]">
+              <div data-reveal className="group relative aspect-square overflow-hidden bg-img-bg">
                 <div className="zoom grayscale-[.35] transition-[transform,filter] duration-[1200ms] group-hover:scale-[1.06] group-hover:grayscale-0">
                   <Img src={m.src} alt={`${m.name}, ${m.role}`} sizes="(max-width: 880px) 100vw, 33vw" />
                 </div>

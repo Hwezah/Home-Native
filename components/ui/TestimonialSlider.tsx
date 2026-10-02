@@ -27,7 +27,7 @@ function Dots({ count, active, onPick }: { count: number; active: number; onPick
           aria-current={i === active}
           onClick={() => onPick(i)}
           className="h-[5px] cursor-pointer rounded border-0 p-0 transition-[width] duration-300"
-          style={{ width: i === active ? 44 : 6, background: i === active ? "#111" : "#ccc" }}
+          style={{ width: i === active ? 44 : 6, background: i === active ? "var(--ink)" : "var(--line-strong)" }}
         />
       ))}
     </div>
@@ -78,7 +78,7 @@ export function TestimonialCentered({ items }: { items: Testimonial[] }) {
         >
           {q.text}
         </div>
-        <div className="relative mt-11 h-[84px] w-[84px] overflow-hidden rounded-full bg-[#ddd] grayscale">
+        <div className="relative mt-11 h-[84px] w-[84px] overflow-hidden rounded-full bg-img-bg grayscale">
           {items.map((it, i) => (
             <div key={it.name} className="absolute inset-0 transition-opacity duration-[600ms]" style={{ opacity: i === t ? 1 : 0 }}>
               <Image src={it.avatar} alt={i === t ? it.name : ""} fill sizes="84px" className="object-cover" />

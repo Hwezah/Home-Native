@@ -27,12 +27,12 @@ export function Accordion({
   const id = useId();
 
   return (
-    <div className={cn(variant === "circle" && "border-t border-[#ddd]", className)}>
+    <div className={cn(variant === "circle" && "border-t border-line-strong", className)}>
       {items.map((it, i) => {
         const on = open === i;
         const panelId = `${id}-p${i}`;
         return (
-          <div key={it.q} className={variant === "circle" ? "border-b border-[#ddd]" : "border-b border-line"}>
+          <div key={it.q} className={variant === "circle" ? "border-b border-line-strong" : "border-b border-line"}>
             <button
               type="button"
               aria-expanded={on}
@@ -53,7 +53,7 @@ export function Accordion({
                   />
                 </span>
               ) : (
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#ccc]" aria-hidden="true">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line-strong" aria-hidden="true">
                   {on ? <Minus size={20} strokeWidth={1.25} /> : <Plus size={20} strokeWidth={1.25} />}
                 </span>
               )}

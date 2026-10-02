@@ -14,7 +14,7 @@ export function Footer() {
 function LightFooter() {
   return (
     <footer className="px-[clamp(20px,5vw,80px)] pb-12 pt-10">
-      <div data-m-center className="flex flex-wrap items-center justify-between gap-5 text-[15px] uppercase tracking-[.06em] text-[#666]">
+      <div data-m-center className="flex flex-wrap items-center justify-between gap-5 text-[15px] uppercase tracking-[.06em] text-muted-1b">
         <div data-reveal className="flex items-center gap-7 text-ink">
           <a href={site.socials.instagram} aria-label="Instagram"><Instagram /></a>
           <a href={site.socials.facebook} aria-label="Facebook"><Facebook /></a>
@@ -28,13 +28,13 @@ function LightFooter() {
 
 function DarkFooter() {
   const col = "flex flex-col gap-3.5 text-[16px]";
-  const head = "mb-1.5 text-[13px] uppercase tracking-[.16em] text-paper";
+  const head = "mb-1.5 text-[13px] uppercase tracking-[.16em] text-white";
   return (
     <footer className="bg-brand text-[#D9C7B4]">
       <div className="wrap-wide pb-10 pt-[clamp(64px,7vw,100px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-12 border-b border-white/10 pb-16">
           <div data-m-span data-m-center className="col-span-2 min-w-0">
-            <div className="mb-5 font-serif text-[34px] text-paper">Home Native</div>
+            <div className="mb-5 font-serif text-[34px] text-white">Home Native</div>
             <p className="m-0 max-w-[380px] text-[17px] font-light leading-[1.6]">
               Interior design studio creating calm, functional and lasting spaces. A MachineNative company.
             </p>

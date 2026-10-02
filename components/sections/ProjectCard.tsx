@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <Link
       href={`/portfolio/${project.slug}`}
       data-reveal
-      className="zoom-host relative block aspect-[4/5] overflow-hidden bg-[#E9E4DC] text-paper hover:text-paper"
+      className="zoom-host relative block aspect-[4/5] overflow-hidden bg-img-bg text-white hover:text-white"
     >
       <div className="zoom">
         <Img src={project.cover} alt={`${project.title} — ${project.category} interior`} sizes="(max-width: 760px) 100vw, (max-width: 1160px) 50vw, 33vw" />

@@ -35,7 +35,7 @@ export function ZoomImg({
   style?: React.CSSProperties;
 }) {
   return (
-    <div data-reveal className={cn("zoom-host relative overflow-hidden bg-[#E9E4DC]", frameClassName)} style={style}>
+    <div data-reveal className={cn("zoom-host relative overflow-hidden bg-img-bg", frameClassName)} style={style}>
       <div className={cn("zoom", className)}>
         <Img src={src} alt={alt} sizes={sizes} />
       </div>

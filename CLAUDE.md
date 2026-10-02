@@ -13,6 +13,12 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
 - Brand colour (client decision, overrides the handoff's green): `--brand` #2E1F12 is the main colour (dark
   sections, filled buttons, active chips, footer); `--brand-mid` #8B5E3C is the accent on light backgrounds
   (highlighted words, link hover, cursor, focus); `--brand-tint` #EADBC8 is the highlight underline.
+- Theming: light/dark via `<html data-theme>` (set before paint by `themeInitScript`, state in
+  `context/ThemeContext.tsx`, toggle `components/layout/ThemeToggle.tsx`). Use flipping tokens (`paper`, `ink`,
+  `line`, `muted-*`, `surface-*`, `fill`, `img-bg`) for page surfaces/text; use fixed `white` / `#111` only for
+  text and buttons sitting on photos or the deep-brown sections.
+- Header is fixed and transparent at the top (white text over image heroes listed in `HERO_PAGES`), frosted
+  glass once scrolled. `#main` is padded by `--header-h`; a first-child `[data-hero]` slides up under it.
 - Cursor and click sound react to mouse presses and real taps only — never to touch-down, so scrolls
   are not treated as clicks.
 - Custom classes live in `@layer base` / `@layer components` so Tailwind utilities always win.

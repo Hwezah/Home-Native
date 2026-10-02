@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
       </section>
 
       {/* ── Hero image ── */}
-      <section aria-label="Project photo" className="relative h-[clamp(420px,58vw,880px)] overflow-hidden bg-[#E9D9C4]">
+      <section aria-label="Project photo" className="relative h-[clamp(420px,58vw,880px)] overflow-hidden bg-img-bg">
         <ParallaxImg src={project.hero} alt={`${project.title} interior`} speed={0.3} extra={20} priority />
       </section>
 
@@ -80,19 +80,19 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
                     style={{ background: c.hex }}
                     title={c.hex}
                   />
-                  <span className="text-[13px] uppercase tracking-[.12em] text-[#666]">{c.name}</span>
+                  <span className="text-[13px] uppercase tracking-[.12em] text-muted-1b">{c.name}</span>
                 </div>
               ))}
             </div>
           </div>
-          <ZoomImg src={palette.image} alt={`${project.title} — palette detail`} frameClassName="aspect-[16/11] bg-[#D8CFBF]" sizes="(max-width: 960px) 100vw, 50vw" />
+          <ZoomImg src={palette.image} alt={`${project.title} — palette detail`} frameClassName="aspect-[16/11] bg-img-bg" sizes="(max-width: 960px) 100vw, 50vw" />
         </div>
       </section>
 
       {/* ── Materials ── */}
       <section className="wrap pb-[clamp(90px,10vw,160px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(48px,6vw,96px)]">
-          <ZoomImg src={materials.image} alt={`${project.title} — materials detail`} frameClassName="aspect-[16/11] bg-[#D8CFBF]" sizes="(max-width: 960px) 100vw, 50vw" />
+          <ZoomImg src={materials.image} alt={`${project.title} — materials detail`} frameClassName="aspect-[16/11] bg-img-bg" sizes="(max-width: 960px) 100vw, 50vw" />
           <div data-m-center className="flex flex-col">
             <Eyebrow className="w-full">{materials.eyebrow}</Eyebrow>
             <h2 className="t-h2">

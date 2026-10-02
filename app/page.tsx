@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section data-hero className="relative h-[min(92vh,900px)] min-h-[560px] overflow-hidden bg-[#6E675E] text-paper">
+      <section data-hero className="relative h-[min(92vh,900px)] min-h-[560px] overflow-hidden bg-[#6E675E] text-white">
         <ParallaxImg src={pexels(1571460)} alt="Bright open-plan living room with a floating oak staircase" speed={0.35} priority className="hero-zoom" />
         <div className="pointer-events-none absolute inset-0 bg-[rgba(40,36,30,.35)]" />
         <div className="hero-line pointer-events-none absolute inset-x-0 top-1/2 h-px bg-white/30" />
@@ -51,7 +51,7 @@ export default function HomePage() {
             <Link
               href="/services"
               data-m-btn
-              className="inline-flex items-center justify-center border-b border-white/60 pb-1.5 text-[14px] uppercase tracking-[.16em] text-paper transition-colors duration-[350ms] hover:text-paper mp:rounded-full mp:border mp:px-10 mp:py-[22px] mp:hover:bg-paper mp:hover:text-ink"
+              className="inline-flex items-center justify-center border-b border-white/60 pb-1.5 text-[14px] uppercase tracking-[.16em] text-white transition-colors duration-[350ms] hover:text-white mp:rounded-full mp:border mp:px-10 mp:py-[22px] mp:hover:bg-paper mp:hover:text-ink"
             >
               Explore Services
             </Link>
@@ -66,7 +66,7 @@ export default function HomePage() {
               <textPath href="#hnCircle">Scroll to explore • Home Native • </textPath>
             </text>
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center text-paper">
+          <div className="absolute inset-0 flex items-center justify-center text-white">
             <ArrowDown size={28} strokeWidth={1} />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
 
       {/* ── About ── */}
       <section className="wrap-wide relative overflow-hidden pb-[clamp(60px,8vw,120px)] pt-[clamp(80px,9vw,130px)]">
-        <div aria-hidden="true" className="outline-word absolute -right-[1vw] top-5 text-[clamp(160px,26vw,420px)] font-light [-webkit-text-stroke:1px_rgba(0,0,0,.08)]">
+        <div aria-hidden="true" className="outline-word absolute -right-[1vw] top-5 text-[clamp(160px,26vw,420px)] font-light">
           Native
         </div>
         <div data-m-center className="relative flex flex-col gap-7">
@@ -121,7 +121,7 @@ export default function HomePage() {
               key={s.title}
               href="/services"
               data-reveal
-              className="zoom-host group relative block h-[clamp(440px,38vw,580px)] overflow-hidden rounded-[14px] bg-[#6A5442] text-paper transition-[transform,box-shadow] duration-500 ease-hn hover:-translate-y-2 hover:text-paper hover:shadow-[0_24px_50px_rgba(0,0,0,.18)]"
+              className="zoom-host group relative block h-[clamp(440px,38vw,580px)] overflow-hidden rounded-[14px] bg-[#6A5442] text-white transition-[transform,box-shadow] duration-500 ease-hn hover:-translate-y-2 hover:text-white hover:shadow-[0_24px_50px_rgba(0,0,0,.18)]"
             >
               <div className="absolute inset-0 transition-transform duration-[1200ms] ease-hn group-hover:scale-[1.08]">
                 <Img src={s.src} alt="" sizes="(max-width: 700px) 100vw, 33vw" />
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Why us ── */}
-      <section className="bg-brand text-paper">
+      <section className="bg-brand text-white">
         <div className="wrap-wide py-[clamp(80px,9vw,130px)]">
           <SectionHead
             eyebrow="Why Choose Us?"
@@ -169,14 +169,14 @@ export default function HomePage() {
               const Icon = reasonIcons[r.icon];
               return (
                 <div key={r.title} data-m-center className="flex flex-col items-start border-r border-white/[.12] px-[clamp(20px,2.4vw,36px)] pb-10 pt-7 mp:border-r-0 mp:px-0 mp:pb-14">
-                  <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#4A3526] text-paper transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
+                  <div className="mb-[34px] flex h-[134px] w-[134px] items-center justify-center rounded-3xl bg-[#4A3526] text-white transition-[background,transform,color] duration-[400ms] hover:-rotate-6 hover:bg-yellow hover:text-ink">
                     <Icon size={52} strokeWidth={1} />
                   </div>
                   <h3 className="m-0 mb-[18px] text-[30px] font-normal leading-[1.1]">{r.title}</h3>
                   <p className="m-0 mb-[22px] text-[19px] font-light leading-[1.45] text-[#E3D5C6]">{r.body}</p>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2.5 border-b border-paper pb-1 text-[15px] uppercase tracking-[.16em] text-paper hover:text-yellow"
+                    className="inline-flex items-center gap-2.5 border-b border-white pb-1 text-[15px] uppercase tracking-[.16em] text-white hover:text-yellow"
                   >
                     See Details
                     <ArrowRight size={16} strokeWidth={1.25} />
@@ -212,7 +212,7 @@ export default function HomePage() {
       {/* ── FAQ ── */}
       <section className="bg-surface-warm-2">
         <div className="wrap-wide grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] items-start gap-[clamp(40px,6vw,100px)] py-[clamp(80px,9vw,130px)]">
-          <div data-reveal className="relative h-[clamp(420px,46vw,680px)] overflow-hidden rounded-3xl bg-[#cfc6b8]">
+          <div data-reveal className="relative h-[clamp(420px,46vw,680px)] overflow-hidden rounded-3xl bg-img-bg">
             <ParallaxImg src={pexels(1571467)} alt="Calm living room with a grey sofa and patterned rug" speed={0.15} extra={12} sizes="(max-width: 960px) 100vw, 50vw" />
           </div>
           <div data-m-center className="">
@@ -235,12 +235,12 @@ export default function HomePage() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-[clamp(24px,2.6vw,40px)]">
           {posts.slice(0, 3).map((n) => (
             <Link key={n.slug} href={`/news/${n.slug}`} data-m-center className="zoom-host group flex flex-col gap-[22px] hover:text-ink">
-              <div data-reveal className="relative h-[340px] overflow-hidden rounded-[14px] bg-[#ddd]">
+              <div data-reveal className="relative h-[340px] overflow-hidden rounded-[14px] bg-img-bg">
                 <div className="zoom group-hover:scale-[1.07]">
                   <Img src={n.image} alt="" sizes="(max-width: 1000px) 100vw, 33vw" />
                 </div>
               </div>
-              <div className="flex gap-3.5 text-[13px] uppercase tracking-[.14em] text-[#777]">
+              <div className="flex gap-3.5 text-[13px] uppercase tracking-[.14em] text-muted-2">
                 <span>{n.date}</span>
                 <span>·</span>
                 <span className="text-brand-mid">{n.category}</span>
@@ -255,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative flex min-h-[620px] items-center overflow-hidden bg-[#4a443c] text-paper">
+      <section className="relative flex min-h-[620px] items-center overflow-hidden bg-[#4a443c] text-white">
         <ParallaxImg src={pexels(1457842)} alt="" speed={0.35} extra={20} />
         <div className="pointer-events-none absolute inset-0 bg-[rgba(30,27,22,.45)]" />
         <div className="wrap-wide pointer-events-none relative w-full text-center">

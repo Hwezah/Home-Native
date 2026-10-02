@@ -45,7 +45,7 @@ export function NewsList({ posts }: { posts: Post[] }) {
                 <span className="font-normal">{p.category}</span>
               </div>
             </div>
-            <Link href={`/news/${p.slug}`} data-reveal className="zoom-host relative block aspect-[16/7] overflow-hidden bg-[#E9E4DC]" aria-label={p.title}>
+            <Link href={`/news/${p.slug}`} data-reveal className="zoom-host relative block aspect-[16/7] overflow-hidden bg-img-bg" aria-label={p.title}>
               <div className="zoom">
                 <Img src={p.image} alt="" sizes="(max-width: 1160px) 100vw, 1080px" />
               </div>

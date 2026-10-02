@@ -31,7 +31,7 @@ function BlockView({ b }: { b: Block }) {
     case "h3":
       return <h3 data-m-center className="mb-0 mt-6 text-[clamp(24px,2vw,30px)] font-normal leading-[1.3]">{b.text}</h3>;
     case "image":
-      return <ZoomImg src={b.src} alt={b.alt} frameClassName="my-[22px] aspect-[16/10] bg-[#D8CFBF]" sizes="(max-width: 860px) 100vw, 780px" />;
+      return <ZoomImg src={b.src} alt={b.alt} frameClassName="my-[22px] aspect-[16/10] bg-img-bg" sizes="(max-width: 860px) 100vw, 780px" />;
     case "list":
       // Lists are always left-aligned, mobile included.
       return (
@@ -82,7 +82,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
         </header>
 
         <div className="wrap">
-          <div className="relative h-[clamp(340px,52vw,720px)] overflow-hidden bg-[#E9D9C4]">
+          <div className="relative h-[clamp(340px,52vw,720px)] overflow-hidden bg-img-bg">
             <ParallaxImg src={post.image} alt={post.title} speed={0.2} extra={12} priority sizes="(max-width: 1160px) 100vw, 1080px" />
           </div>
         </div>
@@ -132,7 +132,7 @@ export default async function PostPage({ params }: PageProps<"/news/[slug]">) {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-[clamp(24px,3vw,48px)]">
           {related.map((n) => (
             <Link key={n.slug} href={`/news/${n.slug}`} className="zoom-host group flex flex-col gap-[18px] text-ink">
-              <div data-reveal className="relative aspect-[4/3] overflow-hidden bg-[#E9E4DC]">
+              <div data-reveal className="relative aspect-[4/3] overflow-hidden bg-img-bg">
                 <div className="zoom">
                   <Img src={n.image} alt="" sizes="(max-width: 960px) 100vw, 33vw" />
                 </div>

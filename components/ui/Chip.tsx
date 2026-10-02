@@ -11,7 +11,7 @@ export function Chip({
       aria-pressed={active}
       className={cn(
         "cursor-pointer rounded-full border px-5 py-2.5 text-[14px] font-light uppercase tracking-[.08em] whitespace-nowrap transition-[background,color,border-color] duration-300",
-        active ? "border-brand bg-brand text-paper" : "border-line-strong bg-transparent text-ink hover:border-ink",
+        active ? "border-fill bg-fill text-white" : "border-line-strong bg-transparent text-ink hover:border-ink",
         className,
       )}
       {...props}

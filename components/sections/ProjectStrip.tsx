@@ -84,7 +84,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
   const active = index % n;
 
   return (
-    <section aria-label="Latest projects" className="grid bg-brand text-paper min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+    <section aria-label="Latest projects" className="grid bg-brand text-white min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
       {/* Intro panel */}
       <div data-m-center className="flex flex-col justify-center px-[clamp(20px,4vw,72px)] py-[clamp(64px,8vw,110px)]">
         <Eyebrow dash={false} className="max-w-[440px] border-white/[.14] text-white/70">
@@ -143,7 +143,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
                 draggable={false}
                 tabIndex={visible ? undefined : -1}
                 aria-hidden={visible ? undefined : true}
-                className="group relative h-full shrink-0 basis-[calc(100%/var(--per))] overflow-hidden text-paper hover:text-paper"
+                className="group relative h-full shrink-0 basis-[calc(100%/var(--per))] overflow-hidden text-white hover:text-white"
               >
                 <div className="absolute inset-0 transition-transform duration-[1200ms] ease-hn group-hover:scale-[1.06]">
                   <Img src={p.cover} alt="" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 33vw, 22vw" />
@@ -167,10 +167,10 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
         {/* PREV / NEXT — spread apart on mobile portrait */}
         <div className="absolute inset-x-0 bottom-[clamp(28px,3.4vw,48px)] px-[clamp(24px,2.4vw,36px)]">
           <div data-m-row className="flex gap-6 text-[14px] uppercase tracking-[.08em]">
-            <button type="button" onClick={prev} aria-label="Previous project" className="cursor-pointer border-0 bg-transparent p-0 text-paper transition-colors hover:text-yellow">
+            <button type="button" onClick={prev} aria-label="Previous project" className="cursor-pointer border-0 bg-transparent p-0 text-white transition-colors hover:text-yellow">
               Prev
             </button>
-            <button type="button" onClick={next} aria-label="Next project" className="cursor-pointer border-0 bg-transparent p-0 text-paper transition-colors hover:text-yellow">
+            <button type="button" onClick={next} aria-label="Next project" className="cursor-pointer border-0 bg-transparent p-0 text-white transition-colors hover:text-yellow">
               Next
             </button>
           </div>

@@ -18,7 +18,7 @@ export function PageHero({
   alt: string;
 }) {
   return (
-    <section data-hero className="relative h-[min(78vh,760px)] min-h-[520px] overflow-hidden bg-[#7A5E45] text-paper">
+    <section data-hero className="relative h-[min(78vh,760px)] min-h-[520px] overflow-hidden bg-[#7A5E45] text-white">
       <ParallaxImg src={image} alt={alt} speed={0.35} priority className="hero-zoom" />
       <div className="pointer-events-none absolute inset-0 bg-[rgba(40,30,20,.32)]" />
       <div className="hero-line pointer-events-none absolute inset-x-0 top-[62%] h-px bg-white/[.22]" />

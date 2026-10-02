@@ -59,7 +59,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
             type="button"
             onClick={prev}
             aria-label="Previous project"
-            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border border-line-strong bg-paper p-0 text-ink transition-colors duration-300 hover:bg-brand hover:text-paper"
+            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border border-line-strong bg-paper p-0 text-ink transition-colors duration-300 hover:bg-brand hover:text-white"
           >
             <ArrowLeft size={22} strokeWidth={1.25} />
           </button>
@@ -70,7 +70,7 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
             type="button"
             onClick={next}
             aria-label="Next project"
-            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-0 bg-brand p-0 text-paper transition-colors duration-300 hover:bg-brand-mid"
+            className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-0 bg-fill p-0 text-white transition-colors duration-300 hover:bg-brand-mid"
           >
             <ArrowRight size={22} strokeWidth={1.25} />
           </button>
@@ -107,13 +107,13 @@ export function ProjectSlider({ projects, head }: { projects: Project[]; head: R
                   }
                 }}
                 aria-label={`${p.title} — ${p.category}`}
-                className="zoom-host relative flex-[0_0_var(--card)] overflow-hidden rounded-[14px] bg-[#ddd] transition-[height,opacity] duration-700 ease-hn"
+                className="zoom-host relative flex-[0_0_var(--card)] overflow-hidden rounded-[14px] bg-img-bg transition-[height,opacity] duration-700 ease-hn"
                 style={{ height: active ? "100%" : "78.5%", opacity: active ? 1 : 0.55 }}
               >
                 <div className="zoom absolute inset-0">
                   <Img src={p.cover} alt={p.title} sizes="(max-width: 600px) 80vw, 524px" />
                 </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between bg-[linear-gradient(transparent,rgba(0,0,0,.55))] p-8 text-paper">
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between bg-[linear-gradient(transparent,rgba(0,0,0,.55))] p-8 text-white">
                   <div>
                     <div className="mb-2 text-[13px] uppercase tracking-[.16em]">{p.category}</div>
                     <div className="font-serif text-[34px] leading-none">{p.title}</div>
