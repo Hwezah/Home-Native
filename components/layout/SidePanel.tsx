@@ -3,12 +3,16 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { nav, site } from "@/content/site";
+import { usePathname } from "next/navigation";
 import { useMenu } from "@/context/MenuContext";
+import { cn } from "@/lib/utils";
+import { isActive } from "./Header";
 import { Wordmark } from "./Wordmark";
 
 /** Right-hand 35% panel. Text is never centred, mobile included. */
 export function SidePanel() {
   const { menuOpen, closeMenu } = useMenu();
+  const pathname = usePathname();
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -47,16 +51,23 @@ export function SidePanel() {
           </button>
         </div>
         <nav aria-label="Menu" className="flex flex-col gap-1.5 text-[clamp(32px,2.6vw,44px)] font-light leading-[1.3]">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={closeMenu}
-              className="transition-[padding,color] duration-[400ms] hover:pl-[18px] hover:text-brand-mid"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const active = isActive(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "transition-[padding,color] duration-[400ms] hover:pl-[18px] hover:text-brand-mid",
+                  active && "text-brand-mid",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="mt-auto flex flex-col gap-2.5 border-t border-line pt-12 text-[17px] font-light text-muted-1b">
           <div className="mb-1.5 text-[13px] uppercase tracking-[.16em] text-ink">Get in touch</div>

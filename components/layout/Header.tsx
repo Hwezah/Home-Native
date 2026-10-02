@@ -49,7 +49,12 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 // Links collapse into the side panel below 1100px (and always on mobile portrait).
-                className={cn("transition-colors duration-300 max-[1100px]:hidden", active && "border-b border-current pb-1")}
+                className={cn(
+                  "transition-colors duration-300 max-[1100px]:hidden",
+                  // Current page: brand accent (theme-aware); a light tan while over a hero photo.
+                  active && "border-b border-current pb-1",
+                  active && (overHero ? "text-[#E7C9A9] hover:text-[#E7C9A9]" : "text-brand-mid hover:text-brand-mid"),
+                )}
               >
                 {item.label}
               </Link>

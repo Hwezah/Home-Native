@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import { Facebook, Instagram, Linkedin } from "@/components/ui/social-icons";
+import { Wordmark } from "./Wordmark";
 
 /** Home uses the dark, multi-column footer; every other page uses the light strip. */
 export function Footer() {
@@ -34,7 +35,9 @@ function DarkFooter() {
       <div className="wrap-wide pb-10 pt-[clamp(64px,7vw,100px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-12 border-b border-white/10 pb-16">
           <div data-m-span data-m-center className="col-span-2 min-w-0">
-            <div className="mb-5 font-serif text-[34px] text-white">HomeNative</div>
+            <Link href="/" className="mb-5 inline-flex text-white hover:text-white" aria-label="HomeNative interiors — home">
+              <Wordmark size="footer" />
+            </Link>
             <p className="m-0 max-w-[380px] text-[17px] font-light leading-[1.6]">
               Interior design studio creating calm, functional and lasting spaces. A MachineNative company.
             </p>
