@@ -68,9 +68,9 @@ export function Header() {
             aria-controls="side-panel"
             className="flex h-[30px] w-[52px] shrink-0 cursor-pointer flex-row items-center justify-center gap-[9px] border-0 bg-transparent p-0 text-current"
           >
-            <span className="block h-[30px] w-px bg-current" />
-            <span className="block h-[30px] w-px bg-current" />
-            <span className="block h-[30px] w-px bg-current" />
+            <span className="block h-[30px] w-px bg-current transition-transform duration-500 ease-hn" style={{ transform: menuOpen ? "translateX(-12px)" : "translateX(0)" }} />
+            <span className="block h-[30px] w-px bg-current transition-transform duration-500 ease-hn" style={{ transform: menuOpen ? "translateX(0)" : "translateX(0)" }} />
+            <span className="block h-[30px] w-px bg-current transition-transform duration-500 ease-hn" style={{ transform: menuOpen ? "translateX(12px)" : "translateX(0)" }} />
           </button>
         </nav>
       </div>

@@ -44,10 +44,10 @@ export function SidePanel() {
             type="button"
             onClick={closeMenu}
             aria-label="Close menu"
-            className="relative h-12 w-12 cursor-pointer border-0 bg-transparent p-0"
+            className="relative h-10 w-10 cursor-pointer border-0 bg-transparent p-0"
           >
-            <span className="absolute left-0 top-1/2 h-px w-12 rotate-45 bg-ink" />
-            <span className="absolute left-0 top-1/2 h-px w-12 -rotate-45 bg-ink" />
+            <span className="absolute left-0 top-1/2 h-px w-10 rotate-45 bg-ink" />
+            <span className="absolute left-0 top-1/2 h-px w-10 -rotate-45 bg-ink" />
           </button>
         </div>
         <nav aria-label="Menu" className="flex flex-col gap-1.5 text-[clamp(32px,2.6vw,44px)] font-light leading-[1.3]">
