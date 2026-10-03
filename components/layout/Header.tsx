@@ -70,6 +70,7 @@ export function Header() {
           >
             <span className="block h-px w-[52px] bg-current" />
             <span className="block h-px w-[52px] bg-current" />
+            <span className="block h-px w-[52px] bg-current" />
           </button>
         </nav>
       </div>
