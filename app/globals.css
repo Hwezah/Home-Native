@@ -226,7 +226,7 @@
     text-transform: uppercase;
     padding-bottom: 6px;
     border-bottom: 1px solid var(--line);
-    margin-bottom: 6px;
+    margin-bottom: 24px;
   }
   .label-caps {
     font-size: 15px;
