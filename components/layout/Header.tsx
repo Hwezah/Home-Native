@@ -66,11 +66,11 @@ export function Header() {
             aria-label="Open menu"
             aria-expanded={menuOpen}
             aria-controls="side-panel"
-            className="flex h-[30px] w-[52px] shrink-0 cursor-pointer flex-col justify-center gap-[9px] border-0 bg-transparent p-0 text-current"
+            className="flex h-[30px] w-[52px] shrink-0 cursor-pointer flex-row items-center justify-center gap-[9px] border-0 bg-transparent p-0 text-current"
           >
-            <span className="block h-px w-[52px] bg-current" />
-            <span className="block h-px w-[52px] bg-current" />
-            <span className="block h-px w-[52px] bg-current" />
+            <span className="block h-[30px] w-px bg-current" />
+            <span className="block h-[30px] w-px bg-current" />
+            <span className="block h-[30px] w-px bg-current" />
           </button>
         </nav>
       </div>
