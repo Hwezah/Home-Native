@@ -29,6 +29,10 @@
   --fill: var(--brand);
   /* Placeholder behind photos while they load. */
   --img-bg: #e9e4dc;
+  /* Service column tag backgrounds */
+  --tag-tint-1: #E3E6DC;
+  --tag-tint-2: #DCE4E8;
+  --tag-tint-3: #EBDDE0;
 
   color-scheme: light;
 
@@ -75,6 +79,10 @@
   --error: #e08a76;
   --fill: #8b5e3c;
   --img-bg: #2a221b;
+  /* Service column tag backgrounds (dark) */
+  --tag-tint-1: #3a3328;
+  --tag-tint-2: #32373b;
+  --tag-tint-3: #3b3336;
 }
 
 @theme inline {

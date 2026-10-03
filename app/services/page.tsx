@@ -47,10 +47,12 @@ export default function ServicesPage() {
       {/* ── Service columns ── */}
       <section className="wrap pb-[clamp(90px,10vw,160px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-[clamp(48px,5vw,80px)]">
-          {serviceColumns.map((c) => (
+          {serviceColumns.map((c, i) => {
+            const tagBgVar = `var(--tag-tint-${i + 1})`;
+            return (
             <div key={c.tag} className="flex flex-col">
               <div data-m-center className="flex flex-col items-start">
-                <span className="inline-block px-5 py-2.5 text-[14px] uppercase tracking-[.14em]" style={{ background: c.tint, color: "#111" }}>
+                <span className="inline-block px-5 py-2.5 text-[14px] uppercase tracking-[.14em] text-ink dark:text-paper" style={{ background: tagBgVar }}>
                   {c.tag}
                 </span>
                 <h3 className="mt-8 w-full border-b border-line pb-7 text-[clamp(26px,2.2vw,34px)] font-light leading-[1.25]">{c.title}</h3>
@@ -66,7 +68,8 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
