@@ -124,7 +124,7 @@ export default function AboutPage() {
             <Counter
               to={st.n}
               suffix={st.suffix}
-              className="min-w-[2.4em] text-right font-num text-[clamp(56px,6.4vw,96px)] font-extralight leading-none"
+              className="min-w-[2.4em] text-right font-num mp:min-w-0 mp:text-center text-[clamp(56px,6.4vw,96px)] font-extralight leading-none"
             />
           </div>
         ))}
