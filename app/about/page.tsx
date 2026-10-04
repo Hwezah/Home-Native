@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { pexels } from "@/content/site";
 import { stats, team } from "@/content/team";
+import { commitments } from "@/content/commitments";
 import { PageHero } from "@/components/sections/PageHero";
 import { TestimonialSplit } from "@/components/sections/TestimonialSplit";
 import { GetStarted } from "@/components/layout/GetStarted";
@@ -73,6 +74,37 @@ export default function AboutPage() {
         <ParallaxImg src={pexels(1350789)} alt="Two armchairs upholstered in bold African wax-print fabric" speed={0.3} extra={20} />
       </section>
 
+      {/* ── Commitment ── */}
+      <section className="wrap pt-[clamp(80px,9vw,140px)]">
+        <div data-m-center className="mb-[clamp(48px,6vw,90px)]">
+          <Eyebrow>Our Commitment</Eyebrow>
+          <h2 className="t-h2">
+            Our commitment <span className="hl-brand">to quality</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-x-[clamp(32px,4vw,64px)]">
+          {commitments.map((c) => (
+            <div key={c.title} className="border-t border-line py-[clamp(36px,4vw,48px)]">
+              <div data-m-center>
+                <h3 className="m-0 text-[clamp(24px,2vw,30px)] font-light leading-[1.2]">{c.title}</h3>
+                <p className="mt-5 text-[18px] leading-[1.6] text-muted-1b">{c.body}</p>
+              </div>
+              {/* Lists stay left-aligned on mobile. */}
+              <ul className="mt-7 flex list-none flex-col gap-3.5 p-0 text-[18px] text-muted-1">
+                {c.items.map((it) => (
+                  <li key={it} className="flex items-center gap-4">
+                    <span aria-hidden="true" className="text-brand-mid">
+                      —
+                    </span>
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── Numbers ── */}
       <section className="wrap py-[clamp(80px,9vw,140px)]">
         <div data-m-center className="border-b border-line pb-7 text-[15px] uppercase">/ Numbers of Success</div>
@@ -82,7 +114,7 @@ export default function AboutPage() {
             data-m-stack data-m-center className="group grid grid-cols-[auto_minmax(0,1.2fr)_minmax(0,1.6fr)_auto] items-center gap-[clamp(16px,3vw,48px)] border-b border-line py-8 transition-colors hover:bg-surface-warm"
           >
             <div
-              className="flex h-[clamp(84px,9vw,124px)] w-[clamp(84px,9vw,124px)] items-center justify-center rounded-full text-ink transition-transform duration-500 group-hover:rotate-45"
+              className="flex h-[clamp(84px,9vw,124px)] w-[clamp(84px,9vw,124px)] items-center justify-center rounded-full text-[#111] transition-transform duration-500 group-hover:rotate-45"
               style={{ background: st.bg }}
             >
               <ArrowUpRight size={40} strokeWidth={1} />
