@@ -52,7 +52,7 @@ export default function ServicesPage() {
             return (
             <div key={c.tag} className="flex flex-col">
               <div data-m-center className="flex flex-col items-start">
-                <span className="inline-block px-5 py-2.5 text-[14px] uppercase tracking-[.14em] text-ink dark:text-paper" style={{ background: tagBgVar, width: "70vw" }}>
+                <span className="inline-block max-w-full px-5 py-2.5 text-center text-[14px] uppercase tracking-[.14em] text-ink mp:w-[70vw]" style={{ background: tagBgVar }}>
                   {c.tag}
                 </span>
                 <h3 className="mt-8 w-full border-b border-line pb-7 text-[clamp(26px,2.2vw,34px)] font-light leading-[1.25]">{c.title}</h3>
