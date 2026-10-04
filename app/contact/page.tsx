@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
-import { clients, pexels, site } from "@/content/site";
+import { clients, pexels, phone, site } from "@/content/site";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Facebook, Instagram, Linkedin } from "@/components/ui/social-icons";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Tell us about your space — a single room or a whole home. HomeNative, Kampala, Uganda. info@homenative.co · 0742 696 353.",
+  description: `Tell us about your space — a single room or a whole home. ${site.name}, ${site.location}. ${site.email} · ${phone.display}.`,
 };
 
 export default function ContactPage() {
@@ -34,17 +34,15 @@ export default function ContactPage() {
               Tell us about your space — a single room or a whole home. We will come back with ideas, a rough timeline and next steps.
             </p>
             <h3 className="mt-16 text-[26px] font-light">Call us now</h3>
-            <a href={site.phoneHref} className="mt-3.5 text-[clamp(40px,4.4vw,64px)] font-light leading-[1.1] tracking-[.01em]">
-              {site.phone}
-            </a>
+            {site.phones.map((p) => (
+              <a key={p.href} href={p.href} className="mt-3.5 text-[clamp(40px,4.4vw,64px)] font-light leading-[1.1] tracking-[.01em]">
+                {p.display}
+              </a>
+            ))}
             <a href={`mailto:${site.email}`} className="mt-3.5 text-[20px] text-muted-1">
               {site.email}
             </a>
-            <div className="mt-10 flex gap-[26px] text-ink">
-              <a href={site.socials.instagram} aria-label="Instagram"><Instagram /></a>
-              <a href={site.socials.facebook} aria-label="Facebook"><Facebook /></a>
-              <a href={site.socials.linkedin} aria-label="LinkedIn"><Linkedin /></a>
-            </div>
+            <SocialLinks variant="icons" className="mt-10 gap-[26px] text-ink" />
           </div>
           <div>
             <ContactForm />
@@ -57,7 +55,7 @@ export default function ContactPage() {
           {[
             ["Studio", site.location, "Visits by appointment"],
             ["Hours", site.hours[0], site.hours[1]],
-            ["Company", "HomeNative Interiors", site.company],
+            ["Company", site.fullName, site.parent],
           ].map(([label, a, b]) => (
             <div key={label} data-m-center className="">
               <div className="label-caps">— {label}</div>

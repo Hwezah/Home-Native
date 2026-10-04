@@ -8,6 +8,7 @@ import { useMenu } from "@/context/MenuContext";
 import { cn } from "@/lib/utils";
 import { isActive } from "./Header";
 import { Wordmark } from "./Wordmark";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 /** Right-hand 35% panel. Text is never centred, mobile included. */
 export function SidePanel() {
@@ -36,7 +37,7 @@ export function SidePanel() {
         style={{ transform: menuOpen ? "translateX(0)" : "translateX(105%)" }}
       >
         <div className="mb-[clamp(48px,7vh,90px)] flex items-center justify-between">
-          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label="HomeNative interiors — home">
+          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label={`${site.fullName} — home`}>
             <Wordmark size="panel" />
           </Link>
           <button
@@ -72,12 +73,10 @@ export function SidePanel() {
         <div className="mt-auto flex flex-col gap-2.5 border-t border-line pt-12 text-[17px] font-light text-muted-1b">
           <div className="mb-1.5 text-[13px] uppercase tracking-[.16em] text-ink">Get in touch</div>
           <a href={`mailto:${site.email}`}>{site.email}</a>
-          <a href={site.phoneHref}>{site.phone}</a>
-          <div className="mt-3.5 flex gap-[22px] text-[14px] uppercase tracking-[.1em]">
-            <a href={site.socials.instagram} className="text-ink">Instagram</a>
-            <a href={site.socials.pinterest} className="text-ink">Pinterest</a>
-            <a href={site.socials.linkedin} className="text-ink">LinkedIn</a>
-          </div>
+          {site.phones.map((p) => (
+            <a key={p.href} href={p.href}>{p.display}</a>
+          ))}
+          <SocialLinks variant="text" className="mt-3.5 flex-wrap gap-x-[22px] gap-y-2 text-[14px] uppercase tracking-[.1em]" linkClassName="text-ink" />
         </div>
       </aside>
     </>

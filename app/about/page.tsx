@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { pexels } from "@/content/site";
+import { pexels, site } from "@/content/site";
 import { stats, team } from "@/content/team";
 import { commitments } from "@/content/commitments";
 import { PageHero } from "@/components/sections/PageHero";
@@ -15,7 +15,7 @@ import { Counter } from "@/components/effects/Counter";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Meet HomeNative — an interior design studio in Kampala creating calm, functional and lasting spaces.",
+  description: `Meet ${site.name} — an interior design studio in ${site.city} creating calm, functional and lasting spaces.`,
 };
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
           aria-hidden="true"
           className="outline-word absolute left-1/2 top-[30px] -translate-x-[42%] text-[clamp(180px,30vw,460px)] font-extralight"
         >
-          Native
+          {site.outlineWord}
         </div>
         <div data-m-center className="wrap relative flex flex-col gap-8">
           <div className="text-[14px] uppercase">— About Us</div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Mission</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
-              At <strong className="font-medium text-ink">HomeNative</strong>, our mission is to design spaces that blend beauty, comfort and function. We
+              At <strong className="font-medium text-ink">{site.name}</strong>, our mission is to design spaces that blend beauty, comfort and function. We
               create interiors that reflect the people in them, make everyday living easier and leave a lasting impression — through thoughtful design,
               sustainable choices and close attention to detail.
             </p>
@@ -60,11 +60,11 @@ export default function AboutPage() {
           <div data-m-center className="flex flex-col gap-[26px]">
             <h3 className="m-0 text-[19px] font-normal uppercase tracking-[.2em]">Vision</h3>
             <p className="m-0 text-[18px] font-light leading-[1.7] text-muted-1">
-              At <strong className="font-medium text-ink">HomeNative</strong>, our vision is to be a trusted name in inspiring, livable spaces. We aim to raise
+              At <strong className="font-medium text-ink">{site.name}</strong>, our vision is to be a trusted name in inspiring, livable spaces. We aim to raise
               the standard of interior design by embracing innovation, sustainability and craftsmanship — turning every project into a timeless place that
               fits its owner&apos;s life.
             </p>
-            <div className="mt-[18px] self-end border-b border-ink pb-1 font-serif text-[34px] italic">HomeNative</div>
+            <div className="mt-[18px] self-end border-b border-ink pb-1 font-serif text-[34px] italic">{site.name}</div>
           </div>
         </div>
       </section>

@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
+import { site } from "@/content/site";
 
 /**
- * "HomeNative" with INTERIORS in capitals underneath, spread to exactly the same width.
- * `size` sets the "HomeNative" font size; INTERIORS scales with it.
+ * The client's name with a capitalised line (e.g. INTERIORS) spread underneath to the same width.
+ * Text comes from `site.wordmark`; `size` sets the name's font size and the line scales with it.
  */
 export function Wordmark({ className, size = "header" }: { className?: string; size?: "header" | "panel" | "footer" }) {
   return (
@@ -15,7 +16,7 @@ export function Wordmark({ className, size = "header" }: { className?: string; s
           "leading-none",
         )}
       >
-        HomeNative
+        {site.wordmark.name}
       </span>
       <span
         aria-hidden="true"
@@ -24,7 +25,7 @@ export function Wordmark({ className, size = "header" }: { className?: string; s
           size === "footer" ? "mt-0 text-[12px]" : "text-[11px] mp:-mt-px mp:text-[10px]",
         )}
       >
-        {"INTERIORS".split("").map((ch, i) => (
+        {site.wordmark.sub.split("").map((ch, i) => (
           <span key={i}>{ch}</span>
         ))}
       </span>

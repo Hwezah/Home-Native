@@ -53,3 +53,29 @@ export function Linkedin(props: IconProps) {
     </Base>
   );
 }
+
+export function Pinterest(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M11 8.5c2.6-.6 5 .9 4.6 3.7-.3 2-2 3.1-3.6 2.6M11.8 10 9 21" />
+    </Base>
+  );
+}
+
+export function TikTok(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M9 12a4 4 0 1 0 4 4V3c.4 2.6 2.4 4.6 5 5" />
+    </Base>
+  );
+}
+
+export function WhatsApp(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3 3z" />
+      <path d="M9 9.5c0 2.8 2.7 5.5 5.5 5.5l1-1.5-2-1-1 .8c-1-.4-1.9-1.3-2.3-2.3l.8-1-1-2z" />
+    </Base>
+  );
+}

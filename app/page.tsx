@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Eye, Gem, Layers, PenTool, Sparkle } from "lucide-react";
 
-import { pexels } from "@/content/site";
+import { pexels, site } from "@/content/site";
 import { featuredProjects } from "@/content/projects";
 import { posts } from "@/content/posts";
 import { faqs } from "@/content/faqs";
@@ -18,8 +18,8 @@ import { ProjectSlider } from "@/components/sections/ProjectSlider";
 import { TestimonialSplit } from "@/components/sections/TestimonialSplit";
 
 export const metadata: Metadata = {
-  title: { absolute: "HomeNative Interiors — Interior Solutions" },
-  description: "Rooms shaped around how you live. Calm, considered interiors made to last — an interior design studio in Kampala, Uganda.",
+  title: { absolute: `${site.fullName} — Interior Solutions` },
+  description: `Rooms shaped around how you live. Calm, considered interiors made to last — an interior design studio in ${site.location}.`,
 };
 
 const reasonIcons = { gem: Gem, eye: Eye, pen: PenTool, layers: Layers } as const;
@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="hero-line pointer-events-none absolute inset-x-0 top-1/2 h-px bg-white/30" />
         <div data-m-center className="wrap-wide pointer-events-none relative flex h-full flex-col justify-center">
           <div className="hero-fade mb-3.5 text-[13px] uppercase tracking-[.16em]" style={{ animationDelay: "300ms" }}>
-            HomeNative&apos;s Best
+            {site.name}&apos;s Best
           </div>
           <HeroTitle className="m-0 mb-7 font-serif text-[clamp(52px,8.4vw,128px)] leading-none tracking-[-.02em]" parts={["Interior Solutions"]} />
           <p className="hero-fade m-0 mb-9 max-w-[620px] text-[18px] font-light" style={{ animationDelay: "1000ms" }}>
@@ -63,7 +63,7 @@ export default function HomePage() {
               <path id="hnCircle" d="M70,70 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0" />
             </defs>
             <text fill="#fff" className="font-sans" style={{ fontWeight: 300, fontSize: 12.5, letterSpacing: 4.2, textTransform: "uppercase" }}>
-              <textPath href="#hnCircle">Scroll to explore • HomeNative • </textPath>
+              <textPath href="#hnCircle">Scroll to explore • {site.name} • </textPath>
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center text-white">
@@ -89,7 +89,7 @@ export default function HomePage() {
       {/* ── About ── */}
       <section className="wrap-wide relative overflow-hidden pb-[clamp(60px,8vw,120px)] pt-[clamp(80px,9vw,130px)]">
         <div aria-hidden="true" className="outline-word absolute -right-[1vw] top-5 text-[clamp(160px,26vw,420px)] font-light">
-          Native
+          {site.outlineWord}
         </div>
         <div data-m-center className="relative flex flex-col gap-7">
           <div className="text-[14px] uppercase">— About Us</div>

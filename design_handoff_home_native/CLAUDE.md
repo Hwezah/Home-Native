@@ -14,7 +14,7 @@ Implement the Home Native marketing site in **Next.js (App Router, TypeScript)**
 - The header hides on scroll down and shows on scroll up.
 - Green circular cursor with a click pulse, plus a quiet dial-knob tick sound on click (Web Audio, see README).
 - Scroll reveals, parallax, and animated counters. All of them must respect `prefers-reduced-motion`.
-- Contact: info@homenative.co · 0742 696 353 · Kampala, Uganda · "A MachineNative company".
+- Contact: info@example.com · 0742 696 353 · Kampala, Uganda · "A MachineNative company".
 
 ## Suggested structure
 ```

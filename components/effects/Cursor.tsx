@@ -28,10 +28,10 @@ export function Cursor() {
       return d;
     };
     const ring = mk(
-      `width:64px;height:64px;margin:-32px 0 0 -32px;border:1.25px solid #8B5E3C;will-change:transform;opacity:0;` +
+      `width:64px;height:64px;margin:-32px 0 0 -32px;border:1.25px solid var(--brand-mid);will-change:transform;opacity:0;` +
         `transition:width .35s ${EASE},height .35s ${EASE},margin .35s ${EASE},opacity .3s,background-color .35s`,
     );
-    const dot = mk("width:6px;height:6px;margin:-3px 0 0 -3px;background:#8B5E3C;opacity:0;will-change:transform;transition:opacity .3s");
+    const dot = mk("width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--brand-mid);opacity:0;will-change:transform;transition:opacity .3s");
 
     let mx = -100, my = -100, rx = -100, ry = -100, dx = -100, dy = -100;
     let last = 0;
@@ -89,7 +89,7 @@ export function Cursor() {
 
     const pulse = (x: number, y: number) => {
       if (reduced) return;
-      const p = mk("width:64px;height:64px;margin:-32px 0 0 -32px;border:1px solid #8B5E3C");
+      const p = mk("width:64px;height:64px;margin:-32px 0 0 -32px;border:1px solid var(--brand-mid)");
       const base = `translate3d(${x}px,${y}px,0)`;
       p.animate(
         [{ transform: base + " scale(.4)", opacity: 1 }, { transform: base + " scale(2.6)", opacity: 0 }],

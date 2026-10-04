@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Plus } from "lucide-react";
 
-import { pexels, site } from "@/content/site";
+import { pexels, phone, site } from "@/content/site";
 import { accordionA, accordionB, serviceColumns } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
 import { PageHero } from "@/components/sections/PageHero";
@@ -110,10 +110,10 @@ export default function ServicesPage() {
           </h2>
           <p className="mt-8 text-[16px] uppercase tracking-[.06em] text-white">Ask us anything — we reply within one working day.</p>
           <a
-            href={site.phoneHref}
+            href={phone.href}
             className="pointer-events-auto mt-11 font-num text-[clamp(64px,10vw,160px)] font-extralight leading-none tracking-[.01em] text-white hover:text-yellow"
           >
-            {site.phone}
+            {phone.display}
           </a>
           <div className="mt-14 grid w-full max-w-[860px] grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-8">
             <div data-m-center className="text-left">

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { projects } from "@/content/projects";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
 import { GetStarted } from "@/components/layout/GetStarted";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "A selection of recent homes and workplaces by HomeNative — each one shaped around the people who use it.",
+  description: `A selection of recent homes and workplaces by ${site.name} — each one shaped around the people who use it.`,
 };
 
 export default function PortfolioPage() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav } from "@/content/site";
+import { nav, site } from "@/content/site";
 import { useMenu } from "@/context/MenuContext";
 import { useScrolled } from "@/lib/useScrolled";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,7 @@ export function Header() {
       )}
     >
       <div className="flex h-[var(--header-h)] w-full px-[clamp(20px,5vw,40px)] mp:px-[var(--gutter-m)] flex-nowrap items-center gap-6 mp:gap-4">
-        <Link href="/" className="min-w-0 hover:text-current" aria-label="HomeNative interiors — home">
+        <Link href="/" className="min-w-0 hover:text-current" aria-label={`${site.fullName} — home`}>
           <Wordmark />
         </Link>
         <nav aria-label="Main" className="flex items-center gap-[clamp(16px,2.4vw,34px)] text-[13px] uppercase tracking-[.08em] ml-auto">
@@ -53,7 +53,7 @@ export function Header() {
                   "transition-colors duration-300 max-[1100px]:hidden",
                   // Current page: brand accent (theme-aware); a light tan while over a hero photo.
                   active && "border-b border-current pb-1",
-                  active && (overHero ? "text-[#E7C9A9] hover:text-[#E7C9A9]" : "text-brand-mid hover:text-brand-mid"),
+                  active && (overHero ? "text-[var(--on-photo)] hover:text-[var(--on-photo)]" : "text-brand-mid hover:text-brand-mid"),
                 )}
               >
                 {item.label}

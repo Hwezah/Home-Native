@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 import { sendContact } from "@/app/contact/actions";
 import { CONTACT_ERROR, EMAIL_RE, projectTypes, type ContactState, type ProjectType } from "@/app/contact/schema";
-import { site } from "@/content/site";
+import { phone } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,7 +33,7 @@ export function ContactForm() {
         </span>
         <span className="font-serif text-[clamp(36px,3.4vw,52px)] leading-[1.1]">Thank you — message received.</span>
         <span className="text-[18px] leading-[1.7] text-muted-1b">
-          We will be in touch within one working day. In a hurry? Call {site.phone}.
+          We will be in touch within one working day. In a hurry? Call {phone.display}.
         </span>
         <button
           type="button"

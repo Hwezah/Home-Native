@@ -10,7 +10,7 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
 (`context/`) · Supabase placeholder (`lib/supabase`, inactive until env vars are set).
 
 - Tokens are CSS variables in `app/globals.css`, mirrored into Tailwind via `@theme inline`.
-- Brand colour (client decision, overrides the handoff's green): `--brand` #2E1F12 is the main colour (dark
+- Brand colour (set in `content/site.ts` → `site.colors`; client decision, overrides the handoff's green): `--brand` #2E1F12 is the main colour (dark
   sections, filled buttons, active chips, footer); `--brand-mid` #8B5E3C is the accent on light backgrounds
   (highlighted words, link hover, cursor, focus); `--brand-tint` #EADBC8 is the highlight underline.
 - Theming: light/dark via `<html data-theme>` (set before paint by `themeInitScript`, state in
@@ -28,4 +28,7 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   `a[data-m-btn]` and `[data-reveal]` inside `main` reveal; `[data-parallax]` layers move. Opt out with
   `data-no-reveal`; heroes are excluded via `data-hero`.
 - Content is typed data in `content/*.ts`; detail pages use `generateStaticParams`.
+- Client details (name, wordmark, contacts, hours, socials, SEO text, brand colours) live only in `content/site.ts`;
+  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. Emails stay generic
+  (`info@example.com`) until the client gives a real one.
 - Run `npm run lint` and `npm run build` before pushing.

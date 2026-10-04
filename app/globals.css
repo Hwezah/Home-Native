@@ -13,11 +13,7 @@
   --muted-2b: #999999;
   --line: #eeeeee;
   --line-strong: #e3e3e3;
-  /* Brand: deep brown is the main colour; mid brown is the accent on light backgrounds. */
-  --brand: #2e1f12;
-  --brand-mid: #8b5e3c;
-  --brand-tint: #eadbc8;
-  --brand-soft: #c9a98a;
+  /* Brand colours (--brand, --brand-mid, --brand-tint, --brand-soft, --on-photo) come from content/site.ts via app/layout.tsx. */
   --yellow: #f3efa6;
   --sand: #8a7a52;
   --sand-tint: #eae3d3;
@@ -68,16 +64,13 @@
   --muted-2b: #91877c;
   --line: #2a221b;
   --line-strong: #3b3128;
-  --brand-mid: #c99d76;
-  --brand-tint: #4a3526;
-  --brand-soft: #8b6a4f;
   --sand: #c2ad80;
   --sand-tint: #4a4030;
   --surface-warm: #1b1510;
   --surface-warm-2: #1d1712;
   --surface-warm-3: #1c1813;
   --error: #e08a76;
-  --fill: #8b5e3c;
+  --fill: var(--brand-accent-light);
   --img-bg: #2a221b;
   /* Service column tag backgrounds (dark) */
   --tag-tint-1: #3a3328;

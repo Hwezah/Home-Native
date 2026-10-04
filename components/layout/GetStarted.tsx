@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { phone, site } from "@/content/site";
 import { PillButton } from "@/components/ui/PillButton";
 
 export function GetStarted() {
@@ -26,7 +26,7 @@ export function GetStarted() {
         </div>
         <div data-m-center className="text-right">
           <div className="label-caps">— Phone</div>
-          <a href={site.phoneHref} className="text-[24px] font-light">{site.phone}</a>
+          <a href={phone.href} className="text-[24px] font-light">{phone.display}</a>
         </div>
       </div>
       <div className="mt-16 flex justify-center">
