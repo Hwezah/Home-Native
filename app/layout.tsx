@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: `${site.fullName} — ${site.title}`,
     template: `%s — ${site.fullName}`,
   },
-  description: `${site.name} is ${site.description.charAt(0).toLowerCase()}${site.description.slice(1)}`,
+  description: `${site.name} is ${site.description.charAt(0).toLowerCase()}${site.description.slice(1)}${site.parent ? ` ${site.parent}.` : ""}`,
   openGraph: { siteName: site.fullName, type: "website", locale: site.locale },
 };
 

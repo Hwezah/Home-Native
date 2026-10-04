@@ -25,10 +25,12 @@ export const site = {
 
   city: "Kampala",
   location: "Kampala, Uganda",
-  email: "info@example.com",
+  email: "info@homenative.co",
   /** First number is the main one (big call-to-action spots); all are listed in the footer and menu. */
-  phones: [{ display: "0742 696 353", href: "tel:+256742696353" }],
+  phones: [{ display: "0742 696 353", href: "tel:0742696353" }],
   hours: ["Mon–Fri: 9 AM to 5 PM", "Sun: Closed"],
+  /** One-line hours for the footer. */
+  hoursShort: "Mon–Fri, 9am–5pm",
 
   /** Leave a link "" to hide it everywhere. */
   socials: {
@@ -39,6 +41,9 @@ export const site = {
     tiktok: "",
     whatsapp: "",
   },
+  /** Which networks show as icons (contact page, light footer) and as text (menu, dark footer), in order. */
+  socialIcons: ["instagram", "facebook", "linkedin"],
+  socialText: ["instagram", "pinterest", "linkedin"],
 
   /** Brand colours (written into CSS variables by app/layout.tsx). */
   colors: {
@@ -58,6 +63,7 @@ export const site = {
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
+export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },

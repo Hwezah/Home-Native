@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { nav, site } from "@/content/site";
+import { nav, homeLabel, site } from "@/content/site";
 import { usePathname } from "next/navigation";
 import { useMenu } from "@/context/MenuContext";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,7 @@ export function SidePanel() {
         style={{ transform: menuOpen ? "translateX(0)" : "translateX(105%)" }}
       >
         <div className="mb-[clamp(48px,7vh,90px)] flex items-center justify-between">
-          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label={`${site.fullName} — home`}>
+          <Link href="/" onClick={closeMenu} className="hover:text-current" aria-label={homeLabel}>
             <Wordmark size="panel" />
           </Link>
           <button

@@ -80,7 +80,7 @@ Sticky, white background, shadow `0 2px 18px rgba(0,0,0,.05)`. Left: wordmark "H
 - **Hamburger:** 2 long thin lines (52px × 1px, 9px gap).
 - **Close:** a big thin X — two 64px × 1px lines rotated ±45°.
 - Links: `clamp(32px, 2.6vw, 44px)` Jost 300. Hover: padding-left 18px and green.
-- Footer block: "Get in touch", info@example.com, 0742 696 353, Instagram / Pinterest / LinkedIn.
+- Footer block: "Get in touch", info@homenative.co, 0742 696 353, Instagram / Pinterest / LinkedIn.
 - The panel's text is **never centred**, mobile included.
 
 ### Footer
@@ -96,7 +96,7 @@ Eyebrow "— Get Started", H2 "Get Started On *Inspiring* Interiors — Contact 
 - In the prototype this is done with a single media block plus attributes: `data-m-center` (centre the block and its children), `data-m-btn` (80vw centred button), `data-m-row` (space-between row), `data-m-hide`, `data-m-span`. Recreate it as utility classes or a small set of responsive props.
 
 ### Contact details
-info@example.com · 0742 696 353 · Mon–Fri 9 AM–5 PM, Sun closed · Kampala, Uganda · "A MachineNative company"
+info@homenative.co · 0742 696 353 · Mon–Fri 9 AM–5 PM, Sun closed · Kampala, Uganda · "A MachineNative company"
 
 ---
 

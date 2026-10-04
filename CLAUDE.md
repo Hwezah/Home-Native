@@ -29,6 +29,6 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   `data-no-reveal`; heroes are excluded via `data-hero`.
 - Content is typed data in `content/*.ts`; detail pages use `generateStaticParams`.
 - Client details (name, wordmark, contacts, hours, socials, SEO text, brand colours) live only in `content/site.ts`;
-  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. Emails stay generic
-  (`info@example.com`) until the client gives a real one.
+  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. This repo is the HomeNative
+  site and stays HomeNative; client copies use a generic email (`info@example.com`) until the client gives a real one.
 - Run `npm run lint` and `npm run build` before pushing.
