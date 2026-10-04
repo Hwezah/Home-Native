@@ -33,7 +33,10 @@ is blocked) so you can see its details. Don't guess anything that isn't shown �
 
 ## 2. Repo
 
-- If the GitHub check passed: create a private repo named `<Brand>-Interiors` (match the business type) with
+- **Name** (repo, Vercel project and `site.url` all use it): short and plain — the client's main brand word plus the
+  business type, lowercase with hyphens, e.g. `uptown-interiors`, `zama-interiors`. No "ltd", handles, numbers, trailing
+  hyphens or extra words. If it's taken on GitHub or Vercel, add `-ug` (e.g. `uptown-interiors-ug`).
+- If the GitHub check passed: create a private repo with that name using
   `POST https://api.github.com/user/repos` `{"name": "...", "private": true}`. Then attach it with the `add_repo` tool
   (push access) and clone it to `/home/user/<repo-lowercase>`.
 - Otherwise ask the user for an empty repo link, then `add_repo` + clone.
@@ -48,7 +51,7 @@ cp .claude/skills/new-client/files/Wordmark.tsx /home/user/<client>/components/l
 
 ## 4. Re-brand (client copy only)
 
-- `content/site.ts` — the one settings file: url `https://<brand>-interiors.vercel.app`, `name`, `fullName`,
+- `content/site.ts` — the one settings file: url `https://<name>.vercel.app`, `name`, `fullName`,
   `wordmark` (`name` in capitals as on their logo, `sub` e.g. "INTERIORS"), `outlineWord`, `parent: ""`, `title`,
   `description`, `blurb` (use their slogan if the logo has one), `city`/`location` ("Uganda" unless shown),
   `email: "info@example.com"`, `phones` (display "0700 000 000", href `tel:+256700000000`), `hours`/`hoursShort`
@@ -78,10 +81,10 @@ Start `npx next dev -p <free port>` in the client folder, then:
 ## 6. Deploy
 
 - If the Vercel check passed: create the project with `POST https://api.vercel.com/v10/projects`
-  `{"name": "<brand>-interiors", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "<owner>/<repo>"}}`,
+  `{"name": "<name>", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "<owner>/<repo>"}}`,
   trigger a production deployment of `main` (`POST /v13/deployments` with `gitSource`), poll until `READY`, and confirm the
   live URL loads. If the URL differs from `site.url`, update `site.ts` and push again.
-- Otherwise tell the user to import the repo in Vercel and name the project `<brand>-interiors`.
+- Otherwise tell the user to import the repo in Vercel and name the project `<name>`.
 
 ## 7. Hand over
 
