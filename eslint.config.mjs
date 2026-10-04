@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // HTML design references, not app code.
     "design_handoff_home_native/**",
+    // Claude skills and their helper scripts, not app code.
+    ".claude/**",
   ]),
 ]);
 

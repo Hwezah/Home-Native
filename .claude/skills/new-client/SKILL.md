@@ -1,0 +1,94 @@
+---
+name: new-client
+description: Turn a client's TikTok profile screenshot into their own copy of this site — new GitHub repo, re-branded content, recreated logo symbol, Vercel deploy and a WhatsApp pitch. Use whenever the user shares a screenshot of a business's TikTok (or similar social) profile, even with no message at all — the screenshot alone means "make this client's site end to end". Also when they ask to make a site for a company from a screenshot.
+---
+
+# New client site from a TikTok screenshot
+
+The user's whole job is to forward the WhatsApp message at the end. Do every step without asking questions; only stop if a
+token or network call fails, and then say exactly which setting to fix.
+
+This repo is the **HomeNative** site and the template. **Never change HomeNative's own site while doing this** — all
+client work happens in a separate copy and a separate repo. Push everything to the client repo's `main` branch.
+
+## 1. Read the screenshot
+
+Pull out: company name (full + short), handle, bio lines, phone numbers, follower and like counts, what they do (from bio
+and video thumbnails), and the logo. Crop and zoom the logo with Playwright (embed the image as a base64 data URL; `file://`
+is blocked) so you can see its details. Don't guess anything that isn't shown — no city, hours, email or claims.
+
+## 2. Repo
+
+- If `GITHUB_TOKEN` is set: create a private repo named `<Brand>-Interiors` (match the business type) with
+  `POST https://api.github.com/user/repos` `{"name": "...", "private": true}`. Then attach it with the `add_repo` tool
+  (push access) and clone it to `/home/user/<repo-lowercase>`.
+- Otherwise ask the user for an empty repo link, then `add_repo` + clone.
+
+## 3. Copy the template
+
+```bash
+cd /home/user/Home-Native && git archive HEAD -- . ':!.claude/skills/new-client' | tar -x -C /home/user/<client>
+cp -al /home/user/Home-Native/node_modules /home/user/<client>/node_modules   # hard links: a symlink breaks Turbopack
+cp .claude/skills/new-client/files/Wordmark.tsx /home/user/<client>/components/layout/Wordmark.tsx
+```
+
+## 4. Re-brand (client copy only)
+
+- `content/site.ts` — the one settings file: url `https://<brand>-interiors.vercel.app`, `name`, `fullName`,
+  `wordmark` (`name` in capitals as on their logo, `sub` e.g. "INTERIORS"), `outlineWord`, `parent: ""`, `title`,
+  `description`, `blurb` (use their slogan if the logo has one), `city`/`location` ("Uganda" unless shown),
+  `email: "info@example.com"`, `phones` (display "0700 000 000", href `tel:+256700000000`), `hours`/`hoursShort`
+  as "Call us to book a site visit"-style text (never invent opening hours), `socials` (TikTok link; others ""),
+  `socialIcons`/`socialText` = only the networks they have, `colors` from their logo.
+  Set `homeLabel` to `` `${site.fullName} — home` ``.
+- Colours: `brand` = their darkest logo colour (dark sections/footer), `accent` must reach **4.5:1 on white**, dark-theme
+  accent 4.5:1 on `#14100C`. Check with a quick WCAG contrast calc before using them.
+- `components/layout/LogoMark.tsx` — redraw **only the logo's symbol** as an SVG (no circle/badge/background, no text,
+  no slogan), `viewBox` sized to the symbol, `className` passed through. Keep the logo's own colours; if the logo is
+  black/white use `currentColor` so it flips in dark mode. Never invent a symbol — if the logo has none, make LogoMark
+  return `null`. Wordmark.tsx already places it left of the name at the text's height.
+- Copy: `content/services.ts` (serviceCards, marquee, serviceColumns, accordionA/B) and the intro paragraphs in
+  `app/page.tsx` and `app/about/page.tsx` — rewrite around what they actually do. `content/faqs.ts` — neutral, no "free",
+  no fixed fees or durations. `content/team.ts` `stats` — their real TikTok follower and like counts + one honest third
+  stat; remove anything like awards. Update the title/brand-colour lines in the client's `CLAUDE.md`.
+- Leave team, testimonials, projects, posts and photos as placeholders (the pitch says so).
+- `grep -rn -i "native\|kampala"` in `app components content` — only placeholder projects may still mention Kampala.
+
+## 5. Check
+
+Start `npx next dev -p <free port>` in the client folder, then:
+- `PORT=<port> node .claude/skills/new-client/files/check-overflow.js` (run from Home-Native) — must print only `done`.
+- Screenshot the header logo (light, dark, mobile 390×844), footer, and the About "Numbers" stats in dark mode; look at them.
+- `npm run lint` and `npm run build` must pass. Commit (attribution lines as usual) and push to `main`.
+
+## 6. Deploy
+
+- If `VERCEL_TOKEN` is set: create the project with `POST https://api.vercel.com/v10/projects`
+  `{"name": "<brand>-interiors", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "<owner>/<repo>"}}`,
+  trigger a production deployment of `main` (`POST /v13/deployments` with `gitSource`), poll until `READY`, and confirm the
+  live URL loads. If the URL differs from `site.url`, update `site.ts` and push again.
+- Otherwise tell the user to import the repo in Vercel and name the project `<brand>-interiors`.
+
+## 7. Hand over
+
+Reply with: the live link, both phone numbers each in its own code block (no spaces, for copying), what's still
+placeholder, and this WhatsApp pitch with their numbers filled in:
+
+```
+Hello <Company> team,
+
+Your work is already a hit on TikTok: *<followers> followers, <likes> likes*. Let's turn those views into calls.
+
+We've built you a website preview:
+*<live link>*
+
+_Note: the preview uses placeholder photos and content. Once we agree, we'll replace them with your real projects, team and details._
+
+*UGX 1,000,000 covers:*
+✔ Your own website, built for phones and computers
+✔ Your own domain name (e.g. <brand>interiors.co.ug)
+✔ 1 year of hosting
+✔ 2 company emails (e.g. info@ and sales@)
+
+Have a look, and reply *"Let's go"* to get started.
+```
