@@ -32,5 +32,5 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. This repo is the HomeNative
   site and stays HomeNative; client copies use a generic email (`info@example.com`) until the client gives a real one.
 - Run `npm run lint` and `npm run build` before pushing.
-- A TikTok/social profile screenshot from the user (even with no text) means: build that client's site end to end with
-  `.claude/skills/new-client/SKILL.md`. Never change this HomeNative site while doing it.
+- A TikTok/social profile screenshot from the user (even with no text) means: build that client's site end to end as a
+  branch of `Hwezah/interior-sites` (see `.claude/skills/new-client/SKILL.md`). Never change this HomeNative site while doing it.
