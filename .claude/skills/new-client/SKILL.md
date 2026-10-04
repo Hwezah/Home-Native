@@ -36,12 +36,14 @@ is blocked) so you can see its details. Don't guess anything that isn't shown �
 - **Name** (repo, Vercel project and `site.url` all use it): short and plain — the client's main brand word plus the
   business type, lowercase with hyphens, e.g. `uptown-interiors`, `zama-interiors`. No "ltd", handles, numbers, trailing
   hyphens or extra words. If it's taken on GitHub or Vercel, add `-ug` (e.g. `uptown-interiors-ug`).
-- If the GitHub check passed: create a private repo with that name using
-  `POST https://api.github.com/user/repos` `{"name": "...", "private": true}`. Then attach it with the `add_repo` tool
-  (push access) and clone it to `/home/user/<repo-lowercase>`.
-- Otherwise ask the user for an empty repo link, then `add_repo` + clone.
+- Sessions can't create repos (the session's GitHub gateway blocks `POST /user/repos` and the GitHub tool's
+  create_repository, whatever the token allows). So **right after reading the screenshot**, ask the user — in one short
+  message — to create an empty repo at https://github.com/new named exactly `<name>` (no README), and keep building
+  while they do. When they confirm, attach it with `add_repo` (push access); the folder you built in becomes the clone:
+  `git init -b main`, `git remote add origin https://github.com/Hwezah/<name>`, commit, `git push -u origin main`,
+  then `register_repo_root`.
 
-## 3. Copy the template
+## 3. Copy the template (into `/home/user/<name>`)
 
 ```bash
 cd /home/user/Home-Native && git archive HEAD -- . ':!.claude/skills/new-client' | tar -x -C /home/user/<client>
@@ -58,12 +60,20 @@ cp .claude/skills/new-client/files/Wordmark.tsx /home/user/<client>/components/l
   as "Call us to book a site visit"-style text (never invent opening hours), `socials` (TikTok link; others ""),
   `socialIcons`/`socialText` = only the networks they have, `colors` from their logo.
   Set `homeLabel` to `` `${site.fullName} — home` ``.
-- Colours: `brand` = their darkest logo colour (dark sections/footer), `accent` must reach **4.5:1 on white**, dark-theme
-  accent 4.5:1 on `#14100C`. Check with a quick WCAG contrast calc before using them.
+- **Colours come only from the client's logo — never HomeNative's browns/creams** unless their logo has them. `brand` =
+  their darkest logo colour (dark sections/footer), `accent` = a darker shade of their main logo colour reaching
+  **4.5:1 on white**, dark-theme accent 4.5:1 on a near-black; `tint`/`soft`/`onPhoto` are light/mid shades of the same.
+  Check with a quick WCAG contrast calc. Then run
+  `python3 /home/user/Home-Native/.claude/skills/new-client/files/brand-tones.py /home/user/<name>` — it re-derives
+  every remaining tinted colour (dark theme surfaces, section tints, photo placeholders/tints, service tags, highlights,
+  footer text) from those brand colours. The About stat circles (`content/team.ts` `bg`) must also be light shades of
+  the logo colours.
 - `components/layout/LogoMark.tsx` — redraw **only the logo's symbol** as an SVG (no circle/badge/background, no text,
   no slogan), `viewBox` sized to the symbol, `className` passed through. Keep the logo's own colours; if the logo is
-  black/white use `currentColor` so it flips in dark mode. Never invent a symbol — if the logo has none, make LogoMark
-  return `null`. Wordmark.tsx already places it left of the name at the text's height.
+  black/white (or dark navy etc.) use `currentColor` for those parts so it flips in dark mode. If the logo can't be made
+  out from the screenshot (zoom first — a tiny sign in a profile photo often works), use a simple generic house outline
+  (roof + walls, `currentColor`) instead. Wordmark.tsx already places it left of the name at the text's height and
+  handles long taglines (e.g. "INTERIOR & HOME DECO").
 - Copy: `content/services.ts` (serviceCards, marquee, serviceColumns, accordionA/B) and the intro paragraphs in
   `app/page.tsx` and `app/about/page.tsx` — rewrite around what they actually do. `content/faqs.ts` — neutral, no "free",
   no fixed fees or durations. `content/team.ts` `stats` — their real TikTok follower and like counts + one honest third
@@ -81,9 +91,13 @@ Start `npx next dev -p <free port>` in the client folder, then:
 ## 6. Deploy
 
 - If the Vercel check passed: create the project with `POST https://api.vercel.com/v10/projects`
-  `{"name": "<name>", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "<owner>/<repo>"}}`,
-  trigger a production deployment of `main` (`POST /v13/deployments` with `gitSource`), poll until `READY`, and confirm the
-  live URL loads. If the URL differs from `site.url`, update `site.ts` and push again.
+  (`Content-Type: application/json`)
+  `{"name": "<name>", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "Hwezah/<name>"}}` — the
+  response's `link.repoId` is needed next. Trigger production: `POST /v13/deployments`
+  `{"name": "<name>", "project": "<project id>", "target": "production", "gitSource": {"type": "github", "repoId": <repoId>, "ref": "main"}}`.
+  Poll `GET /v13/deployments/<id>` every 15 s until `readyState` is `READY` and `alias` contains `<name>.vercel.app`
+  (the sandbox can't open `*.vercel.app` itself — the alias is the confirmation). If the alias differs from `site.url`,
+  update `site.ts` and push again (Vercel redeploys on push).
 - Otherwise tell the user to import the repo in Vercel and name the project `<name>`.
 
 ## 7. Hand over
