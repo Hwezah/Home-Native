@@ -94,15 +94,20 @@ Also give each phone number in its own code block (no spaces) in case a link fai
 ```
 Hello <Company> team,
 
-Your work is already a hit on TikTok: *<followers> followers, <likes> likes*. Let's turn those views into calls.
+We came across your work on TikTok. It's impressive: *<followers> followers and <likes> likes*.
 
-We've built you a website preview:
+We build websites and mobile apps for businesses in Uganda. As more customers search online before they call anyone, we'd love to help your business be found there too.
+
+A website is your business's own page on the internet. It shows your work, your services and your phone number in one place, it's open day and night, and it helps new clients trust you before they even call. TikTok brings people to you; a website helps turn them into clients.
+
+We've already made a sample website for you. Have a look:
 *<live link>*
 
-_Note: the preview uses placeholder photos and content. Once we agree, we'll replace them with your real projects, team and details._
+_The photos and some text are only samples for now. If you like it, we'll add your real projects and details._
 
-Would you like it live under your own name? Reply *"Yes"* and I'll send you the details.
+If you find the idea interesting, I'm happy to talk about it. Just reply here.
 ```
 
 The first message has **no price and no proposed domain name** (WhatsApp turns anything like `name.co.ug` into a link
-that goes nowhere). Only the preview link may appear. Price comes in the user's follow-up once the client replies.
+that goes nowhere). Only the preview link may appear. Keep it plain and non-technical: the reader may not know what a website is. Price comes in the user's follow-up
+once the client replies.
