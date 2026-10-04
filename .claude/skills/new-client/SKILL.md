@@ -85,8 +85,11 @@ Start `npx next dev -p <free port>` in the client folder, then:
 
 ## 7. Hand over
 
-Reply with: the live link, both phone numbers each in its own code block (no spaces, for copying), what's still
-placeholder, and this WhatsApp pitch with their numbers filled in:
+Reply with: the live link, what's still placeholder, the WhatsApp pitch below with their details filled in, and one
+**tap-to-send link per phone number** so the user's phone opens WhatsApp on that chat with the pitch already typed:
+`https://wa.me/256XXXXXXXXX?text=<pitch, URL-encoded>` (Ugandan `07…` numbers become `2567…`; build the encoding with
+Python `urllib.parse.quote`, keeping WhatsApp's `*bold*` and `_italic_` marks). Each link goes in its own code block.
+Also give each phone number in its own code block (no spaces) in case a link fails. The pitch:
 
 ```
 Hello <Company> team,
