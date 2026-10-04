@@ -11,6 +11,20 @@ token or network call fails, and then say exactly which setting to fix.
 This repo is the **HomeNative** site and the template. **Never change HomeNative's own site while doing this** — all
 client work happens in a separate copy and a separate repo. Push everything to the client repo's `main` branch.
 
+## 0. Access check (first thing)
+
+The cloud environment injects the GitHub and Vercel tokens as `Authorization: Bearer` headers on requests to
+`api.github.com` and `api.vercel.com` — there are no token variables; never ask for or print a token. Check both:
+
+```bash
+curl -s -o /dev/null -w "github %{http_code}\n" https://api.github.com/user
+curl -s -o /dev/null -w "vercel %{http_code}\n" https://api.vercel.com/v2/user
+```
+
+`200` = ready. `401`/`403` from the API = the credential is missing or wrong (Edit cloud environment → API credentials).
+`000` / "CONNECT tunnel failed" = the network policy blocks the host (Edit cloud environment → Network access → Custom,
+add the host). Tell the user which one, then carry on with what doesn't need it.
+
 ## 1. Read the screenshot
 
 Pull out: company name (full + short), handle, bio lines, phone numbers, follower and like counts, what they do (from bio
@@ -19,7 +33,7 @@ is blocked) so you can see its details. Don't guess anything that isn't shown �
 
 ## 2. Repo
 
-- If `GITHUB_TOKEN` is set: create a private repo named `<Brand>-Interiors` (match the business type) with
+- If the GitHub check passed: create a private repo named `<Brand>-Interiors` (match the business type) with
   `POST https://api.github.com/user/repos` `{"name": "...", "private": true}`. Then attach it with the `add_repo` tool
   (push access) and clone it to `/home/user/<repo-lowercase>`.
 - Otherwise ask the user for an empty repo link, then `add_repo` + clone.
@@ -63,7 +77,7 @@ Start `npx next dev -p <free port>` in the client folder, then:
 
 ## 6. Deploy
 
-- If `VERCEL_TOKEN` is set: create the project with `POST https://api.vercel.com/v10/projects`
+- If the Vercel check passed: create the project with `POST https://api.vercel.com/v10/projects`
   `{"name": "<brand>-interiors", "framework": "nextjs", "gitRepository": {"type": "github", "repo": "<owner>/<repo>"}}`,
   trigger a production deployment of `main` (`POST /v13/deployments` with `gitSource`), poll until `READY`, and confirm the
   live URL loads. If the URL differs from `site.url`, update `site.ts` and push again.
