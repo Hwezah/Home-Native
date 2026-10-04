@@ -101,11 +101,8 @@ We've built you a website preview:
 
 _Note: the preview uses placeholder photos and content. Once we agree, we'll replace them with your real projects, team and details._
 
-*UGX 1,000,000 covers:*
-✔ Your own website, built for phones and computers
-✔ Your own domain name (e.g. <brand>interiors.co.ug)
-✔ 1 year of hosting
-✔ 2 company emails (e.g. info@ and sales@)
-
-Have a look, and reply *"Let's go"* to get started.
+Would you like it live under your own name? Reply *"Yes"* and I'll send you the details.
 ```
+
+The first message has **no price and no proposed domain name** (WhatsApp turns anything like `name.co.ug` into a link
+that goes nowhere). Only the preview link may appear. Price comes in the user's follow-up once the client replies.
