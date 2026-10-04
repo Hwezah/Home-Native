@@ -36,7 +36,7 @@ export function Header() {
         overHero ? "text-white" : "text-ink",
       )}
     >
-      <div className="mx-auto flex h-[var(--header-h)] w-[90vw] mp:w-[calc(100vw-2*var(--gutter-m))] flex-nowrap items-center justify-between gap-6 mp:gap-4">
+      <div className="flex h-[var(--header-h)] w-full px-[clamp(20px,5vw,40px)] mp:px-[var(--gutter-m)] flex-nowrap items-center justify-between gap-6 mp:gap-4">
         <Link href="/" className="min-w-0 hover:text-current" aria-label="HomeNative interiors — home">
           <Wordmark />
         </Link>
