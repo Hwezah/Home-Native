@@ -73,7 +73,8 @@ cp .claude/skills/new-client/files/Wordmark.tsx /home/user/<client>/components/l
   black/white (or dark navy etc.) use `currentColor` for those parts so it flips in dark mode. If the logo can't be made
   out from the screenshot (zoom first — a tiny sign in a profile photo often works), use a simple generic house outline
   (roof + walls, `currentColor`) instead. Wordmark.tsx already places it left of the name at the text's height and
-  handles long taglines (e.g. "INTERIOR & HOME DECO").
+  handles long taglines (e.g. "INTERIOR & HOME DECO") and keeps the small line about 4px under an all-caps name —
+  don't add margin between the two lines.
 - Copy: `content/services.ts` (serviceCards, marquee, serviceColumns, accordionA/B) and the intro paragraphs in
   `app/page.tsx` and `app/about/page.tsx` — rewrite around what they actually do. `content/faqs.ts` — neutral, no "free",
   no fixed fees or durations. `content/team.ts` `stats` — their real TikTok follower and like counts + one honest third

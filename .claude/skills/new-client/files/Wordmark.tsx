@@ -61,6 +61,8 @@ export function Wordmark({
               : size === "footer"
                 ? "mt-0 text-[12px]"
                 : "text-[11px] mp:-mt-px mp:text-[10px]",
+            // all-caps names have no descenders: pull the line up so it sits close under the name
+            caps && (size === "footer" ? "-mt-[8px]" : "-mt-[7px] mp:-mt-[6px]"),
           )}
         >
           {site.wordmark.sub.split("").map((ch, i) => (
