@@ -36,11 +36,11 @@ export function Header() {
         overHero ? "text-white" : "text-ink",
       )}
     >
-      <div className="flex h-[var(--header-h)] w-full px-[clamp(20px,5vw,40px)] mp:px-[var(--gutter-m)] flex-nowrap items-center gap-6 mp:gap-4">
+      <div className="flex h-[var(--header-h)] w-full px-[clamp(20px,5vw,40px)] mp:px-[var(--gutter-m)] flex-nowrap items-center gap-6 max-[900px]:gap-4">
         <Link href="/" className="min-w-0 hover:text-current" aria-label={homeLabel}>
           <Wordmark />
         </Link>
-        <nav aria-label="Main" className="flex items-center gap-[clamp(16px,2.4vw,34px)] text-[13px] uppercase tracking-[.08em] ml-auto">
+        <nav aria-label="Main" className="flex items-center gap-[clamp(10px,2.4vw,34px)] text-[13px] uppercase tracking-[.08em] max-[1100px]:text-[12px] max-[1100px]:tracking-[.05em] max-[900px]:text-[11px] max-[900px]:tracking-[.03em] max-[760px]:text-[10px] max-[760px]:tracking-normal ml-auto">
           {nav.map((item) => {
             const active = isActive(pathname, item.href);
             return (
@@ -48,9 +48,9 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                // Links collapse into the side panel below 1100px (and always on mobile portrait).
+                // Full menu on every screen except mobile portrait, where links live in the side panel.
                 className={cn(
-                  "transition-colors duration-300 max-[1100px]:hidden",
+                  "transition-colors duration-300 mp:hidden",
                   // Current page: brand accent (theme-aware); a light tan while over a hero photo.
                   active && "border-b border-current pb-1",
                   active && (overHero ? "text-[var(--on-photo)] hover:text-[var(--on-photo)]" : "text-brand-mid hover:text-brand-mid"),
@@ -66,7 +66,7 @@ export function Header() {
             aria-label="Open menu"
             aria-expanded={menuOpen}
             aria-controls="side-panel"
-            className="flex h-[30px] w-[52px] shrink-0 cursor-pointer flex-row items-center justify-center gap-[9px] border-0 bg-transparent p-0 text-current"
+            className="flex h-[30px] w-[52px] max-[900px]:w-[40px] shrink-0 cursor-pointer flex-row items-center justify-center gap-[9px] border-0 bg-transparent p-0 text-current"
           >
             <span className="block h-[30px] w-px bg-current transition-transform duration-500 ease-hn" style={{ transform: menuOpen ? "translateX(-12px)" : "translateX(0)" }} />
             <span className="block h-[30px] w-px bg-current transition-transform duration-500 ease-hn" style={{ transform: menuOpen ? "translateX(0)" : "translateX(0)" }} />
