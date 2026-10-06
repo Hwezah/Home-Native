@@ -21,7 +21,6 @@ export function PageHero({
     <section data-hero className="relative h-[min(78vh,760px)] min-h-[520px] overflow-hidden bg-[#7A5E45] text-white">
       <ParallaxImg src={image} alt={alt} speed={0.35} priority className="hero-zoom" />
       <div className="pointer-events-none absolute inset-0 bg-[rgba(40,30,20,.32)]" />
-      <div className="hero-line pointer-events-none absolute inset-x-0 top-[62%] h-px bg-white/[.22]" />
       <div data-m-center className="wrap pointer-events-none relative flex h-full flex-col justify-end pb-[clamp(60px,12vh,130px)]">
         <div className="hero-fade mb-[clamp(28px,5vh,56px)] text-[14px] uppercase tracking-[.06em]" style={{ animationDelay: "300ms" }}>
           — {eyebrow}

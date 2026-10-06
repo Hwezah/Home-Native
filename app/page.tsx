@@ -31,7 +31,6 @@ export default function HomePage() {
       <section data-hero className="relative h-[min(92vh,900px)] min-h-[560px] overflow-hidden bg-[#6E675E] text-white">
         <ParallaxImg src={pexels(1571460)} alt="Bright open-plan living room with a floating oak staircase" speed={0.35} priority className="hero-zoom" />
         <div className="pointer-events-none absolute inset-0 bg-[rgba(40,36,30,.35)]" />
-        <div className="hero-line pointer-events-none absolute inset-x-0 top-1/2 h-px bg-white/30" />
         <div data-m-center className="wrap-wide pointer-events-none relative flex h-full flex-col justify-center">
           <div className="hero-fade mb-3.5 text-[13px] uppercase tracking-[.16em]" style={{ animationDelay: "300ms" }}>
             {site.name}&apos;s Best
@@ -40,18 +39,16 @@ export default function HomePage() {
           <p className="hero-fade m-0 mb-9 max-w-[620px] text-[18px] font-light" style={{ animationDelay: "1000ms" }}>
             Rooms shaped around how you live. Calm, considered interiors made to last.
           </p>
-          {/* Mobile portrait: both CTAs stack, centred, 80vw; "or" is dropped. */}
+          {/* Two pills split by a thin pipe. Mobile portrait: both stack, centred, 80vw; the pipe is dropped. */}
           <div data-m-stack data-m-center className="hero-fade pointer-events-auto flex flex-wrap items-center gap-7" style={{ animationDelay: "1150ms" }}>
             <PillButton href="/contact" variant="light" size="hero" icon="before">
               Get Started Now
             </PillButton>
-            <span data-m-hide className="italic opacity-60">
-              or
-            </span>
+            <span data-m-hide aria-hidden="true" className="h-9 w-px bg-white/50" />
             <Link
               href="/services"
               data-m-btn
-              className="inline-flex items-center justify-center border-b border-white/60 pb-1.5 text-[14px] uppercase tracking-[.16em] text-white transition-colors duration-[350ms] hover:text-white mp:rounded-full mp:border mp:px-10 mp:py-[22px] mp:hover:bg-paper mp:hover:text-ink"
+              className="inline-flex items-center justify-center rounded-full border border-white/60 px-10 py-[22px] text-[14px] leading-[24px] uppercase tracking-[.16em] text-white transition-colors duration-[350ms] hover:bg-paper hover:text-ink"
             >
               Explore Services
             </Link>
