@@ -1,33 +1,78 @@
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
+import { LogoMark } from "./LogoMark";
 
 /**
  * The client's name with a capitalised line (e.g. INTERIORS) spread underneath to the same width.
  * Text comes from `site.wordmark`; `size` sets the name's font size and the line scales with it.
+ * The client's logo symbol (LogoMark) sits to the left, as tall as the two lines of text.
  */
-export function Wordmark({ className, size = "header" }: { className?: string; size?: "header" | "panel" | "footer" }) {
+export function Wordmark({
+  className,
+  size = "header",
+}: {
+  className?: string;
+  size?: "header" | "panel" | "footer";
+}) {
+  // the header uses its phone sizes below 900px too, so the full menu fits on tablets and landscape phones
+  const hd = size === "header";
+  const caps = site.wordmark.name === site.wordmark.name.toUpperCase();
+  // Long taglines (e.g. "INTERIOR & HOME DECO") get smaller letters and a wider-spaced name so both lines match.
+  const long = site.wordmark.sub.length > 12;
   return (
-    <span className={cn("inline-flex min-w-0 flex-col", className)}>
-      <span
-        className={cn(
-          "whitespace-nowrap font-serif font-light tracking-[-.02em]", // one notch above the 200 used for headings
-          { header: "text-[30px] max-[900px]:text-[26px] mp:text-[26px]", panel: "text-[28px] mp:text-[26px]", footer: "text-[34px]" }[size],
-          // after the size: tailwind-merge drops a line-height that comes before a font-size
-          "leading-none",
-        )}
-      >
-        {site.wordmark.name}
-      </span>
-      <span
-        aria-hidden="true"
-        className={cn(
-          "-mt-0.5 flex justify-between font-light leading-none",
-          size === "footer" ? "mt-0 text-[12px]" : "text-[11px] mp:-mt-px mp:text-[10px]",
-        )}
-      >
-        {site.wordmark.sub.split("").map((ch, i) => (
-          <span key={i}>{ch}</span>
-        ))}
+    <span
+      className={cn(
+        "inline-flex min-w-0 items-center gap-2.5",
+        size === "footer" && "gap-3",
+        className,
+      )}
+    >
+      <LogoMark
+        className={
+          size === "footer"
+            ? "h-[50px] w-auto"
+            : cn("h-[42px] w-auto mp:h-[37px]", hd && "max-[900px]:h-[37px] max-[700px]:landscape:h-[32px]")
+        }
+      />
+      <span className="inline-flex min-w-0 flex-col">
+        <span
+          className={cn(
+            "whitespace-nowrap font-serif font-light", // one notch above the 200 used for headings
+            caps
+              ? long
+                ? "tracking-[.14em]"
+                : "tracking-[.04em]"
+              : "tracking-[-.02em]",
+            {
+              header: "text-[30px] max-[900px]:text-[26px] max-[700px]:landscape:text-[22px] mp:text-[26px]",
+              panel: "text-[28px] mp:text-[26px]",
+              footer: "text-[34px]",
+            }[size],
+            // after the size: tailwind-merge drops a line-height that comes before a font-size
+            "leading-none",
+          )}
+        >
+          {site.wordmark.name}
+        </span>
+        <span
+          aria-hidden="true"
+          className={cn(
+            "-mt-0.5 flex justify-between font-light leading-none",
+            long
+              ? size === "footer"
+                ? "mt-0.5 text-[10px]"
+                : cn("mt-0.5 text-[9px] mp:text-[8px]", hd && "max-[900px]:text-[8px] max-[700px]:landscape:text-[7px]")
+              : size === "footer"
+                ? "mt-0 text-[12px]"
+                : cn("text-[11px] mp:-mt-px mp:text-[10px]", hd && "max-[900px]:-mt-px max-[900px]:text-[10px] max-[700px]:landscape:text-[9px]"),
+            // all-caps names have no descenders: pull the line up so it sits close under the name
+            caps && (size === "footer" ? "-mt-[8px]" : cn("-mt-[7px] mp:-mt-[6px]", hd && "max-[900px]:-mt-[6px] max-[700px]:landscape:-mt-[5px]")),
+          )}
+        >
+          {site.wordmark.sub.split("").map((ch, i) => (
+            <span key={i}>{ch === " " ? "\u00A0" : ch}</span>
+          ))}
+        </span>
       </span>
     </span>
   );

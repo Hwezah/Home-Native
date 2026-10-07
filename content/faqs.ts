@@ -1,9 +1,9 @@
 import { site } from "./site";
 
 export const faqs = [
-  { q: `How does a project with ${site.name} start?`, a: "With a free consultation. We visit the space, talk through how you use it, your budget and timing, then send a clear proposal." },
-  { q: "Do you take on single rooms?", a: "Yes. Many projects start with one room — a living space, kitchen or bedroom — and grow from there." },
-  { q: "How are your fees structured?", a: "Fixed design fees per phase, agreed up front. Furniture and contractor costs are quoted transparently with no hidden mark-ups." },
-  { q: "Can you work with furniture I already own?", a: "Absolutely. We love building around pieces with meaning and will suggest where to keep, refresh or replace." },
-  { q: "How long does a typical project take?", a: "Styling projects take 4–8 weeks. Full renovations usually run 3–6 months depending on scope." },
+  { q: `How does a project with ${site.name} start?`, a: "Call us. We visit the site, measure up, talk through the design you want, then send a clear quote." },
+  { q: "Do you do single rooms?", a: "Yes. Many jobs start with one ceiling — a living room, bedroom or office — and grow from there." },
+  { q: "Can you add lighting to the ceiling?", a: "Yes. We build LED strip lines and downlights into the gypsum ceiling as we fit it." },
+  { q: "How are your prices structured?", a: "Every job gets a clear quote after the site visit, agreed with you before any work starts." },
+  { q: "How long does a job take?", a: "It depends on the size of the space and the design. You get a timeline together with your quote." },
 ];

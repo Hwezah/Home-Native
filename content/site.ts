@@ -3,67 +3,68 @@
  * Page copy (projects, team, testimonials, posts, FAQs, services, commitments) lives in the other content/*.ts files.
  */
 export const site = {
-  url: "https://homenative.co",
+  url: "https://timeline-interiors.vercel.app",
   locale: "en_UG",
 
-  /** Short brand name used in running text ("At HomeNative, …"). */
-  name: "HomeNative",
+  /** Short brand name used in running text ("At Timeline, …"). */
+  name: "Timeline Interiors",
   /** Full trading name: page titles, copyright, company details. */
-  fullName: "HomeNative Interiors",
+  fullName: "Timeline Interiors UG",
   /** Header / menu / footer logo: `name` in serif with `sub` spread underneath to the same width. */
-  wordmark: { name: "HomeNative", sub: "INTERIORS" },
+  wordmark: { name: "TIMELINE", sub: "INTERIORS" },
   /** Huge outlined word behind the About intros. */
-  outlineWord: "Native",
+  outlineWord: "Timeline",
   /** Optional parent-company line (footer, contact page). Leave "" to hide. */
-  parent: "A MachineNative company",
+  parent: "",
 
   /** Default SEO title and description. */
-  title: "Interior design studio in Kampala",
-  description: "An interior design studio in Kampala, Uganda creating calm, functional and lasting spaces.",
+  title: "Gypsum ceilings, partitions and flooring in Kampala",
+  description:
+    "Timeline Interiors UG fits gypsum ceilings with LED lighting, partitions, wall finishes and flooring for homes and offices in Kampala, Uganda.",
   /** Footer blurb under the logo. */
-  blurb: "Interior design studio creating calm, functional and lasting spaces.",
+  blurb: "Walls & ceilings — gypsum ceilings, partitions and flooring.",
 
   city: "Kampala",
   location: "Kampala, Uganda",
-  email: "info@homenative.co",
+  email: "info@example.com",
   /** First number is the main one (big call-to-action spots); all are listed in the footer and menu. */
-  phones: [{ display: "0742 696 353", href: "tel:0742696353" }],
-  hours: ["Mon–Fri: 9 AM to 5 PM", "Sun: Closed"],
+  phones: [{ display: "0705 619 035", href: "tel:+256705619035" }],
+  hours: ["Call us", "to book a site visit"],
   /** One-line hours for the footer. */
-  hoursShort: "Mon–Fri, 9am–5pm",
+  hoursShort: "Call to book a site visit",
 
   /** Leave a link "" to hide it everywhere. */
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
-    pinterest: "#",
-    tiktok: "",
+    instagram: "",
+    facebook: "",
+    linkedin: "",
+    pinterest: "",
+    tiktok: "https://www.tiktok.com/@timelineinteriors",
     whatsapp: "",
   },
   /** Which networks show as icons (contact page, light footer) and as text (menu, dark footer), in order. */
-  socialIcons: ["instagram", "facebook", "linkedin"],
-  socialText: ["instagram", "pinterest", "linkedin"],
+  socialIcons: ["tiktok"],
+  socialText: ["tiktok"],
 
-  /** Brand colours (written into CSS variables by app/layout.tsx). */
+  /** Brand colours (written into CSS variables by app/layout.tsx) — the navy of the Walls & Ceiling logo. */
   colors: {
     /** Main colour: dark sections, filled buttons, active chips, footer. */
-    brand: "#2E1F12",
+    brand: "#0F1D55",
     /** Accent on light backgrounds: highlighted words, link hover, cursor, focus. */
-    accent: "#8B5E3C",
+    accent: "#1F3A93",
     /** Highlight underline on light backgrounds. */
-    tint: "#EADBC8",
-    soft: "#C9A98A",
+    tint: "#E2E8F8",
+    soft: "#9DB0E6",
     /** Accent / tint / soft on the dark theme. */
-    dark: { accent: "#C99D76", tint: "#4A3526", soft: "#8B6A4F" },
-    /** Active nav link while the header sits over a hero photo. */
-    onPhoto: "#E7C9A9",
+    dark: { accent: "#8FA8F0", tint: "#18244F", soft: "#4F68B8" },
+    /** Active nav link and highlighted words over photos and dark sections. */
+    onPhoto: "#B9C8F5",
   },
 };
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
-export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
+export const homeLabel = `${site.fullName} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },
