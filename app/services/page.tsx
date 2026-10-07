@@ -98,9 +98,9 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Contact band ── */}
-      <section className="relative overflow-hidden bg-[#5A4433] text-white">
+      <section className="relative overflow-hidden bg-[var(--brand)] text-white">
         <ParallaxImg src={pexels(1350789)} alt="" speed={0.25} />
-        <div className="pointer-events-none absolute inset-0 bg-[rgba(30,22,15,.45)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[color-mix(in_srgb,var(--brand)_45%,transparent)]" />
         <div className="wrap pointer-events-none relative flex flex-col items-center py-[clamp(90px,11vw,170px)] text-center">
           <div className="mb-9 border-b border-white/25 pb-3.5 text-[14px] uppercase">— Collaboration</div>
           <h2 className="m-0 font-serif text-[clamp(56px,8vw,130px)] leading-[1.02] tracking-[-.03em] text-white">
