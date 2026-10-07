@@ -29,8 +29,14 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   `data-no-reveal`; heroes are excluded via `data-hero`.
 - Content is typed data in `content/*.ts`; detail pages use `generateStaticParams`.
 - Client details (name, wordmark, contacts, hours, socials, SEO text, brand colours) live only in `content/site.ts`;
-  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. This repo is the HomeNative
-  site and stays HomeNative; client copies use a generic email (`info@example.com`) until the client gives a real one.
+  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. `main` is the HomeNative
+  demo site and stays HomeNative; client branches use a generic email (`info@example.com`) until the client gives a real one.
 - Run `npm run lint` and `npm run build` before pushing.
+- **Branches:** `main` is the HomeNative demo site; changes to it are pushed straight to `main`. Every interior-design
+  client is a branch of this repo cut from `main` and named after them (e.g. `norris-interiors`), deployed by its own
+  Vercel project whose production branch is that branch. Never put client content on `main`, never merge one client
+  into another. Template improvements go on `main`, then `git merge main` into the client branches.
+- **Deploys:** automatic Vercel deploys are off (`vercel.json`). Deploy only the project that changed, through the
+  Vercel API (`POST /v13/deployments` with `gitSource` for that project's branch), once per batch of changes.
 - A TikTok/social profile screenshot from the user (even with no text) means: build that client's site end to end as a
-  branch of `Hwezah/interior-sites` (see `.claude/skills/new-client/SKILL.md`). Never change this HomeNative site while doing it.
+  new branch of this repo (see `.claude/skills/new-client/SKILL.md`). Don't change `main` while doing it.
