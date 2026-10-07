@@ -32,7 +32,7 @@ function DarkFooter() {
   const col = "flex flex-col gap-3.5 text-[16px]";
   const head = "mb-1.5 text-[13px] uppercase tracking-[.16em] text-white";
   return (
-    <footer className="bg-brand text-[#D9C7B4]">
+    <footer className="bg-brand text-[var(--on-brand-muted)]">
       <div className="wrap-wide pb-10 pt-[clamp(64px,7vw,100px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-12 border-b border-white/10 pb-16">
           <div data-m-span data-m-center className="col-span-2 min-w-0">
