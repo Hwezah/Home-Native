@@ -152,7 +152,7 @@ export function ProjectStrip({ projects }: { projects: Project[] }) {
                 <div
                   className={cn(
                     "pointer-events-none absolute inset-0 transition-[background-color] duration-1000",
-                    lit ? "bg-[rgba(46,31,18,.12)] group-hover:bg-[rgba(46,31,18,.05)]" : "bg-[rgba(46,31,18,.72)] group-hover:bg-[rgba(46,31,18,.45)]",
+                    lit ? "bg-[color-mix(in_srgb,var(--brand)_12%,transparent)] group-hover:bg-[color-mix(in_srgb,var(--brand)_5%,transparent)]" : "bg-[color-mix(in_srgb,var(--brand)_72%,transparent)] group-hover:bg-[color-mix(in_srgb,var(--brand)_45%,transparent)]",
                   )}
                 />
                 <div className="pointer-events-none absolute inset-x-[clamp(24px,2.4vw,36px)] top-[44%] flex flex-col gap-6">

@@ -3,67 +3,68 @@
  * Page copy (projects, team, testimonials, posts, FAQs, services, commitments) lives in the other content/*.ts files.
  */
 export const site = {
-  url: "https://homenative.co",
+  url: "https://summit-interiors-ug.vercel.app",
   locale: "en_UG",
 
-  /** Short brand name used in running text ("At HomeNative, …"). */
-  name: "HomeNative",
+  /** Short brand name used in running text ("At Summit, …"). */
+  name: "Summit",
   /** Full trading name: page titles, copyright, company details. */
-  fullName: "HomeNative Interiors",
+  fullName: "Summit Interiors",
   /** Header / menu / footer logo: `name` in serif with `sub` spread underneath to the same width. */
-  wordmark: { name: "HomeNative", sub: "INTERIORS" },
+  wordmark: { name: "SUMMIT", sub: "INTERIORS" },
   /** Huge outlined word behind the About intros. */
-  outlineWord: "Native",
+  outlineWord: "Summit",
   /** Optional parent-company line (footer, contact page). Leave "" to hide. */
-  parent: "A MachineNative company",
+  parent: "",
 
   /** Default SEO title and description. */
-  title: "Interior design studio in Kampala",
-  description: "An interior design studio in Kampala, Uganda creating calm, functional and lasting spaces.",
+  title: "Interior finishing in Ndeeba, Kampala",
+  description:
+    "An interior finishing company at Masterwood Plaza, Ndeeba — wall moulding, gypsum ceilings, kitchens, wall panels, TV units and wardrobes.",
   /** Footer blurb under the logo. */
-  blurb: "Interior design studio creating calm, functional and lasting spaces.",
+  blurb: "Wall moulding, gypsum ceilings, kitchens and fitted furniture. Visit us at Masterwood Plaza, level 3, shop B09, Ndeeba.",
 
   city: "Kampala",
-  location: "Kampala, Uganda",
-  email: "info@homenative.co",
+  location: "Masterwood Plaza, level 3, shop B09, Ndeeba",
+  email: "info@example.com",
   /** First number is the main one (big call-to-action spots); all are listed in the footer and menu. */
-  phones: [{ display: "0742 696 353", href: "tel:0742696353" }],
-  hours: ["Mon–Fri: 9 AM to 5 PM", "Sun: Closed"],
+  phones: [{ display: "0701 362 197", href: "tel:+256701362197" }],
+  hours: ["WhatsApp us, or visit", "Masterwood Plaza, shop B09"],
   /** One-line hours for the footer. */
-  hoursShort: "Mon–Fri, 9am–5pm",
+  hoursShort: "Masterwood Plaza, level 3, shop B09",
 
   /** Leave a link "" to hide it everywhere. */
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
-    pinterest: "#",
-    tiktok: "",
-    whatsapp: "",
+    instagram: "",
+    facebook: "",
+    linkedin: "",
+    pinterest: "",
+    tiktok: "https://www.tiktok.com/@summitinteriors",
+    whatsapp: "https://wa.me/256701362197",
   },
   /** Which networks show as icons (contact page, light footer) and as text (menu, dark footer), in order. */
-  socialIcons: ["instagram", "facebook", "linkedin"],
-  socialText: ["instagram", "pinterest", "linkedin"],
+  socialIcons: ["whatsapp", "tiktok"],
+  socialText: ["whatsapp", "tiktok"],
 
-  /** Brand colours (written into CSS variables by app/layout.tsx). */
+  /** Brand colours (written into CSS variables by app/layout.tsx) — black, blue and orange from the Summit logo. */
   colors: {
     /** Main colour: dark sections, filled buttons, active chips, footer. */
-    brand: "#2E1F12",
+    brand: "#141414",
     /** Accent on light backgrounds: highlighted words, link hover, cursor, focus. */
-    accent: "#8B5E3C",
+    accent: "#1F6FD1",
     /** Highlight underline on light backgrounds. */
-    tint: "#EADBC8",
-    soft: "#C9A98A",
+    tint: "#DCE9FA",
+    soft: "#8DB8EE",
     /** Accent / tint / soft on the dark theme. */
-    dark: { accent: "#C99D76", tint: "#4A3526", soft: "#8B6A4F" },
-    /** Active nav link while the header sits over a hero photo. */
-    onPhoto: "#E7C9A9",
+    dark: { accent: "#6FA6F0", tint: "#1E3550", soft: "#3F78C2" },
+    /** Active nav link and highlighted words over photos and dark sections — the logo's orange. */
+    onPhoto: "#F39A1E",
   },
 };
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
-export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
+export const homeLabel = `${site.fullName} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },
