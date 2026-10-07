@@ -2,9 +2,9 @@ import { pexels } from "./site";
 
 /** Homepage service cards */
 export const serviceCards = [
-  { src: pexels(1571463), title: "Interior Styling & Customization", body: "Layered textures, curated pieces and a finish that feels personal." },
-  { src: pexels(1643383), title: "Renovation & Remodeling", body: "Reworking layouts and surfaces so the space fits the way you live." },
-  { src: pexels(1080721), title: "Furniture & Custom Pieces", body: "Made-to-measure furniture designed for the room it lives in." },
+  { src: pexels(1571463), title: "Smart Kitchens", body: "Modern kitchens with glass cabinets, built-in hobs, islands and lighting — designed and fitted by us." },
+  { src: pexels(1643383), title: "Construction", body: "From the foundation up — we build, then finish the inside to the same standard." },
+  { src: pexels(1080721), title: "Cable-less Interiors", body: "Walls, TVs and lights with every cable hidden, for a clean, finished look." },
 ];
 
 export const reasons = [
@@ -14,25 +14,25 @@ export const reasons = [
   { icon: "layers", title: "End-to-End Service", body: "With you through the whole process — planning to execution." },
 ] as const;
 
-export const marquee = ["Interior Styling", "Renovation", "Custom Furniture", "Space Planning", "Lighting Design", "Commercial Interiors"];
+export const marquee = ["Smart Kitchens", "Construction", "Cable-less Walls", "Kitchen Islands", "Wall Lighting", "Full Interiors"];
 
 /** Services page columns */
 export const serviceColumns = [
-  { tag: "Concept & Planning", tint: "#E3E6DC", title: "Space planning for the way you actually live", body: "Layouts that make room for comfort, flow and everyday routines.", items: ["Space Planning", "Colour Consultation", "Furniture Selection", "3D Visualisation"] },
-  { tag: "Light & Detail", tint: "#DCE4E8", title: "Lighting and detail that set the mood", body: "Layered light and finishing touches that change how a room feels.", items: ["Lighting Design", "Décor & Accessories", "Art Placement", "Custom Joinery"] },
-  { tag: "Materials", tint: "#EBDDE0", title: "Natural materials for healthier interiors", body: "Honest, durable finishes chosen to age well and feel good to live with.", items: ["Material Sourcing", "Wall Treatments", "Flooring", "Window Styling"] },
+  { tag: "Kitchens", tint: "#E3E6DC", title: "Smart kitchens, built to work hard", body: "Cabinets, worktops, appliances and lighting planned as one.", items: ["Kitchen Cabinets", "Glass-front Wall Units", "Built-in Hobs & Ovens", "Kitchen Islands"] },
+  { tag: "Construction", tint: "#DCE4E8", title: "From construction to the final finish", body: "We build the shell and finish the inside — one team, start to end.", items: ["New Builds", "Renovations", "Site Supervision", "Finishing Works"] },
+  { tag: "Interiors", tint: "#EBDDE0", title: "Clean, cable-less interiors", body: "Hidden wiring, wall lights and feature walls for a tidy, modern home.", items: ["Cable-less TV Walls", "Wall & Accent Lighting", "Wall Panelling", "Full Home Interiors"] },
 ];
 
 export const accordionA = [
-  { q: "Space Planning", a: "We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks." },
-  { q: "Colour Consultation", a: "A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface." },
-  { q: "Furniture Selection", a: "We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own." },
-  { q: "Lighting Design", a: "Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark." },
+  { q: "Smart Kitchens", a: "Full kitchens with glass-front wall units, built-in hobs and ovens, islands and under-cabinet lighting." },
+  { q: "Kitchen Islands & Worktops", a: "Islands and worktops sized for how you cook, gather and store." },
+  { q: "Cable-less Walls", a: "TV walls and wall lights with the wiring hidden inside the wall — no cables in sight." },
+  { q: "Lighting", a: "Wall lights, LED strips and accent lighting planned with the rest of the room." },
 ];
 
 export const accordionB = [
-  { q: "Project Management", a: "One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to." },
-  { q: "Custom Joinery", a: "Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers." },
-  { q: "Styling & Art", a: "The final layer — textiles, objects and art curated to make the space feel lived-in from day one." },
-  { q: "Aftercare", a: "We check in after you move in and help with tweaks, additions and seasonal refreshes." },
+  { q: "Construction", a: "We take on building work too, so your home is built and finished by one team." },
+  { q: "Renovations", a: "Tired kitchens and rooms reworked and refitted with modern finishes." },
+  { q: "Full Interiors", a: "From the kitchen to every room — we do it all." },
+  { q: "Site Visits & Quotes", a: "We visit the site, listen to what you want and send a clear quote before work begins." },
 ];

@@ -301,6 +301,14 @@
     filter: brightness(1);
   }
 }
+@keyframes hn-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
 @keyframes hn-word {
   from {
     transform: translateY(110%) rotate(4deg);
@@ -341,6 +349,10 @@
 }
 .hero-zoom > img {
   animation: hn-hero-img 2.6s var(--ease) both;
+}
+.hero-line {
+  transform-origin: left;
+  animation: hn-line 1.8s var(--ease) 0.3s both;
 }
 .hero-word {
   display: inline-block;
