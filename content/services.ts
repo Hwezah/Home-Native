@@ -2,9 +2,9 @@ import { pexels } from "./site";
 
 /** Homepage service cards */
 export const serviceCards = [
-  { src: pexels(1571463), title: "Interior Styling & Customization", body: "Layered textures, curated pieces and a finish that feels personal." },
-  { src: pexels(1643383), title: "Renovation & Remodeling", body: "Reworking layouts and surfaces so the space fits the way you live." },
-  { src: pexels(1080721), title: "Furniture & Custom Pieces", body: "Made-to-measure furniture designed for the room it lives in." },
+  { src: pexels(1571463), title: "Luxury Interior Design", body: "Elegant homes and spaces designed down to the last detail — layout, lighting, colour and finish." },
+  { src: pexels(1643383), title: "House Transformations", body: "Old houses and tired rooms turned into bright, modern spaces you will love coming home to." },
+  { src: pexels(1080721), title: "Home Décor & Deliveries", body: "Mirrors, vases, wall art and statement furniture — chosen with you and delivered to your door." },
 ];
 
 export const reasons = [
@@ -14,25 +14,25 @@ export const reasons = [
   { icon: "layers", title: "End-to-End Service", body: "With you through the whole process — planning to execution." },
 ] as const;
 
-export const marquee = ["Interior Styling", "Renovation", "Custom Furniture", "Space Planning", "Lighting Design", "Commercial Interiors"];
+export const marquee = ["Luxury Interiors", "House Transformations", "Ceilings & Lighting", "Dining Sets", "Mirrors & Décor", "Deliveries"];
 
 /** Services page columns */
 export const serviceColumns = [
-  { tag: "Concept & Planning", tint: "#E3E6DC", title: "Space planning for the way you actually live", body: "Layouts that make room for comfort, flow and everyday routines.", items: ["Space Planning", "Colour Consultation", "Furniture Selection", "3D Visualisation"] },
-  { tag: "Light & Detail", tint: "#DCE4E8", title: "Lighting and detail that set the mood", body: "Layered light and finishing touches that change how a room feels.", items: ["Lighting Design", "Décor & Accessories", "Art Placement", "Custom Joinery"] },
-  { tag: "Materials", tint: "#EBDDE0", title: "Natural materials for healthier interiors", body: "Honest, durable finishes chosen to age well and feel good to live with.", items: ["Material Sourcing", "Wall Treatments", "Flooring", "Window Styling"] },
+  { tag: "Interior Design", tint: "#E3E6DC", title: "Luxurious interiors planned around you", body: "Full-room and full-house design with a polished, high-end finish.", items: ["Living & Dining Rooms", "Bedrooms", "Offices & Shops", "Colour & Finishes"] },
+  { tag: "Transformations", tint: "#DCE4E8", title: "Old spaces made new again", body: "Before-and-after makeovers that change how a home looks and feels.", items: ["House Transformations", "Ceilings & Lighting", "Curtains & Windows", "Wall Features"] },
+  { tag: "Home Décor", tint: "#EBDDE0", title: "Statement pieces, delivered", body: "Furniture and décor chosen to complete the room — and brought to you.", items: ["Dining Sets & Sofas", "Mirrors & Wall Art", "Vases & Accessories", "Deliveries"] },
 ];
 
 export const accordionA = [
-  { q: "Space Planning", a: "We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks." },
-  { q: "Colour Consultation", a: "A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface." },
-  { q: "Furniture Selection", a: "We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own." },
-  { q: "Lighting Design", a: "Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark." },
+  { q: "Interior Design", a: "We plan the whole room — layout, colours, lighting, furniture and finishing pieces — for a luxurious look that still works every day." },
+  { q: "House Transformations", a: "From old and tired to bright and modern: we rework rooms and whole houses, then style them to finish." },
+  { q: "Ceilings & Lighting", a: "Ceilings with concealed lighting, spotlights and chandeliers that make every room feel grand, day and night." },
+  { q: "Curtains & Windows", a: "Curtains and window styling in fabrics and colours chosen to match the rest of the room." },
 ];
 
 export const accordionB = [
-  { q: "Project Management", a: "One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to." },
-  { q: "Custom Joinery", a: "Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers." },
-  { q: "Styling & Art", a: "The final layer — textiles, objects and art curated to make the space feel lived-in from day one." },
-  { q: "Aftercare", a: "We check in after you move in and help with tweaks, additions and seasonal refreshes." },
+  { q: "Furniture", a: "Dining sets, sofas and statement pieces selected to fit your space and your style." },
+  { q: "Mirrors & Décor", a: "Mirrors, vases, wall art and accessories — the finishing touches that make a room feel complete." },
+  { q: "Deliveries", a: "Order décor and furniture with us and we deliver it. Call or WhatsApp to arrange." },
+  { q: "Site Visits & Quotes", a: "We visit the space, listen to what you want and send a clear quote before any work begins." },
 ];

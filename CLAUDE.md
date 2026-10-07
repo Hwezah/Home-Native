@@ -1,6 +1,8 @@
 @AGENTS.md
 
-# HomeNative — project rules
+# Brayz Interior & Home Deco — project rules
+
+Built from the HomeNative template (github.com/Hwezah/Home-Native); the design rules below still apply.
 
 The design rules, tokens and page specs live in `design_handoff_home_native/CLAUDE.md` and
 `design_handoff_home_native/README.md`. Read both before changing UI. When the README and the HTML
@@ -10,9 +12,9 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
 (`context/`) · Supabase placeholder (`lib/supabase`, inactive until env vars are set).
 
 - Tokens are CSS variables in `app/globals.css`, mirrored into Tailwind via `@theme inline`.
-- Brand colour (set in `content/site.ts` → `site.colors`; client decision, overrides the handoff's green): `--brand` #2E1F12 is the main colour (dark
-  sections, filled buttons, active chips, footer); `--brand-mid` #8B5E3C is the accent on light backgrounds
-  (highlighted words, link hover, cursor, focus); `--brand-tint` #EADBC8 is the highlight underline.
+- Brand colour (set in `content/site.ts` → `site.colors`, from the Brayz logo): `--brand` #1C2541 (navy) is the main colour (dark
+  sections, filled buttons, active chips, footer); `--brand-mid` #8A6A12 (gold) is the accent on light backgrounds
+  (highlighted words, link hover, cursor, focus); `--brand-tint` #F4E9C8 is the highlight underline.
 - Theming: light/dark via `<html data-theme>` (set before paint by `themeInitScript`, state in
   `context/ThemeContext.tsx`, toggle `components/layout/ThemeToggle.tsx`). Use flipping tokens (`paper`, `ink`,
   `line`, `muted-*`, `surface-*`, `fill`, `img-bg`) for page surfaces/text; use fixed `white` / `#111` only for
@@ -29,8 +31,6 @@ Stack: Next.js App Router (TypeScript) · Tailwind v4 · shadcn/ui (`components/
   `data-no-reveal`; heroes are excluded via `data-hero`.
 - Content is typed data in `content/*.ts`; detail pages use `generateStaticParams`.
 - Client details (name, wordmark, contacts, hours, socials, SEO text, brand colours) live only in `content/site.ts`;
-  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. This repo is the HomeNative
-  site and stays HomeNative; client copies use a generic email (`info@example.com`) until the client gives a real one.
+  re-branding for a new client starts there, then the page copy in the other `content/*.ts` files. Email stays generic
+  (`info@example.com`) until Brayz gives a real one.
 - Run `npm run lint` and `npm run build` before pushing.
-- A TikTok/social profile screenshot from the user (even with no text) means: build that client's site end to end as a
-  branch of `Hwezah/interior-sites` (see `.claude/skills/new-client/SKILL.md`). Never change this HomeNative site while doing it.
