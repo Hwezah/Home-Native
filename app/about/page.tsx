@@ -41,11 +41,11 @@ export default function AboutPage() {
         <div data-m-center className="wrap relative flex flex-col gap-8">
           <div className="text-[14px] uppercase">— About Us</div>
           <p className="t-lead">
-            We are an interior design studio dedicated to creating calm, functional and lasting spaces. Experienced in{" "}
+            We finish interiors — walls, ceilings, floors and fitted furniture. Experienced in{" "}
             <Link href="/portfolio" className="hl-brand">
               residential and commercial projects
             </Link>
-            , blending modern lines with comfort and purpose. Currently shaping homes that feel native to the people who live in them.
+            , we create new spaces, update tired ones and renovate whole homes.
           </p>
         </div>
         <div className="wrap relative mt-[clamp(80px,10vw,150px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] gap-[clamp(40px,6vw,90px)]">

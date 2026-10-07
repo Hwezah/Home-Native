@@ -2,9 +2,9 @@ import { pexels } from "./site";
 
 /** Homepage service cards */
 export const serviceCards = [
-  { src: pexels(1571463), title: "Interior Styling & Customization", body: "Layered textures, curated pieces and a finish that feels personal." },
-  { src: pexels(1643383), title: "Renovation & Remodeling", body: "Reworking layouts and surfaces so the space fits the way you live." },
-  { src: pexels(1080721), title: "Furniture & Custom Pieces", body: "Made-to-measure furniture designed for the room it lives in." },
+  { src: pexels(1571463), title: "TV Walls & Wall Panels", body: "Slatted panels, marble-look boards and built-in units that turn a wall into the centre of the room." },
+  { src: pexels(1643383), title: "Ceilings & Lighting", body: "Gypsum ceilings with concealed lighting and statement chandeliers." },
+  { src: pexels(1080721), title: "Carpets & Wardrobes", body: "Wall-to-wall carpet and fitted wardrobes that finish every bedroom." },
 ];
 
 export const reasons = [
@@ -14,25 +14,25 @@ export const reasons = [
   { icon: "layers", title: "End-to-End Service", body: "With you through the whole process — planning to execution." },
 ] as const;
 
-export const marquee = ["Interior Styling", "Renovation", "Custom Furniture", "Space Planning", "Lighting Design", "Commercial Interiors"];
+export const marquee = ["TV Walls", "Wall Panels", "Gypsum Ceilings", "Wall-to-wall Carpet", "Wardrobes", "Renovations"];
 
 /** Services page columns */
 export const serviceColumns = [
-  { tag: "Concept & Planning", tint: "#E3E6DC", title: "Space planning for the way you actually live", body: "Layouts that make room for comfort, flow and everyday routines.", items: ["Space Planning", "Colour Consultation", "Furniture Selection", "3D Visualisation"] },
-  { tag: "Light & Detail", tint: "#DCE4E8", title: "Lighting and detail that set the mood", body: "Layered light and finishing touches that change how a room feels.", items: ["Lighting Design", "Décor & Accessories", "Art Placement", "Custom Joinery"] },
-  { tag: "Materials", tint: "#EBDDE0", title: "Natural materials for healthier interiors", body: "Honest, durable finishes chosen to age well and feel good to live with.", items: ["Material Sourcing", "Wall Treatments", "Flooring", "Window Styling"] },
+  { tag: "Walls", tint: "#E3E6DC", title: "Feature walls that finish the room", body: "TV walls and panels with storage and lighting built in.", items: ["TV Wall Units", "Slatted Wall Panels", "Marble-look Boards", "Shelving & Display"] },
+  { tag: "Ceilings & Floors", tint: "#DCE4E8", title: "Ceilings and floors, done properly", body: "Gypsum ceilings with lighting, and carpet laid wall to wall.", items: ["Gypsum Ceilings", "Concealed Lighting", "Chandeliers", "Wall-to-wall Carpet"] },
+  { tag: "Renovations", tint: "#EBDDE0", title: "We create, update and renovate", body: "From new homes to tired rooms that need a fresh finish.", items: ["Fitted Wardrobes", "Room Makeovers", "Full Renovations", "Finishing Works"] },
 ];
 
 export const accordionA = [
-  { q: "Space Planning", a: "We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks." },
-  { q: "Colour Consultation", a: "A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface." },
-  { q: "Furniture Selection", a: "We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own." },
-  { q: "Lighting Design", a: "Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark." },
+  { q: "TV Walls", a: "TV wall units with slatted panels, marble-look boards, shelving and lighting, built around your screen." },
+  { q: "Wall Panels", a: "Slatted and textured wall panels that add warmth and depth to living rooms and bedrooms." },
+  { q: "Gypsum Ceilings", a: "Gypsum ceilings with concealed lighting, designed together with your chandeliers and spotlights." },
+  { q: "Wall-to-wall Carpet", a: "Carpet measured, cut and laid wall to wall for a soft, finished floor." },
 ];
 
 export const accordionB = [
-  { q: "Project Management", a: "One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to." },
-  { q: "Custom Joinery", a: "Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers." },
-  { q: "Styling & Art", a: "The final layer — textiles, objects and art curated to make the space feel lived-in from day one." },
-  { q: "Aftercare", a: "We check in after you move in and help with tweaks, additions and seasonal refreshes." },
+  { q: "Fitted Wardrobes", a: "Floor-to-ceiling wardrobes made to fit the room exactly, with lighting and storage inside." },
+  { q: "Renovations", a: "We update tired rooms and renovate whole homes — one team from start to finish." },
+  { q: "Orders & Enquiries", a: "Call or WhatsApp us on 0741 172 522 to order or ask about a project." },
+  { q: "Visit Us", a: "Find us at Laxmi Plaza along Biashara Street." },
 ];
