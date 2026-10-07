@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav, homeLabel } from "@/content/site";
+import { nav, homeLabel, site } from "@/content/site";
 import { useMenu } from "@/context/MenuContext";
 import { useScrolled } from "@/lib/useScrolled";
 import { cn } from "@/lib/utils";

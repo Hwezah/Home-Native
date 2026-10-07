@@ -2,9 +2,9 @@ import { pexels } from "./site";
 
 /** Homepage service cards */
 export const serviceCards = [
-  { src: pexels(1571463), title: "Interior Styling & Customization", body: "Layered textures, curated pieces and a finish that feels personal." },
-  { src: pexels(1643383), title: "Renovation & Remodeling", body: "Reworking layouts and surfaces so the space fits the way you live." },
-  { src: pexels(1080721), title: "Furniture & Custom Pieces", body: "Made-to-measure furniture designed for the room it lives in." },
+  { src: pexels(1571463), title: "Gypsum Ceilings & Lighting", body: "Layered gypsum ceilings with concealed LED lines, spotlights and statement fittings." },
+  { src: pexels(1643383), title: "Renovation & Remodelling", body: "Reworking layouts, walls and finishes — inside and out — so the space fits how you live." },
+  { src: pexels(1080721), title: "Built-ins & Feature Walls", body: "Made-to-measure shelving, display units and TV walls designed for the room they live in." },
 ];
 
 export const reasons = [
@@ -14,25 +14,25 @@ export const reasons = [
   { icon: "layers", title: "End-to-End Service", body: "With you through the whole process — planning to execution." },
 ] as const;
 
-export const marquee = ["Interior Styling", "Renovation", "Custom Furniture", "Space Planning", "Lighting Design", "Commercial Interiors"];
+export const marquee = ["Gypsum Ceilings", "Lighting", "TV Walls", "Built-in Units", "Painting", "Exterior Design"];
 
 /** Services page columns */
 export const serviceColumns = [
-  { tag: "Concept & Planning", tint: "#E3E6DC", title: "Space planning for the way you actually live", body: "Layouts that make room for comfort, flow and everyday routines.", items: ["Space Planning", "Colour Consultation", "Furniture Selection", "3D Visualisation"] },
-  { tag: "Light & Detail", tint: "#DCE4E8", title: "Lighting and detail that set the mood", body: "Layered light and finishing touches that change how a room feels.", items: ["Lighting Design", "Décor & Accessories", "Art Placement", "Custom Joinery"] },
-  { tag: "Materials", tint: "#EBDDE0", title: "Natural materials for healthier interiors", body: "Honest, durable finishes chosen to age well and feel good to live with.", items: ["Material Sourcing", "Wall Treatments", "Flooring", "Window Styling"] },
+  { tag: "Ceilings & Light", tint: "#E3E6DC", title: "Ceilings and lighting that set the mood", body: "Gypsum work and layered light that change how a room feels, day and night.", items: ["Gypsum Ceilings", "LED Strip Lighting", "Spotlights", "Chandeliers"] },
+  { tag: "Walls & Joinery", tint: "#DCE4E8", title: "Feature walls and built-ins made to measure", body: "Display units, shelving and TV walls built to fit the room and the way you use it.", items: ["TV Walls", "Shelving & Display Units", "Wall Panelling", "Custom Joinery"] },
+  { tag: "Exterior & Finishing", tint: "#EBDDE0", title: "Exteriors and finishes that last", body: "Durable finishes and careful renovation work, inside and out.", items: ["Exterior Design", "Painting", "Renovations", "Site Supervision"] },
 ];
 
 export const accordionA = [
-  { q: "Space Planning", a: "We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks." },
-  { q: "Colour Consultation", a: "A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface." },
-  { q: "Furniture Selection", a: "We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own." },
-  { q: "Lighting Design", a: "Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark." },
+  { q: "Gypsum Ceilings", a: "Flat, stepped and coffered gypsum ceilings, with neat recesses for LED lines and spotlights — planned together with the lighting." },
+  { q: "Lighting Design", a: "Ambient, task and accent lighting — LED strips, spotlights and chandeliers — placed so every room works after dark." },
+  { q: "TV Walls", a: "Feature walls in marble-look, panelled or painted finishes, with hidden cabling and space for consoles and speakers." },
+  { q: "Built-in Units", a: "Made-to-measure shelving, display and storage units designed for the room and built by our own team." },
 ];
 
 export const accordionB = [
-  { q: "Project Management", a: "One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to." },
-  { q: "Custom Joinery", a: "Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers." },
-  { q: "Styling & Art", a: "The final layer — textiles, objects and art curated to make the space feel lived-in from day one." },
-  { q: "Aftercare", a: "We check in after you move in and help with tweaks, additions and seasonal refreshes." },
+  { q: "Project Management", a: "One point of contact from the site visit to handover. We coordinate the work, timeline and budget so you do not have to." },
+  { q: "Painting & Finishes", a: "Interior and exterior painting and wall finishes, applied by the same crew that built the space." },
+  { q: "Exterior Design", a: "Facades, entrances and outdoor finishes that match the care put into the interior." },
+  { q: "Aftercare", a: "We check in after handover and help with touch-ups, additions and changes." },
 ];
