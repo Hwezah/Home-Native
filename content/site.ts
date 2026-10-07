@@ -3,67 +3,68 @@
  * Page copy (projects, team, testimonials, posts, FAQs, services, commitments) lives in the other content/*.ts files.
  */
 export const site = {
-  url: "https://homenative.co",
+  url: "https://doozy-designs-ug.vercel.app",
   locale: "en_UG",
 
-  /** Short brand name used in running text ("At HomeNative, …"). */
-  name: "HomeNative",
+  /** Short brand name used in running text ("At Doozy, …"). */
+  name: "Doozy",
   /** Full trading name: page titles, copyright, company details. */
-  fullName: "HomeNative Interiors",
+  fullName: "Doozy Designs",
   /** Header / menu / footer logo: `name` in serif with `sub` spread underneath to the same width. */
-  wordmark: { name: "HomeNative", sub: "INTERIORS" },
+  wordmark: { name: "DOOZY", sub: "DESIGNS" },
   /** Huge outlined word behind the About intros. */
-  outlineWord: "Native",
+  outlineWord: "Doozy",
   /** Optional parent-company line (footer, contact page). Leave "" to hide. */
-  parent: "A MachineNative company",
+  parent: "",
 
   /** Default SEO title and description. */
-  title: "Interior design studio in Kampala",
-  description: "An interior design studio in Kampala, Uganda creating calm, functional and lasting spaces.",
+  title: "Lux décor & interior design in Uganda",
+  description:
+    "A lux décor and interior design studio in Uganda — living rooms, bedrooms, lighting and custom upholstery made in our own workshop.",
   /** Footer blurb under the logo. */
-  blurb: "Interior design studio creating calm, functional and lasting spaces.",
+  blurb: "Lux décor and interiors — designed by us, with custom upholstery made in our own workshop.",
 
-  city: "Kampala",
-  location: "Kampala, Uganda",
-  email: "info@homenative.co",
+  city: "Uganda",
+  location: "Uganda",
+  email: "info@example.com",
   /** First number is the main one (big call-to-action spots); all are listed in the footer and menu. */
-  phones: [{ display: "0742 696 353", href: "tel:0742696353" }],
-  hours: ["Mon–Fri: 9 AM to 5 PM", "Sun: Closed"],
+  phones: [{ display: "0200 956 455", href: "tel:+256200956455" }],
+  hours: ["Call or message us", "to book a site visit"],
   /** One-line hours for the footer. */
-  hoursShort: "Mon–Fri, 9am–5pm",
+  hoursShort: "Call to book a site visit",
 
   /** Leave a link "" to hide it everywhere. */
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
-    pinterest: "#",
-    tiktok: "",
+    instagram: "https://www.instagram.com/doozydesigns_",
+    facebook: "",
+    linkedin: "",
+    pinterest: "",
+    tiktok: "https://www.tiktok.com/@doozydesigns_",
     whatsapp: "",
   },
   /** Which networks show as icons (contact page, light footer) and as text (menu, dark footer), in order. */
-  socialIcons: ["instagram", "facebook", "linkedin"],
-  socialText: ["instagram", "pinterest", "linkedin"],
+  socialIcons: ["instagram", "tiktok"],
+  socialText: ["instagram", "tiktok"],
 
-  /** Brand colours (written into CSS variables by app/layout.tsx). */
+  /** Brand colours (written into CSS variables by app/layout.tsx) — teal, turquoise and gold from the Doozy logo. */
   colors: {
     /** Main colour: dark sections, filled buttons, active chips, footer. */
-    brand: "#2E1F12",
+    brand: "#0B5F5C",
     /** Accent on light backgrounds: highlighted words, link hover, cursor, focus. */
-    accent: "#8B5E3C",
+    accent: "#0E7A74",
     /** Highlight underline on light backgrounds. */
-    tint: "#EADBC8",
-    soft: "#C9A98A",
+    tint: "#D9F2F1",
+    soft: "#7FD6D4",
     /** Accent / tint / soft on the dark theme. */
-    dark: { accent: "#C99D76", tint: "#4A3526", soft: "#8B6A4F" },
-    /** Active nav link while the header sits over a hero photo. */
-    onPhoto: "#E7C9A9",
+    dark: { accent: "#3CC7C7", tint: "#1E4A49", soft: "#2E8C8A" },
+    /** Active nav link and highlighted words over photos and dark sections — the logo's gold. */
+    onPhoto: "#E0B33A",
   },
 };
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
-export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
+export const homeLabel = `${site.fullName} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },

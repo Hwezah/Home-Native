@@ -2,9 +2,9 @@ import { pexels } from "./site";
 
 /** Homepage service cards */
 export const serviceCards = [
-  { src: pexels(1571463), title: "Interior Styling & Customization", body: "Layered textures, curated pieces and a finish that feels personal." },
-  { src: pexels(1643383), title: "Renovation & Remodeling", body: "Reworking layouts and surfaces so the space fits the way you live." },
-  { src: pexels(1080721), title: "Furniture & Custom Pieces", body: "Made-to-measure furniture designed for the room it lives in." },
+  { src: pexels(1571463), title: "Interior Design", body: "Living rooms, bedrooms and whole homes designed with a polished, lux finish." },
+  { src: pexels(1643383), title: "Lux Décor & Lighting", body: "Statement mirrors, lighting and décor pieces that make a room feel complete." },
+  { src: pexels(1080721), title: "Custom Upholstery", body: "Sofas, headboards and seating made and customised in our own workshop." },
 ];
 
 export const reasons = [
@@ -14,25 +14,25 @@ export const reasons = [
   { icon: "layers", title: "End-to-End Service", body: "With you through the whole process — planning to execution." },
 ] as const;
 
-export const marquee = ["Interior Styling", "Renovation", "Custom Furniture", "Space Planning", "Lighting Design", "Commercial Interiors"];
+export const marquee = ["Interior Design", "Lux Décor", "Custom Upholstery", "Lighting & Mirrors", "Bedrooms", "Living Rooms"];
 
 /** Services page columns */
 export const serviceColumns = [
-  { tag: "Concept & Planning", tint: "#E3E6DC", title: "Space planning for the way you actually live", body: "Layouts that make room for comfort, flow and everyday routines.", items: ["Space Planning", "Colour Consultation", "Furniture Selection", "3D Visualisation"] },
-  { tag: "Light & Detail", tint: "#DCE4E8", title: "Lighting and detail that set the mood", body: "Layered light and finishing touches that change how a room feels.", items: ["Lighting Design", "Décor & Accessories", "Art Placement", "Custom Joinery"] },
-  { tag: "Materials", tint: "#EBDDE0", title: "Natural materials for healthier interiors", body: "Honest, durable finishes chosen to age well and feel good to live with.", items: ["Material Sourcing", "Wall Treatments", "Flooring", "Window Styling"] },
+  { tag: "Interiors", tint: "#E3E6DC", title: "Rooms designed around the people in them", body: "From living rooms to children's bedrooms, planned for how you actually live.", items: ["Living Rooms", "Bedrooms & Kids' Rooms", "Wardrobes & Storage", "Wall Finishes & Wallpaper"] },
+  { tag: "Lux Décor", tint: "#DCE4E8", title: "The finishing touches that make it feel luxe", body: "Lighting, mirrors and décor chosen to complete each room.", items: ["Lit Mirrors & Vanities", "Ceiling & Accent Lighting", "Rugs & Soft Furnishings", "Décor Styling"] },
+  { tag: "Upholstery", tint: "#EBDDE0", title: "Made locally, in our own workshop", body: "Seating and headboards made to fit your room, your fabric and your style.", items: ["Custom Sofas", "Headboards", "Accent Chairs", "Re-upholstery"] },
 ];
 
 export const accordionA = [
-  { q: "Space Planning", a: "We plan layouts that make the most of every square metre — smooth movement, balanced proportions and practical storage, so the room works as well as it looks." },
-  { q: "Colour Consultation", a: "A palette built around your light, your materials and your mood. We test samples in situ and give you a clear schedule for every wall and surface." },
-  { q: "Furniture Selection", a: "We source, specify and arrange pieces at the right scale — mixing new, vintage and what you already own." },
-  { q: "Lighting Design", a: "Layered ambient, task and accent lighting that shifts with the day and makes the space feel warm after dark." },
+  { q: "Interior Design", a: "We plan the whole room — layout, colour, lighting, furniture and décor — so it looks luxe and works every day." },
+  { q: "Bedrooms & Kids' Rooms", a: "Calm main bedrooms and fun, practical rooms for children, with storage that keeps them tidy." },
+  { q: "Lighting & Mirrors", a: "Lit mirrors, vanities and layered lighting that change how a room feels, day and night." },
+  { q: "Lux Décor", a: "Rugs, soft furnishings and statement pieces chosen to finish each space." },
 ];
 
 export const accordionB = [
-  { q: "Project Management", a: "One point of contact from first sketch to handover. We coordinate trades, timelines and budgets so you do not have to." },
-  { q: "Custom Joinery", a: "Made-to-measure storage, shelving and built-ins designed for the room they live in and crafted by local makers." },
-  { q: "Styling & Art", a: "The final layer — textiles, objects and art curated to make the space feel lived-in from day one." },
-  { q: "Aftercare", a: "We check in after you move in and help with tweaks, additions and seasonal refreshes." },
+  { q: "Custom Upholstery", a: "Sofas, headboards and chairs made and customised in our own workshop, in the fabric you choose." },
+  { q: "Project Management", a: "We coordinate the trades on site — from plumbing to finishing — so you have one point of contact." },
+  { q: "Projects Across Uganda", a: "We take on projects in different towns, including Jinja." },
+  { q: "Site Visits & Quotes", a: "We visit the space, listen to what you want and send a clear quote before work begins." },
 ];
