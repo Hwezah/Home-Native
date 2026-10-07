@@ -7,7 +7,7 @@ export const team = [
 ];
 
 export const stats = [
-  { title: "Design Awards", body: "Recognised with 10+ national design excellence awards.", n: 10, suffix: "+", bg: "#C3D0DA" },
-  { title: "Project Efficiency", body: "Completed 90% of projects ahead of schedule.", n: 90, suffix: "%", bg: "#D8CFBF" },
-  { title: "Space Optimization", body: "85% improvement in functional room usage.", n: 85, suffix: "%", bg: "#B7CDBB" },
+  { title: "TikTok Followers", body: "People following our before-and-after transformations as they happen.", n: 32, suffix: "K+", bg: "#E6DDCF" },
+  { title: "Likes on Our Work", body: "Likes across the homes, wardrobes and kitchens we share from site.", n: 256, suffix: "K+", bg: "#D9CBB5" },
+  { title: "Spaces We Transform", body: "Homes, offices, hotels and Airbnbs — designed and built by one team.", n: 4, suffix: "", bg: "#CFC6B8" },
 ];
