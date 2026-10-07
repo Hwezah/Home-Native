@@ -1,9 +1,9 @@
 import { site } from "./site";
 
 export const faqs = [
-  { q: `How does a project with ${site.name} start?`, a: "With a free consultation. We visit the space, talk through how you use it, your budget and timing, then send a clear proposal." },
-  { q: "Do you take on single rooms?", a: "Yes. Many projects start with one room — a living space, kitchen or bedroom — and grow from there." },
-  { q: "How are your fees structured?", a: "Fixed design fees per phase, agreed up front. Furniture and contractor costs are quoted transparently with no hidden mark-ups." },
-  { q: "Can you work with furniture I already own?", a: "Absolutely. We love building around pieces with meaning and will suggest where to keep, refresh or replace." },
-  { q: "How long does a typical project take?", a: "Styling projects take 4–8 weeks. Full renovations usually run 3–6 months depending on scope." },
+  { q: `How does a project with ${site.name} start?`, a: "WhatsApp us on 0756 281 269 or call 0761 189 945. We look at the space, talk through what you want and send a clear quote." },
+  { q: "Do you take on single rooms?", a: "Yes. Single rooms are a big part of our work, and many projects grow from there." },
+  { q: "Do you make sofas?", a: "Yes. Ask us about sectionals and tufted sofas in the size and fabric you want." },
+  { q: "How are your prices structured?", a: "Every job gets a clear quote after we see the space, agreed with you before any work starts." },
+  { q: "How long does a typical project take?", a: "It depends on the scope — a TV wall unit is much quicker than a full home. You get a timeline together with your quote." },
 ];
