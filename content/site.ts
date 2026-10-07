@@ -3,67 +3,71 @@
  * Page copy (projects, team, testimonials, posts, FAQs, services, commitments) lives in the other content/*.ts files.
  */
 export const site = {
-  url: "https://homenative.co",
+  url: "https://maliha-interiors.vercel.app",
   locale: "en_UG",
 
-  /** Short brand name used in running text ("At HomeNative, …"). */
-  name: "HomeNative",
+  /** Short brand name used in running text ("At Maliha, …"). */
+  name: "Maliha",
   /** Full trading name: page titles, copyright, company details. */
-  fullName: "HomeNative Interiors",
+  fullName: "Maliha Interiors Ug",
   /** Header / menu / footer logo: `name` in serif with `sub` spread underneath to the same width. */
-  wordmark: { name: "HomeNative", sub: "INTERIORS" },
+  wordmark: { name: "MALIHA", sub: "INTERIORS" },
   /** Huge outlined word behind the About intros. */
-  outlineWord: "Native",
+  outlineWord: "Maliha",
   /** Optional parent-company line (footer, contact page). Leave "" to hide. */
-  parent: "A MachineNative company",
+  parent: "",
 
   /** Default SEO title and description. */
-  title: "Interior design studio in Kampala",
-  description: "An interior design studio in Kampala, Uganda creating calm, functional and lasting spaces.",
+  title: "Interiors, furniture & décor in Kampala",
+  description:
+    "Interiors, furniture and décor in Kampala — bedrooms, living rooms, studio apartments, sofas, mirrors and outdoor spaces.",
   /** Footer blurb under the logo. */
-  blurb: "Interior design studio creating calm, functional and lasting spaces.",
+  blurb: "Interior | Furniture | Décor — bedrooms, living rooms and apartments styled and furnished in Kampala.",
 
   city: "Kampala",
   location: "Kampala, Uganda",
-  email: "info@homenative.co",
+  email: "info@example.com",
   /** First number is the main one (big call-to-action spots); all are listed in the footer and menu. */
-  phones: [{ display: "0742 696 353", href: "tel:0742696353" }],
-  hours: ["Mon–Fri: 9 AM to 5 PM", "Sun: Closed"],
+  phones: [
+    { display: "0756 947 596", href: "tel:+256756947596" },
+    { display: "0756 300 267", href: "tel:+256756300267" },
+  ],
+  hours: ["Call us", "to book a site visit"],
   /** One-line hours for the footer. */
-  hoursShort: "Mon–Fri, 9am–5pm",
+  hoursShort: "Call to book a site visit",
 
   /** Leave a link "" to hide it everywhere. */
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
-    pinterest: "#",
-    tiktok: "",
+    instagram: "",
+    facebook: "",
+    linkedin: "",
+    pinterest: "",
+    tiktok: "https://www.tiktok.com/@malihainteriorsug",
     whatsapp: "",
   },
   /** Which networks show as icons (contact page, light footer) and as text (menu, dark footer), in order. */
-  socialIcons: ["instagram", "facebook", "linkedin"],
-  socialText: ["instagram", "pinterest", "linkedin"],
+  socialIcons: ["tiktok"],
+  socialText: ["tiktok"],
 
-  /** Brand colours (written into CSS variables by app/layout.tsx). */
+  /** Brand colours (written into CSS variables by app/layout.tsx) — the Maliha logo is black on white, so monochrome. */
   colors: {
     /** Main colour: dark sections, filled buttons, active chips, footer. */
-    brand: "#2E1F12",
+    brand: "#1A1A1A",
     /** Accent on light backgrounds: highlighted words, link hover, cursor, focus. */
-    accent: "#8B5E3C",
+    accent: "#555555",
     /** Highlight underline on light backgrounds. */
-    tint: "#EADBC8",
-    soft: "#C9A98A",
+    tint: "#ECECEC",
+    soft: "#B5B5B5",
     /** Accent / tint / soft on the dark theme. */
-    dark: { accent: "#C99D76", tint: "#4A3526", soft: "#8B6A4F" },
+    dark: { accent: "#C8C8C8", tint: "#3A3A3A", soft: "#7A7A7A" },
     /** Active nav link while the header sits over a hero photo. */
-    onPhoto: "#E7C9A9",
+    onPhoto: "#E6E6E6",
   },
 };
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
-export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
+export const homeLabel = `${site.fullName} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },
