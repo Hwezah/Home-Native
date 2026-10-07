@@ -63,7 +63,7 @@ export const site = {
 
 export const siteUrl = site.url;
 export const phone = site.phones[0];
-export const homeLabel = `${site.wordmark.name} ${site.wordmark.sub.toLowerCase()} — home`;
+export const homeLabel = `${site.fullName} — home`;
 
 export const nav = [
   { href: "/", label: "Home" },

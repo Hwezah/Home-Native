@@ -80,7 +80,7 @@ export function Cursor() {
     const setHot = (h: boolean) => {
       hot = h;
       if (!pressed) setSize(h ? 104 : 64);
-      ring.style.backgroundColor = h ? "rgba(139,94,60,.12)" : "transparent";
+      ring.style.backgroundColor = h ? "color-mix(in srgb, var(--brand-mid) 12%, transparent)" : "transparent";
     };
     const isHot = (el: Element | null) => !!el?.closest(HOT);
     const show = (on: boolean) => {
